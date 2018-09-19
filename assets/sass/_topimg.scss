@@ -1,0 +1,78 @@
+@import 'variables';
+
+.topImg{
+  background-image: linear-gradient(135deg, #ffffff00, #0000006b 60%, black), url(https://wallpapers.wallhalla.com/pGgQpOgvSYeG_0pT381N_47c24138/aHR0cHM6Ly9hbHBoYS53YWxsaGF2ZW4uY2Mvd2FsbHBhcGVyLzY1MTU2Nw==);
+  height: 100vh;
+
+  // https://wallpapers.wallhalla.com/NNJrK057FaN_6dI61yN_0e2d7547/aHR0cHM6Ly93YWxsLmFscGhhY29kZXJzLmNvbS9iaWcucGhwP2k9OTE5NjU4
+
+  // https://wallpapers.wallhalla.com/QwOALOvsAoN_M8IQqq0_3c2ade4f/aHR0cHM6Ly93YWxsLmFscGhhY29kZXJzLmNvbS9iaWcucGhwP2k9ODg3NDg4
+}
+
+.welcome{
+  color: white;
+  /* font-weight: 700; */
+  position: absolute;
+  right: 190px;
+  top: 280px;
+  text-shadow: 3px 3px 3px black;
+  font-size: 1.5em;
+}
+
+.title{
+  position: absolute;
+  right: 190px;
+  top: 310px;
+  color: white;
+  font-size: 5em;
+  text-shadow: 3px 3px 3px black;
+  font-weight: 700;
+  font-family: $ff-title;
+}
+
+.below{
+  color: white;
+  font-weight: 700;
+  position: absolute;
+  right: 190px;
+  font-size: 3em;
+  top: 395px;
+  text-shadow: 3px 3px 3px black;
+  font-family: $ff-title;
+}
+
+.contact-info{
+  position: absolute;
+  right: 190px;
+  color: white;
+  bottom: 30px;
+  text-align: right;
+}
+
+.small-text{
+  font-weight: 500;
+  text-shadow: 3px 2px 1px black;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.phone{
+  font-size: 2rem;
+  text-shadow: 3px 3px 3px black;
+  margin-bottom: 30px;
+  font-family: $ff-number;
+}
+
+.hours{
+  text-shadow: 3px 2px 1px black;
+  letter-spacing: 2px;
+}
+
+.bowl{
+  background: url(/img/bowl.png) no-repeat;
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  top: 46em;
+  background-size: contain;
+}

@@ -1,0 +1,33 @@
+header{
+  position: absolute;
+  width: 100%;
+}
+
+.logo{
+  background: url(/img/logodark.png) no-repeat;
+  background-size: contain;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  left: 10px;
+  top: 20px;
+}
+
+nav{
+  text-align: center;
+  padding: 40px;
+  text-shadow: 3px 3px 3px black;
+  letter-spacing: 2px;
+}
+
+.reservations{
+  position: absolute;
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+    right: 40px;
+    top: 39px;
+    text-shadow: 3px 3px 3px black;
+}
+
+

@@ -271,21 +271,34 @@ function SpecialMenu(_ref) {
         (0, _hyperapp.h)(
           "div",
           { "class": "col-md-4" },
-          (0, _hyperapp.h)("img", { id: "card1" }),
           (0, _hyperapp.h)(
-            "h3",
-            { "class": "special-price" },
-            "$32"
-          ),
-          (0, _hyperapp.h)(
-            "p",
-            { "class": "special-menu-title" },
-            "Pressure Grilled NY Strip"
-          ),
-          (0, _hyperapp.h)(
-            "p",
-            { "class": "special-menu-description" },
-            "Barely 9oz served with half an asparagus and 1/16 of a potato."
+            "div",
+            { "class": "card", style: "width:100%" },
+            (0, _hyperapp.h)(
+              "div",
+              { "class": "top-card" },
+              (0, _hyperapp.h)("img", { id: "card1" }),
+              (0, _hyperapp.h)("div", { "class": "light-circle" }),
+              (0, _hyperapp.h)(
+                "div",
+                { "class": "special-price" },
+                "$32"
+              )
+            ),
+            (0, _hyperapp.h)(
+              "div",
+              { "class": "container" },
+              (0, _hyperapp.h)(
+                "p",
+                { "class": "special-menu-title" },
+                "Pressure Grilled NY Strip"
+              ),
+              (0, _hyperapp.h)(
+                "p",
+                { "class": "special-menu-description" },
+                "Barely 9oz served with half an asparagus and 1/16 of a potato."
+              )
+            )
           )
         ),
         (0, _hyperapp.h)(

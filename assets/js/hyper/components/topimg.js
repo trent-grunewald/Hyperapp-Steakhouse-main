@@ -4,9 +4,11 @@ export default function TopImg({state, actions}) {
   return (
     <section class="topImg">
       <div class="container">
-        <h5 class="welcome">Welcome to</h5>
-        <h1 class="title">Over-Seasoned</h1>
-        <h2 class= "below">Steak House</h2>
+        <div class="intro">
+          <h5 class="welcome">WELCOME TO</h5>
+          <h1 class="title">Over-Seasoned</h1>
+          <h2 class= "below">Steak House</h2>
+        </div>
         <div class="contact-info">
             <p class="small-text">Call for seating</p>
             <h4 class="phone">(206)-643-0185</h4>

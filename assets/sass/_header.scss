@@ -8,9 +8,8 @@ header{
   background-size: contain;
   height: 100px;
   width: 100px;
-  position: absolute;
-  left: 10px;
-  top: 20px;
+  float: left;
+  margin-top: -1.25em;
 }
 
 nav{
@@ -21,13 +20,8 @@ nav{
 }
 
 .reservations{
-  position: absolute;
-    text-decoration: none;
-    font-weight: 700;
-    color: white;
-    right: 40px;
-    top: 39px;
     text-shadow: 3px 3px 3px black;
+    float: right;
 }
 
 

@@ -3,7 +3,7 @@
 
 
 .specialMenu{
-  height: 100vh;
+  height: 110vh;
   background: url(https://cdn.inspirationhut.net/wp-content/uploads/2013/05/61.png);
 }
 
@@ -118,4 +118,15 @@
 .special-menu-description{
   color: #b5b3b4;
   line-height: 1.5em;
+}
+
+.view-menu{
+  font-family: "Playfair Display",serif;
+  color: black;
+  display: block;
+  text-align: center;
+  margin-top: 5em;
+  letter-spacing: 2px;
+  text-shadow: 0px 0px;
+  text-decoration: underline #b5b3b4;
 }

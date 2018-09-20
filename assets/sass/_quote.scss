@@ -1,0 +1,48 @@
+@import url( 'https://fonts.googleapis.com/css?family=Playfair+Display:700');
+@import url('https://fonts.googleapis.com/css?family=Nobile:700');
+@import 'variables';
+
+.quote-body{
+  height: 80vh;
+  background: linear-gradient(to right, #00000066, #00000066, #00000066),url(https://www.visitpasadena.com/wp-content/uploads/2016/11/flemings-pasadena-6.jpg) no-repeat;
+  background-size: cover;
+  margin-bottom: 10em;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  background-position-y: bottom;
+}
+
+q{
+  padding-top: 4em;
+  font-family: $ff-quote;
+}
+
+q:before {
+  display: block;
+  font-size: 1200%;
+  content: open-quote;
+  height: 1px;
+  padding-top: 150px;
+}
+
+q:lang(en) {
+  quotes: '\201C' '\201D' '\2018' '\2019';
+}
+
+.quote{
+  font-family: $ff-title;
+  margin-bottom: 3em;
+  margin-top: 3em;
+  line-height: 1.5em;
+}
+
+.quote-name{
+  font-family: "Playfair Display",serif;
+  margin-bottom: .5em;
+
+  .quote2{
+    color: #b5b3b4;
+    font-style: italic;
+  }
+}

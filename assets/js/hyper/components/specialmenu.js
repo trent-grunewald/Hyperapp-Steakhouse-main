@@ -49,6 +49,7 @@ export default function SpecialMenu({state, actions}) {
       </div>
      </div>
       </div>
+      <a class="view-menu" href="#">VIEW FULL MENU</a>
       </div>
     </section>
   )

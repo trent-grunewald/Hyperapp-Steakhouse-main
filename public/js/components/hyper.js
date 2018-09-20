@@ -1,6 +1,7 @@
 webpackJsonp([0],[
 /* 0 */,
-/* 1 */
+/* 1 */,
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27,7 +28,7 @@ function intro(state, actions) {
 }
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40,21 +41,25 @@ exports.default = App;
 
 var _hyperapp = __webpack_require__(0);
 
-var _header = __webpack_require__(4);
+var _header = __webpack_require__(9);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _topimg = __webpack_require__(7);
+var _topimg = __webpack_require__(13);
 
 var _topimg2 = _interopRequireDefault(_topimg);
 
-var _ourstory = __webpack_require__(5);
+var _ourstory = __webpack_require__(10);
 
 var _ourstory2 = _interopRequireDefault(_ourstory);
 
-var _specialmenu = __webpack_require__(6);
+var _specialmenu = __webpack_require__(12);
 
 var _specialmenu2 = _interopRequireDefault(_specialmenu);
+
+var _quote = __webpack_require__(11);
+
+var _quote2 = _interopRequireDefault(_quote);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -68,14 +73,15 @@ function App(_ref) {
     (0, _hyperapp.h)(_header2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_topimg2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_ourstory2.default, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_specialmenu2.default, { state: state, actions: actions })
+    (0, _hyperapp.h)(_specialmenu2.default, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_quote2.default, { state: state, actions: actions })
   );
 }
 // <Header state={state} actions={actions}/>
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -89,7 +95,11 @@ var globalState = exports.globalState = {
 };
 
 /***/ }),
-/* 4 */
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -102,45 +112,67 @@ exports.default = Header;
 
 var _hyperapp = __webpack_require__(0);
 
+var _fontawesome = __webpack_require__(8);
+
+var _fontawesome2 = _interopRequireDefault(_fontawesome);
+
+var _fontawesomeFreeRegular = __webpack_require__(6);
+
+var _fontawesomeFreeRegular2 = _interopRequireDefault(_fontawesomeFreeRegular);
+
+var _fontawesomeFreeSolid = __webpack_require__(7);
+
+var _fontawesomeFreeSolid2 = _interopRequireDefault(_fontawesomeFreeSolid);
+
+var _fontawesomeFreeBrands = __webpack_require__(5);
+
+var _fontawesomeFreeBrands2 = _interopRequireDefault(_fontawesomeFreeBrands);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_fontawesome2.default.library.add(_fontawesomeFreeRegular2.default);
+_fontawesome2.default.library.add(_fontawesomeFreeSolid2.default);
+_fontawesome2.default.library.add(_fontawesomeFreeBrands2.default);
+
 function Header(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
   return (0, _hyperapp.h)(
-    "header",
+    'header',
     null,
     (0, _hyperapp.h)(
-      "div",
-      { "class": "container" },
+      'div',
+      { 'class': 'container' },
       (0, _hyperapp.h)(
-        "nav",
-        { "class": "nav-item" },
-        (0, _hyperapp.h)("a", { "class": "logo", href: "#" }),
+        'nav',
+        { 'class': 'nav' },
+        (0, _hyperapp.h)('a', { 'class': 'logo', href: '#' }),
         (0, _hyperapp.h)(
-          "a",
-          { href: "#" },
-          "Menu"
+          'a',
+          { href: '#', 'class': 'nav-item' },
+          'Menu'
         ),
         (0, _hyperapp.h)(
-          "a",
-          { href: "#" },
-          "Our Story"
+          'a',
+          { href: '#', 'class': 'nav-item' },
+          'Our Story'
         ),
         (0, _hyperapp.h)(
-          "a",
-          { href: "#" },
-          "Private Events"
+          'a',
+          { href: '#', 'class': 'nav-item' },
+          'Private Events'
         ),
         (0, _hyperapp.h)(
-          "a",
-          { href: "#" },
-          "Locations"
+          'a',
+          { href: '#', 'class': 'nav-item' },
+          'Locations'
         ),
         (0, _hyperapp.h)(
-          "a",
-          { href: "#", "class": "reservations" },
-          "Reservations ",
-          (0, _hyperapp.h)("i", { "class": "fas fa-angle-right" })
+          'a',
+          { href: '#', 'class': 'reservations' },
+          'Reservations ',
+          (0, _hyperapp.h)('i', { 'class': 'fas fa-angle-right' })
         )
       )
     )
@@ -150,7 +182,7 @@ function Header(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 5 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -228,7 +260,60 @@ function ourStory(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 6 */
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Quote;
+
+var _hyperapp = __webpack_require__(0);
+
+function Quote(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
+
+  return (0, _hyperapp.h)(
+    "section",
+    { "class": "quote-body" },
+    (0, _hyperapp.h)(
+      "div",
+      { "class": "container" },
+      (0, _hyperapp.h)("q", { lang: "en" }),
+      (0, _hyperapp.h)(
+        "h1",
+        { "class": "quote" },
+        "I Love Cooking A Big Steak,",
+        (0, _hyperapp.h)("br", null),
+        "For Myself and For My Cat."
+      ),
+      (0, _hyperapp.h)(
+        "h5",
+        { "class": "quote-name" },
+        "- Tommy Tammisimo -"
+      ),
+      (0, _hyperapp.h)(
+        "h5",
+        { "class": "quote-name" },
+        "The lonely head chef ",
+        (0, _hyperapp.h)(
+          "span",
+          { "class": "quote2" },
+          "- Over-Seasoned Steakhouse"
+        )
+      )
+    )
+  );
+}
+// <Header state={state} actions={actions}/>
+// <Button state={state} actions={actions}/>
+
+/***/ }),
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -367,6 +452,11 @@ function SpecialMenu(_ref) {
             )
           )
         )
+      ),
+      (0, _hyperapp.h)(
+        "a",
+        { "class": "view-menu", href: "#" },
+        "VIEW FULL MENU"
       )
     )
   );
@@ -375,7 +465,7 @@ function SpecialMenu(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 7 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -399,19 +489,23 @@ function TopImg(_ref) {
       "div",
       { "class": "container" },
       (0, _hyperapp.h)(
-        "h5",
-        { "class": "welcome" },
-        "Welcome to"
-      ),
-      (0, _hyperapp.h)(
-        "h1",
-        { "class": "title" },
-        "Over-Seasoned"
-      ),
-      (0, _hyperapp.h)(
-        "h2",
-        { "class": "below" },
-        "Steak House"
+        "div",
+        { "class": "intro" },
+        (0, _hyperapp.h)(
+          "h5",
+          { "class": "welcome" },
+          "WELCOME TO"
+        ),
+        (0, _hyperapp.h)(
+          "h1",
+          { "class": "title" },
+          "Over-Seasoned"
+        ),
+        (0, _hyperapp.h)(
+          "h2",
+          { "class": "below" },
+          "Steak House"
+        )
       ),
       (0, _hyperapp.h)(
         "div",
@@ -451,7 +545,7 @@ function TopImg(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 8 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -459,11 +553,11 @@ function TopImg(_ref) {
 
 var _hyperapp = __webpack_require__(0);
 
-var _actions = __webpack_require__(1);
+var _actions = __webpack_require__(2);
 
-var _globalState = __webpack_require__(3);
+var _globalState = __webpack_require__(4);
 
-var _App = __webpack_require__(2);
+var _App = __webpack_require__(3);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -493,4 +587,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 });
 
 /***/ })
-],[8]);
+],[14]);

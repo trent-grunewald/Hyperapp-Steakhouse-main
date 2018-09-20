@@ -7,6 +7,11 @@
 @import "topimg";
 @import "ourstory";
 @import "specialMenu";
+@import "quote";
+
+.fa,.fas,.far,.fal,.fab {
+  font-family: "Font Awesome 5 Free";
+}
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -18,12 +23,15 @@ h1 {
   font-size: 50px;
 }
 
-.nav-item{
+.nav{
   a {
   color: white;
     text-decoration: none;
     font-weight: 700;
-    margin: 0 3rem;
+  }
+
+  .nav-item{
+    margin: 0 1.75em;
   }
 }
 

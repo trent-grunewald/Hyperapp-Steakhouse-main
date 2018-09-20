@@ -3,6 +3,9 @@ import {actions} from './actions/actions.js'
 import {globalState} from './state/globalState.js'
 import App from './components/App.js'
 
+
+
+
 app({
   state: {globalState},
   view: (state, actions) => <App state={state} actions={actions} />,

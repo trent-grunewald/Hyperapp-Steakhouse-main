@@ -23,6 +23,13 @@
   margin-top: .5em;
 }
 
+.card{
+  margin-top: 5em;
+  background: white;
+  padding: 20px;
+  outline: 2px solid black;
+}
+
 .top-card{
   position: relative;
   text-align: center;
@@ -43,12 +50,13 @@
     margin-left: auto;
     margin-right: auto;
     position: absolute;
-    left: 128px;
-    bottom: -56px;
+    left: 50%;
+    bottom: -125px;
+    transform: translate(-50%,-50%);
 }
 
 .special-price{
-  font-family: $ff-number;
+  font-family: "Prata",serif;
   width: 110px;
   height: 110px;
   border-radius: 50%;
@@ -56,10 +64,23 @@
   color: black;
   text-align: center;
   background: #fff;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
   line-height: 2;
   position: absolute;
-  left: 135px;
-  bottom: -50px;
+  left: 0;
+  right: 0;
+  bottom: -110px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-container{
+  text-align: center;
+    margin-top: 5em;
+}
+
+.special-menu-title{
+  font-family: $ff-title;
+  margin-bottom: 1em;
 }

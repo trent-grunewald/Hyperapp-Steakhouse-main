@@ -287,7 +287,7 @@ function SpecialMenu(_ref) {
             ),
             (0, _hyperapp.h)(
               "div",
-              { "class": "container" },
+              { "class": "container card-container" },
               (0, _hyperapp.h)(
                 "p",
                 { "class": "special-menu-title" },

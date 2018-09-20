@@ -16,7 +16,7 @@ export default function SpecialMenu({state, actions}) {
           <div class="light-circle"></div>
           <div class="special-price">$32</div>
           </div>
-        <div class="container">
+        <div class="container card-container">
           <p class="special-menu-title">Pressure Grilled NY Strip</p>
           <p class="special-menu-description">Barely 9oz served with half an asparagus and 1/16 of a potato.</p>
         </div>

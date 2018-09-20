@@ -348,7 +348,7 @@ function SpecialMenu(_ref) {
               (0, _hyperapp.h)(
                 "div",
                 { "class": "special-price" },
-                "$22"
+                "$72"
               )
             ),
             (0, _hyperapp.h)(
@@ -362,7 +362,7 @@ function SpecialMenu(_ref) {
               (0, _hyperapp.h)(
                 "p",
                 { "class": "special-menu-description" },
-                "An over-charred T-Bone with leaves from a nearby tree sprinkled on top."
+                "A delicious 16oz Ribeye, completely dowsed in seasonsings, you will need water."
               )
             )
           )

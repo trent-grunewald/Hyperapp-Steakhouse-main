@@ -18,23 +18,36 @@ export default function SpecialMenu({state, actions}) {
           </div>
         <div class="container card-container">
           <p class="special-menu-title">Pressure Grilled NY Strip</p>
-          <p class="special-menu-description">Barely 9oz served with half an asparagus and 1/16 of a potato.</p>
+          <p class="special-menu-description">A fresh, barely 9oz NY Strip, served with half an asparagus and 1/16 of a potato.</p>
         </div>
       </div>
-     
+     </div>
+     <div class="col-md-4">
+        <div class="card" style="width:100%">
+        <div class="top-card">
+          <img id="card2"/>
+          <div class="light-circle"></div>
+          <div class="special-price">$52</div>
+          </div>
+        <div class="container card-container">
+          <p class="special-menu-title">Charbroiled T-Bone</p>
+          <p class="special-menu-description">An over-charred T-Bone with leaves from a nearby tree sprinkled on top.</p>
+        </div>
       </div>
-      <div class="col-md-4">
-        <img id="card2"/>
-        <h3 class="special-price">$32</h3>
-        <p class="special-menu-title">Pressure Grilled NY Strip</p>
-        <p class="special-menu-description">Barely 9oz served with half an asparagus and 1/16 of a potato.</p>
+     </div>
+     <div class="col-md-4">
+        <div class="card" style="width:100%">
+        <div class="top-card">
+          <img id="card3"/>
+          <div class="light-circle"></div>
+          <div class="special-price">$22</div>
+          </div>
+        <div class="container card-container">
+          <p class="special-menu-title">Charbroiled T-Bone</p>
+          <p class="special-menu-description">An over-charred T-Bone with leaves from a nearby tree sprinkled on top.</p>
+        </div>
       </div>
-      <div class="col-md-4">
-        <img id="card3"/>
-        <h3 class="special-price">$32</h3>
-        <p class="special-menu-title">Pressure Grilled NY Strip</p>
-        <p class="special-menu-description">Barely 9oz served with half an asparagus and 1/16 of a potato.</p>
-      </div>
+     </div>
       </div>
       </div>
     </section>

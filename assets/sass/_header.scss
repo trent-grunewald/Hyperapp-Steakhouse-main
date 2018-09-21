@@ -8,35 +8,46 @@ header{
   background-size: contain;
   height: 100px;
   width: 100px;
-  float: left;
+  display:flex;
+  margin-right: auto;
   margin-top: -1.25em;
 }
 
 nav{
-  text-align: center;
+  // text-align: center;
+  // padding-top: 40px;
+  // text-shadow: 3px 3px 3px black;
+  // letter-spacing: 2px;
   padding-top: 40px;
   text-shadow: 3px 3px 3px black;
   letter-spacing: 2px;
+  display: flex;
 
   .nav-item{
+    // margin: 0 1.75em;
     margin: 0 1.75em;
+    display: flex;
+    justify-content: center;
   }
-
-  
 }
 
 .reservations{
     text-shadow: 3px 3px 3px black;
-    float: right;
+    margin-left: auto;
+    display: flex;
 }
 
 @media only screen and (max-width: 1000px) {
   .nav .nav-item{
     margin:0 1em;
+    flex-direction: column;
+    flex-flow: column wrap
   }
 
   .reservations{
     text-shadow: 3px 3px 3px black;
     float: none;
-}
+    flex-direction: column;
+    flex-flow: column wrap
+  }
 }

@@ -41,10 +41,6 @@ exports.default = App;
 
 var _hyperapp = __webpack_require__(0);
 
-var _function = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./function.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
-var _function2 = _interopRequireDefault(_function);
-
 var _header = __webpack_require__(9);
 
 var _header2 = _interopRequireDefault(_header);
@@ -151,30 +147,30 @@ function Header(_ref) {
       (0, _hyperapp.h)(
         'nav',
         { 'class': 'nav' },
-        (0, _hyperapp.h)('a', { 'class': 'logo', href: '#' }),
+        (0, _hyperapp.h)('div', { 'class': 'logo', id: 'test' }),
         (0, _hyperapp.h)(
           'a',
-          { href: '#', 'class': 'nav-item' },
+          { href: '#', 'class': 'nav-item nav-box' },
           'Menu'
         ),
         (0, _hyperapp.h)(
           'a',
-          { href: '#', 'class': 'nav-item' },
+          { href: '#', 'class': 'nav-item nav-box' },
           'Our Story'
         ),
         (0, _hyperapp.h)(
           'a',
-          { href: '#', 'class': 'nav-item' },
+          { href: '#', 'class': 'nav-item nav-box' },
           'Private Events'
         ),
         (0, _hyperapp.h)(
           'a',
-          { href: '#', 'class': 'nav-item' },
+          { href: '#', 'class': 'nav-item nav-box' },
           'Locations'
         ),
         (0, _hyperapp.h)(
           'a',
-          { href: '#', 'class': 'nav-item reservations' },
+          { href: '#', 'class': 'nav-item nav-box reservations' },
           'Reservations ',
           (0, _hyperapp.h)('i', { 'class': 'fas fa-angle-right' })
         )
@@ -589,6 +585,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     }
   }
 });
+
+//NAV COLLAPSE//
+function navToggle() {
+  var navs = document.querySelectorAll('.nav-item');
+
+  navs.forEach(nav.classList.toggle('nav-collapsed'));
+}
+
+document.querySelector('.logo').addEventListener('click', navToggle);
+
+alert('hello');
 
 /***/ })
 ],[14]);

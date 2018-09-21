@@ -1,5 +1,4 @@
 import {h, app} from 'hyperapp'
-import Function from './function.js'
 import Header from './header.js'
 import TopImg from './topimg.js'
 import OurStory from './ourstory.js'

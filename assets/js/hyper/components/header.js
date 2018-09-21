@@ -11,16 +11,18 @@ fontawesome.library.add(brands)
 export default function Header({state, actions}) {
   return (
     <header>
-      <div class="container">
-      <nav class="nav">
-        <a class="logo" href="#"></a>
-        <a href="#" class="nav-item">Menu</a>
-        <a href="#" class="nav-item">Our Story</a>
-        <a href="#" class="nav-item">Private Events</a>
-        <a href="#" class="nav-item">Locations</a>
-        <a href="#" class="nav-item reservations">Reservations <i class="fas fa-angle-right"></i></a>
+      {
+        <div class="container">
+          <nav class="nav">
+            <div class="logo" id="test"></div>
+            <a href="#" class="nav-item nav-box">Menu</a>
+            <a href="#" class="nav-item nav-box">Our Story</a>
+            <a href="#" class="nav-item nav-box">Private Events</a>
+            <a href="#" class="nav-item nav-box">Locations</a>
+            <a href="#" class="nav-item nav-box reservations">Reservations <i class="fas fa-angle-right"></i></a>
         </nav>
       </div>
+      }
     </header>
   )
 }

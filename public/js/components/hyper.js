@@ -41,6 +41,10 @@ exports.default = App;
 
 var _hyperapp = __webpack_require__(0);
 
+var _function = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./function.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var _function2 = _interopRequireDefault(_function);
+
 var _header = __webpack_require__(9);
 
 var _header2 = _interopRequireDefault(_header);
@@ -170,7 +174,7 @@ function Header(_ref) {
         ),
         (0, _hyperapp.h)(
           'a',
-          { href: '#', 'class': 'reservations' },
+          { href: '#', 'class': 'nav-item reservations' },
           'Reservations ',
           (0, _hyperapp.h)('i', { 'class': 'fas fa-angle-right' })
         )

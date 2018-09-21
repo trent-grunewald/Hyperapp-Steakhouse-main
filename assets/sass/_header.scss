@@ -28,14 +28,16 @@ nav{
     margin: 0 1.75em;
     display: flex;
     justify-content: center;
+
+    .reservations{
+      text-shadow: 3px 3px 3px black;
+      margin-left: auto;
+      display: flex;
+  }
   }
 }
 
-.reservations{
-    text-shadow: 3px 3px 3px black;
-    margin-left: auto;
-    display: flex;
-}
+
 
 @media only screen and (max-width: 1000px) {
   .nav{
@@ -45,14 +47,15 @@ nav{
   .nav-item{
     margin:0 1em;
    justify-content: left;
-  }
+   display: none;
 
-  .reservations{
+   .reservations{
     text-shadow: 3px 3px 3px black;
     margin: 0 1em;
     justify-content: left;
     flex-direction: column;
     flex-flow: column wrap;
+     }
+    }
   }
-}
 }

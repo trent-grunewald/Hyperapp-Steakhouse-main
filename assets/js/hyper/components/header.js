@@ -18,7 +18,7 @@ export default function Header({state, actions}) {
         <a href="#" class="nav-item">Our Story</a>
         <a href="#" class="nav-item">Private Events</a>
         <a href="#" class="nav-item">Locations</a>
-        <a href="#" class="reservations">Reservations <i class="fas fa-angle-right"></i></a>
+        <a href="#" class="nav-item reservations">Reservations <i class="fas fa-angle-right"></i></a>
         </nav>
       </div>
     </header>

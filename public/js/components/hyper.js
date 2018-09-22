@@ -219,15 +219,31 @@ function Modal(_ref) {
       (0, _hyperapp.h)(
         "div",
         { "class": "modal-body" },
+        (0, _hyperapp.h)("div", { "class": "modal-img" }),
         (0, _hyperapp.h)(
           "h1",
-          null,
-          "Test"
+          { "class": "modal-title" },
+          "Receive 25% off!"
+        ),
+        (0, _hyperapp.h)(
+          "h5",
+          { "class": "modal-description" },
+          "Receive free coupons for our delicious resturaunt daily!"
+        ),
+        (0, _hyperapp.h)(
+          "input",
+          { type: "text", defaultvalue: "Email Address" },
+          "Email Address"
         ),
         (0, _hyperapp.h)(
           "a",
           { id: "close-modal" },
           "Close"
+        ),
+        (0, _hyperapp.h)(
+          "input",
+          { type: "submit" },
+          "Submit"
         )
       )
     )

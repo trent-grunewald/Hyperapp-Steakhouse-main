@@ -6,8 +6,12 @@ export default function Modal({state, actions}) {
     <div class="modal-overlay"></div>
       <div class="container modal-container">
         <div class="modal-body">
-          <h1>Test</h1>
+          <div class="modal-img"></div>
+          <h1 class="modal-title">Receive 25% off!</h1>
+          <h5 class="modal-description">Receive free coupons for our delicious resturaunt daily!</h5>
+          <input type="text" defaultvalue="Email Address">Email Address</input>
           <a id="close-modal">Close</a>
+          <input type="submit">Submit</input>
         </div>
       </div>
     </section>

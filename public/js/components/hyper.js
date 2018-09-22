@@ -41,27 +41,31 @@ exports.default = App;
 
 var _hyperapp = __webpack_require__(0);
 
+var _modal = __webpack_require__(10);
+
+var _modal2 = _interopRequireDefault(_modal);
+
 var _header = __webpack_require__(9);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _topimg = __webpack_require__(14);
+var _topimg = __webpack_require__(15);
 
 var _topimg2 = _interopRequireDefault(_topimg);
 
-var _ourstory = __webpack_require__(10);
+var _ourstory = __webpack_require__(11);
 
 var _ourstory2 = _interopRequireDefault(_ourstory);
 
-var _specialmenu = __webpack_require__(13);
+var _specialmenu = __webpack_require__(14);
 
 var _specialmenu2 = _interopRequireDefault(_specialmenu);
 
-var _quote = __webpack_require__(11);
+var _quote = __webpack_require__(12);
 
 var _quote2 = _interopRequireDefault(_quote);
 
-var _reviews = __webpack_require__(12);
+var _reviews = __webpack_require__(13);
 
 var _reviews2 = _interopRequireDefault(_reviews);
 
@@ -74,6 +78,7 @@ function App(_ref) {
   return (0, _hyperapp.h)(
     'div',
     { 'class': 'app' },
+    (0, _hyperapp.h)(_modal2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_header2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_topimg2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_ourstory2.default, { state: state, actions: actions }),
@@ -196,6 +201,51 @@ function Header(_ref) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = Modal;
+
+var _hyperapp = __webpack_require__(0);
+
+function Modal(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
+
+  return (0, _hyperapp.h)(
+    "section",
+    { id: "modal", "class": "hidden" },
+    (0, _hyperapp.h)("div", { "class": "modal-overlay" }),
+    (0, _hyperapp.h)(
+      "div",
+      { "class": "container modal-container" },
+      (0, _hyperapp.h)(
+        "div",
+        { "class": "modal-body" },
+        (0, _hyperapp.h)(
+          "h1",
+          null,
+          "Test"
+        ),
+        (0, _hyperapp.h)(
+          "a",
+          { id: "close-modal" },
+          "Close"
+        )
+      )
+    )
+  );
+}
+// <Header state={state} actions={actions}/>
+// <Button state={state} actions={actions}/>
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.default = ourStory;
 
 var _hyperapp = __webpack_require__(0);
@@ -265,7 +315,7 @@ function ourStory(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -318,7 +368,7 @@ function Quote(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -389,7 +439,7 @@ function Reviews(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -541,7 +591,7 @@ function SpecialMenu(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -622,7 +672,7 @@ function TopImg(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -675,4 +725,4 @@ document.querySelector('.logo').addEventListener('click', navToggle);
 alert('hello');
 
 /***/ })
-],[15]);
+],[16]);

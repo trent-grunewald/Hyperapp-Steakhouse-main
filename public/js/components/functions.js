@@ -37,5 +37,5 @@ window.onload =_=>{
    }
   setTimeout(function modal() {
     popup.classList.replace('hidden', 'show');
-  }, 3000)
+  }, 1000)
 }

@@ -36,7 +36,7 @@
 }
 
 .modal-img{
-  background: url(https://wallpapers.wallhalla.com/QwOALOvsAoN_M8IQqq0_3c2ade4f/aHR0cHM6Ly93YWxsLmFscGhhY29kZXJzLmNvbS9iaWcucGhwP2k9ODg3NDg4);
+  background: url(/img/modal.jpg);
    height: 400px;
    width: 100%;
    background-size: cover;
@@ -60,6 +60,7 @@
   margin-right: auto;
   padding: 5px;
   border: 2px solid #b5b3b4;
+  font-family: $ff-title;
 }
 
 .modal-submit{

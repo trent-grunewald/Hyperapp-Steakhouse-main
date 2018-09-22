@@ -17,7 +17,7 @@ export default function SpecialMenu({state, actions}) {
           <div class="special-price">$32</div>
           </div>
         <div class="container card-container">
-          <p class="special-menu-title">Pressure Grilled NY Strip</p>
+          <p class="special-menu-title">Grilled NY Strip</p>
           <p class="special-menu-description">A fresh, barely 9oz NY Strip, served with half an asparagus and 1/16 of a potato.</p>
         </div>
       </div>
@@ -31,7 +31,7 @@ export default function SpecialMenu({state, actions}) {
           </div>
         <div class="container card-container">
           <p class="special-menu-title">Charbroiled T-Bone</p>
-          <p class="special-menu-description">An over-charred T-Bone with leaves from a nearby tree sprinkled on top.</p>
+          <p class="special-menu-description">An over-charred T-Bone with dry leaves from a nearby tree sprinkled on top.</p>
         </div>
       </div>
      </div>
@@ -44,7 +44,7 @@ export default function SpecialMenu({state, actions}) {
           </div>
         <div class="container card-container">
           <p class="special-menu-title">Charbroiled T-Bone</p>
-          <p class="special-menu-description">A delicious 16oz Ribeye, completely dowsed in seasonsings, you will need water.</p>
+          <p class="special-menu-description">A delicious 16oz Ribeye, dowsed in seasonsings, you will need water.</p>
         </div>
       </div>
      </div>

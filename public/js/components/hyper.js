@@ -376,7 +376,7 @@ function SpecialMenu(_ref) {
               (0, _hyperapp.h)(
                 "p",
                 { "class": "special-menu-title" },
-                "Pressure Grilled NY Strip"
+                "Grilled NY Strip"
               ),
               (0, _hyperapp.h)(
                 "p",
@@ -414,7 +414,7 @@ function SpecialMenu(_ref) {
               (0, _hyperapp.h)(
                 "p",
                 { "class": "special-menu-description" },
-                "An over-charred T-Bone with leaves from a nearby tree sprinkled on top."
+                "An over-charred T-Bone with dry leaves from a nearby tree sprinkled on top."
               )
             )
           )
@@ -447,7 +447,7 @@ function SpecialMenu(_ref) {
               (0, _hyperapp.h)(
                 "p",
                 { "class": "special-menu-description" },
-                "A delicious 16oz Ribeye, completely dowsed in seasonsings, you will need water."
+                "A delicious 16oz Ribeye, dowsed in seasonsings, you will need water."
               )
             )
           )

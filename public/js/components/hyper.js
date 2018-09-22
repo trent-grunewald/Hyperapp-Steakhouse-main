@@ -375,7 +375,12 @@ function Reviews(_ref) {
             "Overlook Hotel employee"
           )
         ),
-        (0, _hyperapp.h)("div", { "class": "arrows" })
+        (0, _hyperapp.h)(
+          "div",
+          { "class": "arrows" },
+          (0, _hyperapp.h)("i", { "class": "fas fa-arrow-left" }),
+          (0, _hyperapp.h)("i", { "class": "fas fa-arrow-right" })
+        )
       )
     )
   );

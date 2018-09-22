@@ -11,7 +11,7 @@ export default function Reviews({state, actions}) {
         <h5 class="review-quote">“Way too many spices, I threw up!”</h5>
         <p class="review-quote-body">There was so much damn pepper on my steak that it was actually spicy! My fiance and I didn't finish our meals and the amount of "side" you get with your meal is laughable... We were still hungry after, so we went to McDonalds. Terrible honeymoon dinner.</p>
         <h5 class="reviewer">Jack Torrance - <span class="quote2">Overlook Hotel employee</span></h5>
-        <div class="arrows"></div>
+        <div class="arrows"><i class="fas fa-arrow-left"></i><i class="fas fa-arrow-right"></i></div>
        </div>
       </div>
     </section>

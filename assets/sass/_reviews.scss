@@ -1,7 +1,7 @@
 @import 'variables';
 
 .review{
-  min-width: 700px;
+  min-height: 700px;
   text-align: right;
 }
 
@@ -10,8 +10,6 @@
   height: 800px;
   width: 500px;
   background-size: contain;
-  margin-top:-14em;
-  position: relative;
 }
 
 .review-head{
@@ -46,4 +44,13 @@
     font-style: italic;
   }
 }
+
+  .arrows{
+    margin-top: 5em;
+    font-size: 2em;
+  }
+
+  .fa-arrow-left{
+    margin-right: 2em;
+  }
 

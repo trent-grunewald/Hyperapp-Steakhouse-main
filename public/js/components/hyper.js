@@ -344,7 +344,7 @@ function Reviews(_ref) {
       (0, _hyperapp.h)("div", { "class": "col-md-6 chef" }),
       (0, _hyperapp.h)(
         "div",
-        { "class": "col-md-6 chef review-body" },
+        { "class": "col-md-6 review-body" },
         (0, _hyperapp.h)(
           "h5",
           { "class": "review-head" },

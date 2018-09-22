@@ -5,7 +5,7 @@ export default function Reviews({state, actions}) {
     <section class="review">
       <div class="container">
        <div class="col-md-6 chef"></div>
-       <div class="col-md-6 chef review-body">
+       <div class="col-md-6 review-body">
         <h5 class="review-head">REVIEW</h5>
         <h1 class="review-title">What Nobody Say's About Us</h1>
         <h5 class="review-quote">"Way too many spices, I threw up!"</h5>

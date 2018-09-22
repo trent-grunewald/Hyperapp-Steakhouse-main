@@ -1,2 +1,10 @@
 @import 'variables';
 
+.chef{
+  background: url(/img/chef) no-repeat;
+  height: 500px;
+  width: 500px;
+  background-size: contain;
+  margin-top:-14em;
+  position: relative;
+}

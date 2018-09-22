@@ -337,9 +337,42 @@ function Reviews(_ref) {
 
   return (0, _hyperapp.h)(
     "section",
-    { "class": "" },
-    (0, _hyperapp.h)("div", { "class": "" }),
-    (0, _hyperapp.h)("div", { "class": "container" })
+    { "class": "review" },
+    (0, _hyperapp.h)(
+      "div",
+      { "class": "container" },
+      (0, _hyperapp.h)("div", { "class": "col-md-6 chef" }),
+      (0, _hyperapp.h)(
+        "div",
+        { "class": "col-md-6 chef review-body" },
+        (0, _hyperapp.h)(
+          "h5",
+          { "class": "review-head" },
+          "REVIEW"
+        ),
+        (0, _hyperapp.h)(
+          "h1",
+          { "class": "review-title" },
+          "What Nobody Say's About Us"
+        ),
+        (0, _hyperapp.h)(
+          "h5",
+          { "class": "review-quote" },
+          "\"Way too many spices, I threw up!\""
+        ),
+        (0, _hyperapp.h)(
+          "p",
+          { "class": "review-quote-body" },
+          "There was so much damn pepper on my steak that it was actually spicy! My fiance and I didn't finish our meals and the amount of \"side\" you get with your meal is laughable... We were still hungry after, so we went to McDonalds. Terrible honeymoon dinner."
+        ),
+        (0, _hyperapp.h)(
+          "h5",
+          { "class": "reviewer" },
+          "Jack Torrance"
+        ),
+        (0, _hyperapp.h)("div", { "class": "arrows" })
+      )
+    )
   );
 }
 // <Header state={state} actions={actions}/>

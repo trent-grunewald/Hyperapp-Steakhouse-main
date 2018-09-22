@@ -1,10 +1,49 @@
 @import 'variables';
 
+.review{
+  min-width: 700px;
+  text-align: right;
+}
+
 .chef{
-  background: url(/img/chef) no-repeat;
-  height: 500px;
+  background: url(/img/chef.png) no-repeat;
+  height: 800px;
   width: 500px;
   background-size: contain;
   margin-top:-14em;
   position: relative;
 }
+
+.review-head{
+  color: #b5b3b4;
+  font-weight: 700;
+  letter-spacing: 15px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.review-title{
+  font-family: $ff-title;
+}
+
+.review-quote{
+  margin: 4em 0;
+  font-weight: 700;
+  font-size: 1.25em;
+}
+
+.review-quote-body{
+  line-height: 2;
+    color: #b5b3b4;
+}
+
+.reviewer{
+  font-weight: 600;
+  margin-top: 3em;
+
+  .quote2{
+    color: #b5b3b4;
+    font-style: italic;
+  }
+}
+

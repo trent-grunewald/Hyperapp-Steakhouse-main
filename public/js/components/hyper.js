@@ -358,7 +358,7 @@ function Reviews(_ref) {
         (0, _hyperapp.h)(
           "h5",
           { "class": "review-quote" },
-          "\"Way too many spices, I threw up!\""
+          "\u201CWay too many spices, I threw up!\u201D"
         ),
         (0, _hyperapp.h)(
           "p",
@@ -368,7 +368,12 @@ function Reviews(_ref) {
         (0, _hyperapp.h)(
           "h5",
           { "class": "reviewer" },
-          "Jack Torrance"
+          "Jack Torrance - ",
+          (0, _hyperapp.h)(
+            "span",
+            { "class": "quote2" },
+            "Overlook Hotel employee"
+          )
         ),
         (0, _hyperapp.h)("div", { "class": "arrows" })
       )

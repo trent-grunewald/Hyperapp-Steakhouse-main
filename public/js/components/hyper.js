@@ -232,7 +232,7 @@ function Modal(_ref) {
         ),
         (0, _hyperapp.h)(
           "input",
-          { type: "text", "class": "address-input", value: "Email Address" },
+          { type: "text", "class": "address-input", placeholder: "Email Address" },
           "Email Address"
         ),
         (0, _hyperapp.h)(

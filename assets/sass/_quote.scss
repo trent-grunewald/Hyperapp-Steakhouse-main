@@ -3,8 +3,8 @@
 @import 'variables';
 
 .quote-body{
-  height: 80vh;
-  background: linear-gradient(to right, #00000066, #00000066, #00000066),url(https://www.visitpasadena.com/wp-content/uploads/2016/11/flemings-pasadena-6.jpg) no-repeat;
+  min-height: max 690px;
+  background: linear-gradient(to right, #00000066, #00000066, #00000066),url(https://www.visitpasadena.com/wp-content/uploads/2016/11/flemings-pasadena-6.jpg) no-repeat center center;
   background-size: cover;
   margin-bottom: 10em;
   text-align: center;
@@ -37,12 +37,41 @@ q:lang(en) {
   line-height: 1.5em;
 }
 
-.quote-name{
+.quote-author{
   font-family: "Playfair Display",serif;
   margin-bottom: .5em;
+  width: auto;
+  text-align: center;
+}
+
+.quote-name{
+  font-family: "Playfair Display",serif;
+  margin-bottom: 3em;
+  width: auto;
+  text-align: center;
 
   .quote2{
     color: #b5b3b4;
     font-style: italic;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .quote{
+    font-size: 2.5em;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .quote{
+    font-size: 1.75em;
+  }
+
+  q{
+    font-size: .7em;
+  }
+
+  .quote-name{
+    font-size: .95em;
   }
 }

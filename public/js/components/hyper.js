@@ -45,7 +45,7 @@ var _header = __webpack_require__(9);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _topimg = __webpack_require__(13);
+var _topimg = __webpack_require__(14);
 
 var _topimg2 = _interopRequireDefault(_topimg);
 
@@ -53,13 +53,17 @@ var _ourstory = __webpack_require__(10);
 
 var _ourstory2 = _interopRequireDefault(_ourstory);
 
-var _specialmenu = __webpack_require__(12);
+var _specialmenu = __webpack_require__(13);
 
 var _specialmenu2 = _interopRequireDefault(_specialmenu);
 
 var _quote = __webpack_require__(11);
 
 var _quote2 = _interopRequireDefault(_quote);
+
+var _reviews = __webpack_require__(12);
+
+var _reviews2 = _interopRequireDefault(_reviews);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -74,7 +78,8 @@ function App(_ref) {
     (0, _hyperapp.h)(_topimg2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_ourstory2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_specialmenu2.default, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_quote2.default, { state: state, actions: actions })
+    (0, _hyperapp.h)(_quote2.default, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_reviews2.default, { state: state, actions: actions })
   );
 }
 // <Header state={state} actions={actions}/>
@@ -228,7 +233,7 @@ function ourStory(_ref) {
           ),
           (0, _hyperapp.h)(
             "p",
-            { "class": "quote" },
+            { "class": "story-quote" },
             (0, _hyperapp.h)(
               "strong",
               null,
@@ -293,7 +298,7 @@ function Quote(_ref) {
       ),
       (0, _hyperapp.h)(
         "h5",
-        { "class": "quote-name" },
+        { "class": "quote-author" },
         "- Tommy Tammisimo -"
       ),
       (0, _hyperapp.h)(
@@ -314,6 +319,34 @@ function Quote(_ref) {
 
 /***/ }),
 /* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Reviews;
+
+var _hyperapp = __webpack_require__(0);
+
+function Reviews(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
+
+  return (0, _hyperapp.h)(
+    "section",
+    { "class": "" },
+    (0, _hyperapp.h)("div", { "class": "" }),
+    (0, _hyperapp.h)("div", { "class": "container" })
+  );
+}
+// <Header state={state} actions={actions}/>
+// <Button state={state} actions={actions}/>
+
+/***/ }),
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -465,7 +498,7 @@ function SpecialMenu(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -546,7 +579,7 @@ function TopImg(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -599,4 +632,4 @@ document.querySelector('.logo').addEventListener('click', navToggle);
 alert('hello');
 
 /***/ })
-],[14]);
+],[15]);

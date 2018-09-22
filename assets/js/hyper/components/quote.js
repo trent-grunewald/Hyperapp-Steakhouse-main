@@ -7,7 +7,7 @@ export default function Quote({state, actions}) {
       <div class="container">
         <q lang="en"></q>
         <h1 class="quote">I Love Cooking A Big Steak,<br/>For Myself and For My Cat.</h1>
-        <h5 class="quote-name">- Tommy Tammisimo -</h5>
+        <h5 class="quote-author">- Tommy Tammisimo -</h5>
         <h5 class="quote-name">The lonely head chef <span class="quote2">- Over-Seasoned Steakhouse</span></h5>
       </div>
     </section>

@@ -44,7 +44,7 @@
 //   margin-left: 3em;
 // }
 
-.quote{
+.story-quote{
   margin-bottom:  5.3em;
 
   .quote2{
@@ -67,10 +67,6 @@
       }
     }
 
-    @media only screen and (max-width: 1010px) {
-
-    }
-
     @media only screen and (max-width: 992px) {
       .col-md-6 img{
         width: 350px;
@@ -91,8 +87,4 @@
       .story-button{
         margin-bottom: 5em;
       }
-    }
-    
-    @media only screen and (max-width: 580px) {
-
     }

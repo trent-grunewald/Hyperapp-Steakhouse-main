@@ -228,22 +228,22 @@ function Modal(_ref) {
         (0, _hyperapp.h)(
           "h5",
           { "class": "modal-description" },
-          "Receive free coupons for our delicious resturaunt daily!"
+          "Receive free coupons for our delicious resturaunt daily, when you surrender your email address below!"
         ),
         (0, _hyperapp.h)(
           "input",
-          { type: "text", defaultvalue: "Email Address" },
+          { type: "text", "class": "address-input", value: "Email Address" },
           "Email Address"
+        ),
+        (0, _hyperapp.h)(
+          "input",
+          { type: "submit", "class": "modal-submit" },
+          "Submit"
         ),
         (0, _hyperapp.h)(
           "a",
           { id: "close-modal" },
-          "Close"
-        ),
-        (0, _hyperapp.h)(
-          "input",
-          { type: "submit" },
-          "Submit"
+          (0, _hyperapp.h)("i", { "class": "fas fa-times" })
         )
       )
     )

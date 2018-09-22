@@ -485,6 +485,7 @@ function TopImg(_ref) {
   return (0, _hyperapp.h)(
     "section",
     { "class": "topImg" },
+    (0, _hyperapp.h)("div", { "class": "img-cover" }),
     (0, _hyperapp.h)(
       "div",
       { "class": "container" },

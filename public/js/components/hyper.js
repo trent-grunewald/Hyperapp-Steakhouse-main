@@ -49,7 +49,7 @@ var _header = __webpack_require__(9);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _topimg = __webpack_require__(15);
+var _topimg = __webpack_require__(16);
 
 var _topimg2 = _interopRequireDefault(_topimg);
 
@@ -57,17 +57,21 @@ var _ourstory = __webpack_require__(11);
 
 var _ourstory2 = _interopRequireDefault(_ourstory);
 
-var _specialmenu = __webpack_require__(14);
+var _specialmenu = __webpack_require__(15);
 
 var _specialmenu2 = _interopRequireDefault(_specialmenu);
 
-var _quote = __webpack_require__(12);
+var _quote = __webpack_require__(13);
 
 var _quote2 = _interopRequireDefault(_quote);
 
-var _reviews = __webpack_require__(13);
+var _reviews = __webpack_require__(14);
 
 var _reviews2 = _interopRequireDefault(_reviews);
+
+var _promotions = __webpack_require__(12);
+
+var _promotions2 = _interopRequireDefault(_promotions);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -84,7 +88,8 @@ function App(_ref) {
     (0, _hyperapp.h)(_ourstory2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_specialmenu2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_quote2.default, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_reviews2.default, { state: state, actions: actions })
+    (0, _hyperapp.h)(_reviews2.default, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_promotions2.default, { state: state, actions: actions })
   );
 }
 // <Header state={state} actions={actions}/>
@@ -341,6 +346,46 @@ function ourStory(_ref) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = Promotions;
+
+var _hyperapp = __webpack_require__(0);
+
+function Promotions(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
+
+  return (0, _hyperapp.h)(
+    "section",
+    { "class": "promotions" },
+    (0, _hyperapp.h)(
+      "div",
+      { "class": "container promotion-container" },
+      (0, _hyperapp.h)(
+        "h5",
+        { "class": "promotions-head" },
+        "JOIN US"
+      ),
+      (0, _hyperapp.h)(
+        "h1",
+        { "class": "promotions-title" },
+        "NEWS & PROMOTIONS"
+      )
+    )
+  );
+}
+// <Header state={state} actions={actions}/>
+// <Button state={state} actions={actions}/>
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 exports.default = Quote;
 
 var _hyperapp = __webpack_require__(0);
@@ -385,7 +430,7 @@ function Quote(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -456,7 +501,7 @@ function Reviews(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -608,7 +653,7 @@ function SpecialMenu(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -689,7 +734,7 @@ function TopImg(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -742,4 +787,4 @@ document.querySelector('.logo').addEventListener('click', navToggle);
 alert('hello');
 
 /***/ })
-],[16]);
+],[17]);

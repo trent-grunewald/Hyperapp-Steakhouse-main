@@ -54,3 +54,18 @@
     margin-right: 2em;
   }
 
+  @media only screen and (max-width: 1075px) {
+    .chef{
+      width: 300px;
+      margin-top: 5.25em;
+      }
+
+      .arrows{
+        margin-top: 2em;
+      }
+    }
+    @media only screen and (max-width: 768px) {
+      .chef{
+        display: none;
+      }
+    }

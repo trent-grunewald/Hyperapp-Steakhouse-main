@@ -6,6 +6,7 @@ import OurStory from './ourstory.js'
 import SpecialMenu from './specialmenu.js'
 import Quote from './quote.js'
 import Reviews from './reviews.js'
+import Promotions from './promotions.js'
 
 export default function App({state, actions}) {
   return (
@@ -17,6 +18,7 @@ export default function App({state, actions}) {
       <SpecialMenu state={state} actions={actions}/>
       <Quote state={state} actions={actions}/>
       <Reviews state={state} actions={actions}/>
+      <Promotions state={state} actions={actions}/>
     </div>
   )
 }

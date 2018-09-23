@@ -5,22 +5,25 @@ export default function Contact({state, actions}) {
     <section class="contact">
       <div class="container">
        <h5 class="contact-head">CONTACT US</h5>
-       <h1 class="contact-head">COME ENJOY OUR MEAT!</h1>
-        <div class="contact-box">
+       <h1 class="contact-title">COME ENJOY OUR MEAT!</h1>
+        <div class="container contact-box">
           <div class="col-md-6 address">
-            <h5 class="contact-location">Point Pleasant, West Virginia</h5>
-            <h5 class="contact-address">400 Main St, Point Pleasant, WV 25550</h5>
-            <h5 class="contact-street">400 Main St, Point Pleasant, WV 25550</h5>
+            <h5 class="contact-location">Granger, <span>Texas</span></h5>
+            <h5 class="contact-address">901 Co Rd 336, In the basement,<br></br> Granger, TX 76530</h5>
+            <h5 class="contact-email">Email: <span>seasoned@overseasoned.com</span></h5>
+            <h1 class="contact-underline">       </h1>
           </div>
           <div class="col-md-6 call">
-            <h5 class="contact-call">(206)-643-0185</h5>
+            <h5 class="contact-call">Call for reservations:</h5>
+            <h1 class="contact-number">(206)-643-0185</h1>
             <h5 class="contact-hours-title">Weekday Hours:</h5>
-            <h5 class="contact-street">from 4pm-9pm</h5>
+            <h5 class="contact-street">from 4pm-9pm<br></br>Call for reservations</h5>
             <h5 class="contact-hours-title">Weekend Hours:</h5>
-            <h5 class="contact-street">from 3pm-10pm</h5>
+            <h5 class="contact-street">from 3pm-10pm<br></br>Call for reservations</h5>
           </div>
         </div>
       </div>
+      <div id="googleMap" style="width:100%;height:400px;"></div>
     </section>
   )
 }

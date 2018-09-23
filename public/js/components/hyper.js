@@ -149,29 +149,46 @@ function Contact(_ref) {
       ),
       (0, _hyperapp.h)(
         "h1",
-        { "class": "contact-head" },
+        { "class": "contact-title" },
         "COME ENJOY OUR MEAT!"
       ),
       (0, _hyperapp.h)(
         "div",
-        { "class": "contact-box" },
+        { "class": "container contact-box" },
         (0, _hyperapp.h)(
           "div",
           { "class": "col-md-6 address" },
           (0, _hyperapp.h)(
             "h5",
             { "class": "contact-location" },
-            "Point Pleasant, West Virginia"
+            "Granger, ",
+            (0, _hyperapp.h)(
+              "span",
+              null,
+              "Texas"
+            )
           ),
           (0, _hyperapp.h)(
             "h5",
             { "class": "contact-address" },
-            "400 Main St, Point Pleasant, WV 25550"
+            "901 Co Rd 336, In the basement,",
+            (0, _hyperapp.h)("br", null),
+            " Granger, TX 76530"
           ),
           (0, _hyperapp.h)(
             "h5",
-            { "class": "contact-street" },
-            "400 Main St, Point Pleasant, WV 25550"
+            { "class": "contact-email" },
+            "Email: ",
+            (0, _hyperapp.h)(
+              "span",
+              null,
+              "seasoned@overseasoned.com"
+            )
+          ),
+          (0, _hyperapp.h)(
+            "h1",
+            { "class": "contact-underline" },
+            "       "
           )
         ),
         (0, _hyperapp.h)(
@@ -180,6 +197,11 @@ function Contact(_ref) {
           (0, _hyperapp.h)(
             "h5",
             { "class": "contact-call" },
+            "Call for reservations:"
+          ),
+          (0, _hyperapp.h)(
+            "h1",
+            { "class": "contact-number" },
             "(206)-643-0185"
           ),
           (0, _hyperapp.h)(
@@ -190,7 +212,9 @@ function Contact(_ref) {
           (0, _hyperapp.h)(
             "h5",
             { "class": "contact-street" },
-            "from 4pm-9pm"
+            "from 4pm-9pm",
+            (0, _hyperapp.h)("br", null),
+            "Call for reservations"
           ),
           (0, _hyperapp.h)(
             "h5",
@@ -200,11 +224,14 @@ function Contact(_ref) {
           (0, _hyperapp.h)(
             "h5",
             { "class": "contact-street" },
-            "from 3pm-10pm"
+            "from 3pm-10pm",
+            (0, _hyperapp.h)("br", null),
+            "Call for reservations"
           )
         )
       )
-    )
+    ),
+    (0, _hyperapp.h)("div", { id: "googleMap", style: "width:100%;height:400px;" })
   );
 }
 // <Header state={state} actions={actions}/>

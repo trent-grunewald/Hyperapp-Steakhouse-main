@@ -2,6 +2,7 @@
 
 .contact{
   background: url(https://cdn.inspirationhut.net/wp-content/uploads/2013/05/61.png);
+  min-height: 900px;
 }
 
 .contact-head{
@@ -9,4 +10,86 @@
     font-weight: 700;
     letter-spacing: 15px;
     text-align: center;
+    
+}
+
+.contact-title{
+  font-family: $ff-title;
+  text-align: center;
+  margin: 1.5em 0;
+}
+
+.contact-box{
+  letter-spacing: 1px;
+  margin-bottom: 2em;
+  background: white;
+  padding: 5em;
+  height: 520px;
+}
+
+.contact-location{
+  font-family: $ff-title;
+  font-size: 2em;
+  margin-bottom: 1em;
+  
+
+  span{
+    color: #b5b3b4;
+  }
+}
+
+.contact-address{
+  font-weight: 500;
+    line-height: 2;
+    color: #b5b3b4;
+    letter-spacing: 1px;
+    margin-bottom: 2em;
+}
+
+.contact-email{
+  font-family: $ff-title;
+  font-weight: 500;
+
+  span{
+    font-weight: 500;
+    color: #b5b3b4;
+  }
+}
+
+.contact-underline{
+  width: 100px;
+  display: table-cell;
+  border-bottom: 3px solid black;
+  padding-top: 3em;
+}
+
+.call{
+  padding-left: 5em;
+}
+
+.contact-call{
+  font-weight: 500;
+  line-height: 2;
+  color: #b5b3b4;
+  letter-spacing: 1px;
+  margin-bottom: 1em;
+}
+
+.contact-number{
+  font-family: $ff-number;
+  font-size: 2em;
+  margin-bottom: 1.5em;
+}
+
+.contact-hours-title{
+  font-weight: bold;
+  margin-top: 2em;
+  margin-bottom: .5em;
+}
+
+.contact-street{
+font-weight: 500;
+line-height: 2;
+color: #b5b3b4;
+letter-spacing: 1px;
 }

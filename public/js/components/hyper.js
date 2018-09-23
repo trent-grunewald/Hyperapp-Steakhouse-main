@@ -369,6 +369,100 @@ function Promotions(_ref) {
         "h1",
         { "class": "promotions-title" },
         "NEWS & PROMOTIONS"
+      ),
+      (0, _hyperapp.h)(
+        "div",
+        { "class": "grid-container" },
+        (0, _hyperapp.h)("div", { id: "grid-item1" }),
+        (0, _hyperapp.h)(
+          "div",
+          { id: "grid-item2" },
+          (0, _hyperapp.h)(
+            "h5",
+            { "class": "grid-item-title" },
+            "Learn how to chop a steak!"
+          ),
+          (0, _hyperapp.h)(
+            "h5",
+            { "class": "grid-item-seperator" },
+            "-------"
+          ),
+          (0, _hyperapp.h)(
+            "h5",
+            { "class": "grid-item-desc" },
+            "Camp Crystal Lake, Cunningham, New Jersey"
+          ),
+          (0, _hyperapp.h)(
+            "h5",
+            { "class": "grid-item-desc" },
+            "10:00AM - 11:30PM"
+          ),
+          (0, _hyperapp.h)(
+            "h5",
+            { "class": "grid-item-desc" },
+            "Friday, June 13, 1979"
+          )
+        ),
+        (0, _hyperapp.h)("div", { id: "grid-item3" }),
+        (0, _hyperapp.h)(
+          "div",
+          { id: "grid-item4" },
+          (0, _hyperapp.h)(
+            "h5",
+            { "class": "grid-item-title" },
+            "Over searing is a myth!"
+          ),
+          (0, _hyperapp.h)(
+            "h5",
+            { "class": "grid-item-seperator" },
+            "-------"
+          ),
+          (0, _hyperapp.h)(
+            "h5",
+            { "class": "grid-item-desc" },
+            "1428 Elm Street, Springwood, Ohio"
+          ),
+          (0, _hyperapp.h)(
+            "h5",
+            { "class": "grid-item-desc" },
+            "10:00PM - 7:00AM"
+          ),
+          (0, _hyperapp.h)(
+            "h5",
+            { "class": "grid-item-desc" },
+            "Friday, November 9, 1984"
+          )
+        ),
+        (0, _hyperapp.h)("div", { id: "grid-item5" }),
+        (0, _hyperapp.h)(
+          "div",
+          { id: "grid-item6" },
+          (0, _hyperapp.h)(
+            "h5",
+            { "class": "grid-item-title" },
+            "Steak carving classes!"
+          ),
+          (0, _hyperapp.h)(
+            "h5",
+            { "class": "grid-item-seperator" },
+            "-------"
+          ),
+          (0, _hyperapp.h)(
+            "h5",
+            { "class": "grid-item-desc" },
+            "24 N 6th ave, Haddonfield, Illinois"
+          ),
+          (0, _hyperapp.h)(
+            "h5",
+            { "class": "grid-item-desc" },
+            "8:00PM - 5:30AM"
+          ),
+          (0, _hyperapp.h)(
+            "h5",
+            { "class": "grid-item-desc" },
+            "Tuesday, October 31, 1978"
+          )
+        )
       )
     )
   );

@@ -3,3 +3,63 @@
 .promotions{
   background: url(https://cdn.inspirationhut.net/wp-content/uploads/2013/05/61.png);
 }
+
+.promotion-container{
+  text-align: center;
+  padding-top: 10%;
+}
+
+.promotions-head{
+  color: #b5b3b4;
+  font-weight: 700;
+  letter-spacing: 15px;
+}
+
+.promotions-title{
+  font-family: $ff-title;
+  padding-top: 3%;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-auto-rows: 1fr
+}
+
+#grid-item1{
+  background: url(http://s3.amazonaws.com/medias.photodeck.com/1e3ba609-ffc6-45b4-9806-d4f4024d10bb/Steak-Tritip-Sliced-Pesto-Onions_0081R_original_xlarge.jpg)center center no-repeat;
+  height: 400px;
+  width: auto;
+  background-size: cover;
+}
+
+#grid-item2, #grid-item4, #grid-item6{
+  padding-top: 25%;
+  background: white;
+}
+
+.grid-item-title{
+  font-family: $ff-title;
+  font-size: 1.5em;
+}
+
+.grid-item-seperator{
+  margin: 4em;
+  color: #b5b3b4;
+  letter-spacing: .5em;
+}
+
+.grid-item-desc{
+  line-height: 2;
+  color: #b5b3b4;
+}
+
+#grid-item3{
+  background: url(https://www.gorare.com/wp-content/uploads/2012/05/diamond-grill-marks.png)center center no-repeat;
+  background-size: cover;
+}
+
+#grid-item5{
+  background: url(https://0013a05…-7d16a3f….ssl.cf1.rackcdn.com/Andy-Post-Food-Photography-Grilled-Steak-on-the-Campfire.jpg) center center no-repeat;
+  background-size: cover;
+}

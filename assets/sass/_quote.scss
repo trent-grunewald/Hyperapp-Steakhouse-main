@@ -60,9 +60,15 @@ q:lang(en) {
   .quote{
     font-size: 2.5em;
   }
+
+  
 }
 
 @media only screen and (max-width: 580px) {
+  .quote-body{
+    margin-bottom: 5em;
+  }
+
   .quote{
     font-size: 1.75em;
   }

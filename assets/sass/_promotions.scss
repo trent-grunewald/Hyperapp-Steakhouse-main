@@ -18,12 +18,13 @@
 .promotions-title{
   font-family: $ff-title;
   padding-top: 3%;
+  margin-bottom: 2em;
 }
 
 .grid-container{
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-auto-rows: 1fr
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 400px;
 }
 
 #grid-item1{
@@ -36,6 +37,7 @@
 #grid-item2, #grid-item4, #grid-item6{
   padding-top: 25%;
   background: white;
+  border: 2px solid black;
 }
 
 .grid-item-title{
@@ -55,11 +57,11 @@
 }
 
 #grid-item3{
-  background: url(https://www.gorare.com/wp-content/uploads/2012/05/diamond-grill-marks.png)center center no-repeat;
+  background: url(https://thegoodgrubpeople.co.uk/wp-content/uploads/2017/10/8oz-grass-fed-rump-steak.jpg)center center no-repeat;
   background-size: cover;
 }
 
 #grid-item5{
-  background: url(https://0013a05…-7d16a3f….ssl.cf1.rackcdn.com/Andy-Post-Food-Photography-Grilled-Steak-on-the-Campfire.jpg) center center no-repeat;
+  background: url(https://0013a05e776cb3a3cacf-7d16a3f45b9fed243f74feb2d088df02.ssl.cf1.rackcdn.com/Andy-Post-Food-Photography-Grilled-Steak-on-the-Campfire.jpg) center center no-repeat;
   background-size: cover;
 }

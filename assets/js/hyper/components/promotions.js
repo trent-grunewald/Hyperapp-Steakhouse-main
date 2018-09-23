@@ -6,7 +6,7 @@ export default function Promotions({state, actions}) {
       <div class="container promotion-container">
         <h5 class="promotions-head">JOIN US</h5>
         <h1 class="promotions-title">NEWS & PROMOTIONS</h1>
-        <div class="grid-container">
+        <div class="container grid-container">
           <div id="grid-item1"></div>
           <div id="grid-item2">
             <h5 class="grid-item-title">Learn how to chop a steak!</h5>

@@ -231,14 +231,15 @@ function Modal(_ref) {
           "Receive free coupons for our delicious resturaunt daily, when you surrender your email address below!"
         ),
         (0, _hyperapp.h)(
-          "input",
-          { type: "text", "class": "address-input", placeholder: "Email Address" },
-          "Email Address"
-        ),
-        (0, _hyperapp.h)(
-          "input",
-          { type: "submit", "class": "modal-submit" },
-          "Submit"
+          "form",
+          { id: "email-form" },
+          (0, _hyperapp.h)("h5", { "class": "email-validation" }),
+          (0, _hyperapp.h)("input", { type: "text", "class": "address-input", id: "email", action: "mailto:", placeholder: "Email Address" }),
+          (0, _hyperapp.h)(
+            "input",
+            { type: "submit", id: "modal-submit" },
+            "Submit"
+          )
         ),
         (0, _hyperapp.h)(
           "a",

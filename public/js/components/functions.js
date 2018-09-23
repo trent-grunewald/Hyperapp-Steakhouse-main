@@ -9,6 +9,7 @@ function navToggle() {
   collapsed.forEach(nav => nav.classList.replace('nav-collapse', 'nav-item'));
 }
 
+
 //Windows size / resize function for NAV COLLAPSE
 window.onload =_=>{
 const butt = document.querySelector('.logo');
@@ -29,13 +30,23 @@ if(window.innerWidth <= 1000) {
   }
 }
 
-
+// modal popup
 window.onload =_=>{
   const popup = document.getElementById('modal')
+  const userInput = document.querySelector('#email') 
+  const emailValidation = document.querySelector('.email-validation')
+
   document.getElementById('close-modal').onclick =_=> {
   popup.style.display = 'none'
    }
+   //Sets modal popup delay
   setTimeout(function modal() {
     popup.classList.replace('hidden', 'show');
   }, 1000)
+  document.getElementById('modal-submit').onclick =_=> {
+    if(userInput.value === ""){
+      emailValidation.style.color = 'red';
+      emailValidation.innerHTML = "Please enter a valid email address"
+    }
+  }
 }

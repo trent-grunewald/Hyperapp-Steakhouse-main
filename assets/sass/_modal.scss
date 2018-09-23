@@ -51,7 +51,14 @@
   color: #b5b3b4;
   letter-spacing: 1px;
   line-height: 1.5em;
-  margin-bottom: 5%;
+}
+
+.email-validation{
+  height: 2em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5px;
 }
 
 .address-input{
@@ -63,7 +70,7 @@
   font-family: $ff-title;
 }
 
-.modal-submit{
+#modal-submit{
   padding: 10px;
     background: white;
     border: 2px solid black;
@@ -87,6 +94,10 @@
   }
 
   @media only screen and (max-width: 790px) {
+    .email-validation{
+      font-size: .75em;
+    }
+
     .modal-img{
       height: 250px;
     }
@@ -107,5 +118,8 @@
 
     .modal-title{
       font-size: 1.5em;
+    }
+    .email-validation{
+      font-size: .65em;
     }
   }

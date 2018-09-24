@@ -9,6 +9,7 @@ import Reviews from './reviews.js'
 import Promotions from './promotions.js'
 import Contact from './contact.js'
 
+
 export default function App({state, actions}) {
   return (
     <div class={'app'}>

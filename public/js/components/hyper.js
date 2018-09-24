@@ -10,6 +10,96 @@ webpackJsonp([0],[
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+
+var companyInfo = {
+  title: 'Over-Seasoned Steakhouse',
+  phone: '(206)-643-0185',
+  location: 'Granger, Texas'
+};
+
+var specialMenu = [{
+  image: 'card1',
+  title: 'Grilled NY Strip',
+  description: 'A fresh, barely 9oz NY Strip, served with half an asparagus and 1/16 of a potato.',
+  price: '$32'
+}, {
+  image: 'card2',
+  title: 'Charbroiled T-Bone',
+  description: 'An over-charred T-Bone with dry leaves from a nearby tree sprinkled on top.',
+  price: '$52'
+}, {
+  image: 'card3',
+  title: 'Steamed Ribeye',
+  description: 'A delicious 16oz Ribeye, dowsed in seasonsings, you will need water.',
+  price: '$72'
+}, {
+  image: 'card4',
+  title: 'Steamed Ribeye',
+  description: 'A delicious 16oz Ribeye, dowsed in seasonsings, you will need water.',
+  price: '$72'
+}, {
+  image: 'card5',
+  title: 'Steamed Ribeye',
+  description: 'A delicious 16oz Ribeye, dowsed in seasonsings, you will need water.',
+  price: '$72'
+}];
+
+var quotes = [{
+  quote: 'I Love Cooking A Big Steak\, For Myself and For My Cat.',
+  author: '- Tommy Tammisimo -',
+  authorInfo: 'The lonely head chef ',
+  authorInfo2: '- Over-Seasoned Steakhouse '
+}, {
+  quote: 'Could these steaks BE anymore seasoned!?',
+  author: '- Chandler Bing -',
+  authorInfo: 'Overactor ',
+  authorInfo2: '- Can\'t smile'
+}, {
+  quote: 'I don\'t eat any form of meat\,\ so this place is terrible!',
+  author: '- Shilo -',
+  authorInfo: 'Vegan ',
+  authorInfo2: '- Our Lady Health '
+}];
+
+var reviews = [{
+  title: '"Way too many spices, I threw up!"',
+  review: 'There was so much damn pepper on my steak that it was actually spicy! My fiance and I didn\'t finish our meals and the amount of "side" you get with your meal is laughable... We were still hungry after, so we went to McDonalds. Terrible honeymoon dinner.',
+  author: 'Jack Torrance -',
+  author2: 'Overlook Hotel employee'
+}, {
+  title: '"My absolute favorite steakhouse!"',
+  review: 'To say I know the secret of the steak would be ruin half of my enjoyment in coming to watch people eat... ',
+  author: 'Hannibal Lecter -',
+  author2: 'I will see you later'
+}, {
+  title: '"One Groovy place, with terrible steaks"',
+  review: 'I gotta tell you, This place serves some of the best drinks I have ever had... But, the steak tastes like cigarette spit.',
+  author: 'Ash Williams - Demon slayer',
+  author2: 'S-Mart'
+}];
+
+var globalState = exports.globalState = {
+  count: 0,
+  companyInfo: companyInfo,
+  specialMenu: specialMenu,
+  quotes: quotes,
+  reviews: reviews,
+  setReview: {
+    currentReview: 0
+  }
+};
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var actions = exports.actions = {
   up: up,
   intro: intro,
@@ -28,7 +118,7 @@ function intro(state, actions) {
 }
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -101,20 +191,6 @@ function App(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var globalState = exports.globalState = {
-  count: 0
-};
-
-/***/ }),
 /* 5 */,
 /* 6 */,
 /* 7 */,
@@ -138,7 +214,7 @@ function Contact(_ref) {
 
   return (0, _hyperapp.h)(
     "section",
-    { "class": "contact" },
+    { id: "mapid", "class": "contact" },
     (0, _hyperapp.h)(
       "div",
       { "class": "container" },
@@ -231,7 +307,8 @@ function Contact(_ref) {
         )
       )
     ),
-    (0, _hyperapp.h)("div", { id: "googleMap", style: "width:100%;height:400px;" })
+    (0, _hyperapp.h)("div", { id: "mapid", "class": "mapid", style: "width:100%;height:400px;" }),
+    (0, _hyperapp.h)("div", { id: "map", "class": "map", style: "width:100%;height:400px;" })
   );
 }
 // <Header state={state} actions={actions}/>
@@ -665,6 +742,33 @@ function Reviews(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
+  var currentReview = function currentReview(_) {
+    return (0, _hyperapp.h)(
+      "div",
+      null,
+      (0, _hyperapp.h)(
+        "h5",
+        { "class": "review-quote" },
+        state.globalState.reviews[state.globalState.setReview.currentReview].title
+      ),
+      (0, _hyperapp.h)(
+        "p",
+        { "class": "review-quote-body" },
+        state.globalState.reviews[state.globalState.setReview.currentReview].review
+      ),
+      (0, _hyperapp.h)(
+        "h5",
+        { "class": "reviewer" },
+        state.globalState.reviews[state.globalState.setReview.currentReview].author,
+        " ",
+        (0, _hyperapp.h)(
+          "span",
+          { "class": "quote2" },
+          state.globalState.reviews[state.globalState.setReview.currentReview].author2
+        )
+      )
+    );
+  };
   return (0, _hyperapp.h)(
     "section",
     { "class": "review" },
@@ -685,31 +789,12 @@ function Reviews(_ref) {
           { "class": "review-title" },
           "What Nobody Say's About Us"
         ),
-        (0, _hyperapp.h)(
-          "h5",
-          { "class": "review-quote" },
-          "\u201CWay too many spices, I threw up!\u201D"
-        ),
-        (0, _hyperapp.h)(
-          "p",
-          { "class": "review-quote-body" },
-          "There was so much damn pepper on my steak that it was actually spicy! My fiance and I didn't finish our meals and the amount of \"side\" you get with your meal is laughable... We were still hungry after, so we went to McDonalds. Terrible honeymoon dinner."
-        ),
-        (0, _hyperapp.h)(
-          "h5",
-          { "class": "reviewer" },
-          "Jack Torrance - ",
-          (0, _hyperapp.h)(
-            "span",
-            { "class": "quote2" },
-            "Overlook Hotel employee"
-          )
-        ),
+        currentReview(),
         (0, _hyperapp.h)(
           "div",
           { "class": "arrows" },
           (0, _hyperapp.h)("i", { "class": "fas fa-arrow-left" }),
-          (0, _hyperapp.h)("i", { "class": "fas fa-arrow-right" })
+          (0, _hyperapp.h)("i", { "class": "fas fa-arrow-right ready" })
         )
       )
     )
@@ -732,137 +817,80 @@ exports.default = SpecialMenu;
 
 var _hyperapp = __webpack_require__(0);
 
+var _globalState = __webpack_require__(2);
+
 function SpecialMenu(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
-  return (0, _hyperapp.h)(
-    "section",
-    { "class": "specialMenu" },
-    (0, _hyperapp.h)(
-      "div",
-      { "class": "container" },
-      (0, _hyperapp.h)(
-        "div",
-        { "class": "row" },
+
+  var loopMenu = function loopMenu() {
+    return state.globalState.specialMenu.map(function (item) {
+      return (0, _hyperapp.h)(
+        'div',
+        { 'class': 'col-md-4' },
         (0, _hyperapp.h)(
-          "div",
-          { "class": "special-top" },
+          'div',
+          { 'class': 'card', style: 'width:100%' },
           (0, _hyperapp.h)(
-            "h5",
-            { "class": "special-head" },
-            "SPECIAL MENU"
+            'div',
+            { 'class': 'top-card' },
+            (0, _hyperapp.h)('img', { id: item.image }),
+            (0, _hyperapp.h)('div', { 'class': 'light-circle' }),
+            (0, _hyperapp.h)(
+              'div',
+              { 'class': 'special-price' },
+              item.price
+            )
           ),
           (0, _hyperapp.h)(
-            "h1",
-            { "class": "special-title" },
-            "Delicious Flavour Of Spice"
-          )
-        ),
-        (0, _hyperapp.h)(
-          "div",
-          { "class": "col-md-4" },
-          (0, _hyperapp.h)(
-            "div",
-            { "class": "card", style: "width:100%" },
+            'div',
+            { 'class': 'container card-container' },
             (0, _hyperapp.h)(
-              "div",
-              { "class": "top-card" },
-              (0, _hyperapp.h)("img", { id: "card1" }),
-              (0, _hyperapp.h)("div", { "class": "light-circle" }),
-              (0, _hyperapp.h)(
-                "div",
-                { "class": "special-price" },
-                "$32"
-              )
+              'p',
+              { 'class': 'special-menu-title' },
+              item.title
             ),
             (0, _hyperapp.h)(
-              "div",
-              { "class": "container card-container" },
-              (0, _hyperapp.h)(
-                "p",
-                { "class": "special-menu-title" },
-                "Grilled NY Strip"
-              ),
-              (0, _hyperapp.h)(
-                "p",
-                { "class": "special-menu-description" },
-                "A fresh, barely 9oz NY Strip, served with half an asparagus and 1/16 of a potato."
-              )
-            )
-          )
-        ),
-        (0, _hyperapp.h)(
-          "div",
-          { "class": "col-md-4" },
-          (0, _hyperapp.h)(
-            "div",
-            { "class": "card", style: "width:100%" },
-            (0, _hyperapp.h)(
-              "div",
-              { "class": "top-card" },
-              (0, _hyperapp.h)("img", { id: "card2" }),
-              (0, _hyperapp.h)("div", { "class": "light-circle" }),
-              (0, _hyperapp.h)(
-                "div",
-                { "class": "special-price" },
-                "$52"
-              )
-            ),
-            (0, _hyperapp.h)(
-              "div",
-              { "class": "container card-container" },
-              (0, _hyperapp.h)(
-                "p",
-                { "class": "special-menu-title" },
-                "Charbroiled T-Bone"
-              ),
-              (0, _hyperapp.h)(
-                "p",
-                { "class": "special-menu-description" },
-                "An over-charred T-Bone with dry leaves from a nearby tree sprinkled on top."
-              )
-            )
-          )
-        ),
-        (0, _hyperapp.h)(
-          "div",
-          { "class": "col-md-4" },
-          (0, _hyperapp.h)(
-            "div",
-            { "class": "card", style: "width:100%" },
-            (0, _hyperapp.h)(
-              "div",
-              { "class": "top-card" },
-              (0, _hyperapp.h)("img", { id: "card3" }),
-              (0, _hyperapp.h)("div", { "class": "light-circle" }),
-              (0, _hyperapp.h)(
-                "div",
-                { "class": "special-price" },
-                "$72"
-              )
-            ),
-            (0, _hyperapp.h)(
-              "div",
-              { "class": "container card-container" },
-              (0, _hyperapp.h)(
-                "p",
-                { "class": "special-menu-title" },
-                "Charbroiled T-Bone"
-              ),
-              (0, _hyperapp.h)(
-                "p",
-                { "class": "special-menu-description" },
-                "A delicious 16oz Ribeye, dowsed in seasonsings, you will need water."
-              )
+              'p',
+              { 'class': 'special-menu-description' },
+              item.description
             )
           )
         )
+      );
+    });
+  };
+
+  return (0, _hyperapp.h)(
+    'section',
+    { 'class': 'specialMenu' },
+    (0, _hyperapp.h)(
+      'div',
+      { 'class': 'container' },
+      (0, _hyperapp.h)(
+        'div',
+        { 'class': 'row' },
+        (0, _hyperapp.h)(
+          'div',
+          { 'class': 'special-top' },
+          (0, _hyperapp.h)(
+            'h5',
+            { 'class': 'special-head' },
+            'SPECIAL MENU'
+          ),
+          (0, _hyperapp.h)(
+            'h1',
+            { 'class': 'special-title' },
+            'Delicious Flavour Of Spice'
+          )
+        ),
+        loopMenu()
       ),
       (0, _hyperapp.h)(
-        "a",
-        { "class": "view-menu", href: "#" },
-        "VIEW FULL MENU"
+        'a',
+        { 'class': 'view-menu', href: '#' },
+        'VIEW FULL MENU'
       )
     )
   );
@@ -960,11 +988,11 @@ function TopImg(_ref) {
 
 var _hyperapp = __webpack_require__(0);
 
-var _actions = __webpack_require__(2);
+var _actions = __webpack_require__(3);
 
-var _globalState = __webpack_require__(4);
+var _globalState = __webpack_require__(2);
 
-var _App = __webpack_require__(3);
+var _App = __webpack_require__(4);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -992,17 +1020,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
     }
   }
 });
-
-//NAV COLLAPSE//
-function navToggle() {
-  var navs = document.querySelectorAll('.nav-item');
-
-  navs.forEach(nav.classList.toggle('nav-collapsed'));
-}
-
-document.querySelector('.logo').addEventListener('click', navToggle);
-
-alert('hello');
 
 /***/ })
 ],[18]);

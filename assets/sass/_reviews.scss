@@ -48,10 +48,16 @@
   .arrows{
     margin-top: 5em;
     font-size: 2em;
+    color: #b5b3b4;
   }
 
   .fa-arrow-left{
     margin-right: 2em;
+  }
+
+  .fa-arrow-left.ready,
+  .fa-arrow-right.ready{
+    color: black;
   }
 
   @media only screen and (max-width: 1075px) {

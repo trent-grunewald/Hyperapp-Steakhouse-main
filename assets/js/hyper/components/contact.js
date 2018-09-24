@@ -2,7 +2,7 @@ import {h, app} from 'hyperapp'
 
 export default function Contact({state, actions}) {
   return (
-    <section class="contact">
+    <section id="mapid" class="contact">
       <div class="container">
        <h5 class="contact-head">CONTACT US</h5>
        <h1 class="contact-title">COME ENJOY OUR MEAT!</h1>
@@ -23,7 +23,8 @@ export default function Contact({state, actions}) {
           </div>
         </div>
       </div>
-      <div id="googleMap" style="width:100%;height:400px;"></div>
+      <div id="mapid" class="mapid" style="width:100%;height:400px;"></div>
+      <div id="map" class="map" style="width:100%;height:400px;"></div>
     </section>
   )
 }

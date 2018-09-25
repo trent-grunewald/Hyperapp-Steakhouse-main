@@ -13,10 +13,10 @@ app({
   actions,
   events: {
     action(state, actions, { name, data }) {
-      console.group("Action Info")
-      console.log("Name:", name)
-      console.log("Data:", data)
-      console.groupEnd()
+      // console.group("Action Info")
+      // console.log("Name:", name)
+      // console.log("Data:", data)
+      // console.groupEnd()
     },
   }
 })

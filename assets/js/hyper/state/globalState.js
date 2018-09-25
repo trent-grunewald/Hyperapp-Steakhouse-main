@@ -25,18 +25,18 @@ const specialMenu = [
     description: 'A delicious 16oz Ribeye, dowsed in seasonsings, you will need water.',
     price: '$72',
   },
-  {
-    image: 'card4',
-    title: 'Steamed Ribeye',
-    description: 'A delicious 16oz Ribeye, dowsed in seasonsings, you will need water.',
-    price: '$72',
-  },
-  {
-    image: 'card5',
-    title: 'Steamed Ribeye',
-    description: 'A delicious 16oz Ribeye, dowsed in seasonsings, you will need water.',
-    price: '$72',
-  }
+  // {
+  //   image: 'card4',
+  //   title: 'Porterhouse',
+  //   description: 'A juicy 14oz Porterhouse, by far one of our most popular steaks available.',
+  //   price: '$47',
+  // },
+  // {
+  //   image: 'card5',
+  //   title: 'Top Sirloin',
+  //   description: 'A delicious 24oz Top Sirloin, this thing is juicy! Comes as is, no special orders.',
+  //   price: '$92',
+  // }
 ]
 
 const quotes = [
@@ -68,10 +68,10 @@ const reviews = [
     author2: 'Overlook Hotel employee'
   },
   {
-    title: '"My absolute favorite steakhouse!"',
-    review: 'To say I know the secret of the steak would be ruin half of my enjoyment in coming to watch people eat... ',
+    title: '"A real treat in the form of a steak house"',
+    review: 'To say I know the secret of the steak would be ruin half of my enjoyment in coming here... I enjoy watching the fellow guests enjoy their new found delicacy, these steaks are truly one of a kind and you won\'t find them anywhere else.',
     author: 'Hannibal Lecter -', 
-    author2: 'I will see you later'
+    author2: 'Enjoy!'
   },
   {
     title: '"One Groovy place, with terrible steaks"',
@@ -81,7 +81,7 @@ const reviews = [
   },
 ]
 
-export const globalState = {
+export let globalState = {
   count: 0,
   companyInfo,
   specialMenu,
@@ -89,5 +89,9 @@ export const globalState = {
   reviews,
   setReview: {
     currentReview: 0,
+  },
+
+  setSpecial: {
+    currentSpecial: 2,
   }
 }

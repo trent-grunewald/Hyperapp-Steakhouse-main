@@ -1,0 +1,88 @@
+@import url( 'https://fonts.googleapis.com/css?family=Playfair+Display:700');
+@import 'variables';
+
+.reservation-overlay{
+  background: linear-gradient(135deg, #000000b8, #000000b8 , #000000b8);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.reservation-container{
+  height: 100%;
+}
+
+.reservation-body{
+  position: relative;
+  min-height: 700px;
+  color: black;
+  background: white;
+  outline: 2px solid black;
+  width: 50%;
+  text-align: center;
+  padding-top: 5%;
+}
+
+.show{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.reservation-logo{
+  background: url(/img/logodark.png) no-repeat;
+  height: 10em;
+  width: 10;
+  margin-left: 28%;
+  background-size: contain;
+}
+
+.reservation-title{
+  font-family: $ff-title;
+  text-align: center;
+}
+
+.reservation-description{
+  margin-top: 3.5em;
+  line-height: 2;
+  color: #b5b3b4;
+  text-align: center;
+}
+
+.name,.last,.address,.telephone,.email{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  border: 2px solid #b5b3b4;
+  font-family: $ff-title;
+  margin-bottom: 15px;    
+  background: #443b3b38;
+}
+
+#reservation-submit{
+    padding: 10px;
+    background: white;
+    border: 2px solid black;
+    font-family: $ff-title;
+    color: black;
+    text-decoration: none;
+    transition: .5s ease-in-out;
+    margin: 5% 0;
+    cursor: pointer;
+
+      &:hover{
+        box-shadow: 1px 1px 15px 5px black;
+      }
+}
+
+#close-reservation{
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+}

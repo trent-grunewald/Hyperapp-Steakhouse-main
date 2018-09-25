@@ -1,7 +1,6 @@
 import {h, app} from 'hyperapp'
 
 
-
 export default function Reviews({state, actions}) {
   let currentReview =_=>{
     return (
@@ -12,6 +11,19 @@ export default function Reviews({state, actions}) {
       </div>
     )
   }
+
+  var leftArrow = function() {
+    if(state.globalState.setReview.currentReview !== 0) {
+      actions.previousReview()
+    }
+  }
+
+  const rightArrow = function(){
+    if(state.globalState.setReview.currentReview !== (state.globalState.reviews.length - 1)) {
+      actions.nextReview()
+    }
+  }
+
   return (
     <section class="review">
       <div class="container">
@@ -20,9 +32,9 @@ export default function Reviews({state, actions}) {
         <h5 class="review-head">REVIEW</h5>
         <h1 class="review-title">What Nobody Say's About Us</h1>
           {currentReview()}
-        <div class="arrows"><i class={`fas fa-arrow-left ${(state.globalState.setReview.currentReview > 0) ? 'ready' : ''}`}></i>
-        <i onclick={actions.reviewRight}
-        class={`fas fa-arrow-right ${(state.globalState.setReview.currentReview === (state.globalState.reviews.length - 1)) ? '' : 'ready'}`}></i></div>
+        <div class="arrows">
+          <i onclick={leftArrow} class={`fa fa-arrow-left ${(state.globalState.setReview.currentReview > 0) ? 'ready' : ''}`} aria-hidden="true"></i>
+         <i onclick= {rightArrow} class={`fa fa-arrow-right ${(state.globalState.setReview.currentReview === (state.globalState.reviews.length - 1)) ? '' : 'ready'}`}  aria-hidden="true"></i></div>
        </div>
       </div>
     </section>

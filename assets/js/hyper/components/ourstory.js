@@ -1,8 +1,12 @@
 import {h, app} from 'hyperapp'
 
 export default function ourStory({state, actions}) {
+  // const test = document.querySelector('#reservations').classList.remove('hidden');
+  // const reservation = document.getElementById('reservations')
+  // reservation.style.display = 'unset'
+  //  }
   return (
-    <section class="ourStory">
+    <section class="ourStory" id="ourStory">
     <div class="container">
     <div class="row">
       <div class="col-md-6">
@@ -10,7 +14,7 @@ export default function ourStory({state, actions}) {
         <h2 class="storyTitle">Cooking Is The Art Of The Seasoning</h2>
         <p class="story">Each steak is seared to perfection, finished with a perfect amount of butter, freshly chopped parsley, pepper, garlic, garlic salt, garlic butter, onion powder, onion salt, pepper salt, chili powder, and 1/4 cup of our secret seasoning all served sizzling on a 500-degree plate.</p>
         <p class="story-quote"><strong>Justin Case</strong> <span class="quote2">- Master Seasoner at Over-Seasoned</span></p>
-        <a class="story-button" href="#">Reservation</a>
+        <a class="story-button" href="#reservations" >Reservation</a>
         </div>
         <div class="col-md-6">
         <img src="http://www.justlookaround.nl/wordpress/wp-content/uploads/2016/06/Food-photography-Spareribs-Cookers-Just-Look-Around.jpg" class="story-img"/>

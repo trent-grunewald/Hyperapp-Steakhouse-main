@@ -20,7 +20,7 @@ export default function Reviews({state, actions}) {
         <h5 class="review-head">REVIEW</h5>
         <h1 class="review-title">What Nobody Say's About Us</h1>
           {currentReview()}
-        <div class="arrows"><i class="fas fa-arrow-left"></i><i class="fas fa-arrow-right ready"></i></div>
+        <div class="arrows"><i class={`fas fa-arrow-left ${(state.globalState.setReview.currentReview > 0) ? 'ready' : ''}`}></i><i class={`fas fa-arrow-right ${(state.globalState.setReview.currentReview === (state.globalState.reviews.length - 1)) ? '' : 'ready'}`} aria-hidden="true"></i></div>
        </div>
       </div>
     </section>

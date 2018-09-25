@@ -793,8 +793,8 @@ function Reviews(_ref) {
         (0, _hyperapp.h)(
           "div",
           { "class": "arrows" },
-          (0, _hyperapp.h)("i", { "class": "fas fa-arrow-left" }),
-          (0, _hyperapp.h)("i", { "class": "fas fa-arrow-right ready" })
+          (0, _hyperapp.h)("i", { "class": "fas fa-arrow-left " + (state.globalState.setReview.currentReview > 0 ? 'ready' : '') }),
+          (0, _hyperapp.h)("i", { "class": "fas fa-arrow-right " + (state.globalState.setReview.currentReview === state.globalState.reviews.length ? '' : 'ready'), "aria-hidden": "true" })
         )
       )
     )

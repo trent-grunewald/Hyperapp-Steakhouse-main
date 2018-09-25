@@ -101,20 +101,16 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var actions = exports.actions = {
-  up: up,
-  intro: intro,
-  showMenu: showMenu
+  rightReview: rightReview
+  // leftArrow
 };
 
-function up(state, actions) {
-  return { count: state.count + 1 };
-}
-
-function showMenu() {}
-
-function intro(state, actions) {
-  console.log('Just ran my first action');
-  return { count: state.count + 1 };
+function rightReview(state, actions) {
+  return {
+    setReview: {
+      currentReview: state.globalState.currentReview + 1
+    }
+  };
 }
 
 /***/ }),
@@ -794,7 +790,8 @@ function Reviews(_ref) {
           "div",
           { "class": "arrows" },
           (0, _hyperapp.h)("i", { "class": "fas fa-arrow-left " + (state.globalState.setReview.currentReview > 0 ? 'ready' : '') }),
-          (0, _hyperapp.h)("i", { "class": "fas fa-arrow-right " + (state.globalState.setReview.currentReview === state.globalState.reviews.length ? '' : 'ready'), "aria-hidden": "true" })
+          (0, _hyperapp.h)("i", { onclick: actions.reviewRight,
+            "class": "fas fa-arrow-right " + (state.globalState.setReview.currentReview === state.globalState.reviews.length - 1 ? '' : 'ready') })
         )
       )
     )
@@ -1014,9 +1011,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
       console.log("Name:", name);
       console.log("Data:", data);
       console.groupEnd();
-    },
-    load: function load(state, actions) {
-      actions.intro();
     }
   }
 });

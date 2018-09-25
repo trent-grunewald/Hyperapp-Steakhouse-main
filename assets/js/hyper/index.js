@@ -18,9 +18,6 @@ app({
       console.log("Data:", data)
       console.groupEnd()
     },
-    load(state, actions) {
-      actions.intro()
-    }
   }
 })
 

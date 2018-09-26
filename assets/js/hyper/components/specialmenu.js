@@ -10,6 +10,7 @@ export default function SpecialMenu({state, actions}) {
       <h5 class="special-head">SPECIAL MENU</h5>
       <h1 class="special-title">Delicious Flavour Of Spice</h1>
     </div>
+    <div class="container">
   <div class="col-md-4">
   <div class="card">
     <div class="side"><img id='card1'/>
@@ -74,6 +75,7 @@ export default function SpecialMenu({state, actions}) {
        <div class="container card-container">
         <p class="special-menu-title">Filet Mignon</p>
         <p class="special-menu-description">10oz A well seasoned and month long aged cut that might just bring you back tomorrow</p>
+    </div>
     </div>
     </div>
   </div>

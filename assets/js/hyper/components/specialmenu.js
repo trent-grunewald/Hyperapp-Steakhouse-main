@@ -10,7 +10,7 @@ export default function SpecialMenu({state, actions}) {
       <h5 class="special-head">SPECIAL MENU</h5>
       <h1 class="special-title">Delicious Flavour Of Spice</h1>
     </div>
-    <div class="container">
+    <div class="container card-grid">
   <div class="col-md-4">
   <div class="card">
     <div class="side"><img id='card1'/>

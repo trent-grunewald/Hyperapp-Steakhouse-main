@@ -970,7 +970,7 @@ function SpecialMenu(_ref) {
         ),
         (0, _hyperapp.h)(
           'div',
-          { 'class': 'container' },
+          { 'class': 'container card-grid' },
           (0, _hyperapp.h)(
             'div',
             { 'class': 'col-md-4' },

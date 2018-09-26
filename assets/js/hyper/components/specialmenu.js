@@ -3,15 +3,15 @@ import { globalState } from '../state/globalState';
 
 export default function SpecialMenu({state, actions}) {
 
-  const clickFlip = function(){
-    const test2 = document.querySelectorAll('.card');
-
-    for (var i = 0; i < test2.length; i++) {
-      test2[i].addEventListener("click", function() {
-        this.classList.toggle('flipped');
-      });
-    }
-  };
+//Cards flip on click
+const clickFlip = function(){
+  const card = document.querySelectorAll('.card');
+  //For each card
+  for (var i = 0; i < card.length; i++) {
+      //toggle the class "Flipped" on the selected card
+      this.classList.toggle('flipped');
+    };
+  }
 
   return (
     <section class="specialMenu">

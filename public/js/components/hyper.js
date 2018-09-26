@@ -32,6 +32,16 @@ var specialMenu = [{
   title: 'Steamed Ribeye',
   description: 'A delicious 16oz Ribeye, dowsed in seasonsings, you will need water.',
   price: '$72'
+}, {
+  image: 'card4',
+  title: 'Porterhouse',
+  description: 'A juicy 14oz Porterhouse, by far one of our most popular steaks available.',
+  price: '$47'
+}, {
+  image: 'card5',
+  title: 'Top Sirloin',
+  description: 'A delicious 24oz Top Sirloin, this thing is juicy! Comes as is, no special orders.',
+  price: '$92'
 }];
 
 var quotes = [{
@@ -935,58 +945,6 @@ function SpecialMenu(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
-
-  var loopMenu = function loopMenu() {
-
-    return state.globalState.specialMenu.map(function (item) {
-      return (0, _hyperapp.h)(
-        'div',
-        { 'class': 'col-md-4' },
-        (0, _hyperapp.h)(
-          'div',
-          { 'class': 'card', style: 'width:100%' },
-          (0, _hyperapp.h)(
-            'div',
-            { 'class': 'top-card' },
-            (0, _hyperapp.h)('img', { id: item.image }),
-            (0, _hyperapp.h)('div', { 'class': 'light-circle' }),
-            (0, _hyperapp.h)(
-              'div',
-              { 'class': 'special-price' },
-              item.price
-            )
-          ),
-          (0, _hyperapp.h)(
-            'div',
-            { 'class': 'container card-container' },
-            (0, _hyperapp.h)(
-              'p',
-              { 'class': 'special-menu-title' },
-              item.title
-            ),
-            (0, _hyperapp.h)(
-              'p',
-              { 'class': 'special-menu-description' },
-              item.description
-            )
-          )
-        )
-      );
-    });
-  };
-
-  var leftSpecial = function leftSpecial() {
-    if (state.globalState.setSpecial.currentSpecial !== 0) {
-      actions.previousSpecial();
-    }
-  };
-
-  var rightSpecial = function rightSpecial() {
-    if (state.globalState.setSpecials.currentSpecial !== state.globalState.specialMenu.length - 1) {
-      actions.nextSpecial();
-    }
-  };
-
   return (0, _hyperapp.h)(
     'section',
     { 'class': 'specialMenu' },
@@ -995,7 +953,7 @@ function SpecialMenu(_ref) {
       { 'class': 'container' },
       (0, _hyperapp.h)(
         'div',
-        { 'class': 'row special-row' },
+        { 'class': 'row' },
         (0, _hyperapp.h)(
           'div',
           { 'class': 'special-top' },
@@ -1010,9 +968,192 @@ function SpecialMenu(_ref) {
             'Delicious Flavour Of Spice'
           )
         ),
-        (0, _hyperapp.h)('i', { onclick: leftSpecial, 'class': 'fas fa-angle-left' }),
-        loopMenu(),
-        (0, _hyperapp.h)('i', { onclick: rightSpecial, 'class': 'fas fa-angle-right' })
+        (0, _hyperapp.h)(
+          'div',
+          { 'class': 'col-md-4' },
+          (0, _hyperapp.h)(
+            'div',
+            { 'class': 'card' },
+            (0, _hyperapp.h)(
+              'div',
+              { 'class': 'side' },
+              (0, _hyperapp.h)('img', { id: 'card1' }),
+              (0, _hyperapp.h)('div', { 'class': 'light-circle' }),
+              (0, _hyperapp.h)(
+                'div',
+                { 'class': 'special-price' },
+                '$32'
+              )
+            ),
+            (0, _hyperapp.h)(
+              'div',
+              { 'class': 'container card-container' },
+              (0, _hyperapp.h)(
+                'p',
+                { 'class': 'special-menu-title' },
+                'Grilled NY Strip'
+              ),
+              (0, _hyperapp.h)(
+                'p',
+                { 'class': 'special-menu-description' },
+                'A fresh, barely 9oz NY Strip, served with half an asparagus and 1/16 of a potato.'
+              )
+            ),
+            (0, _hyperapp.h)(
+              'div',
+              { 'class': 'side back' },
+              (0, _hyperapp.h)(
+                'div',
+                { 'class': 'side' },
+                (0, _hyperapp.h)('img', { id: 'card2' }),
+                (0, _hyperapp.h)('div', { 'class': 'light-circle' }),
+                (0, _hyperapp.h)(
+                  'div',
+                  { 'class': 'special-price-back' },
+                  '$52'
+                )
+              ),
+              (0, _hyperapp.h)(
+                'div',
+                { 'class': 'container card-container' },
+                (0, _hyperapp.h)(
+                  'p',
+                  { 'class': 'special-menu-title-back' },
+                  'Charbroiled T-Bone'
+                ),
+                (0, _hyperapp.h)(
+                  'p',
+                  { 'class': 'special-menu-description-back' },
+                  'An over-charred T-Bone with dry leaves from a nearby tree sprinkled on top.'
+                )
+              )
+            )
+          )
+        ),
+        (0, _hyperapp.h)(
+          'div',
+          { 'class': 'col-md-4' },
+          (0, _hyperapp.h)(
+            'div',
+            { 'class': 'card' },
+            (0, _hyperapp.h)(
+              'div',
+              { 'class': 'side' },
+              (0, _hyperapp.h)('img', { id: 'card3' }),
+              (0, _hyperapp.h)('div', { 'class': 'light-circle' }),
+              (0, _hyperapp.h)(
+                'div',
+                { 'class': 'special-price' },
+                '$72'
+              )
+            ),
+            (0, _hyperapp.h)(
+              'div',
+              { 'class': 'container card-container' },
+              (0, _hyperapp.h)(
+                'p',
+                { 'class': 'special-menu-title' },
+                'Steamed Ribeye'
+              ),
+              (0, _hyperapp.h)(
+                'p',
+                { 'class': 'special-menu-description' },
+                'A delicious 16oz Ribeye, dowsed in seasonsings, you will need water.'
+              )
+            ),
+            (0, _hyperapp.h)(
+              'div',
+              { 'class': 'side back' },
+              (0, _hyperapp.h)(
+                'div',
+                { 'class': 'side' },
+                (0, _hyperapp.h)('img', { id: 'card4' }),
+                (0, _hyperapp.h)('div', { 'class': 'light-circle' }),
+                (0, _hyperapp.h)(
+                  'div',
+                  { 'class': 'special-price' },
+                  '$47'
+                )
+              ),
+              (0, _hyperapp.h)(
+                'div',
+                { 'class': 'container card-container' },
+                (0, _hyperapp.h)(
+                  'p',
+                  { 'class': 'special-menu-title' },
+                  'Porterhouse'
+                ),
+                (0, _hyperapp.h)(
+                  'p',
+                  { 'class': 'special-menu-description' },
+                  'A juicy 14oz Porterhouse, by far one of our most popular steaks available.'
+                )
+              )
+            )
+          )
+        ),
+        (0, _hyperapp.h)(
+          'div',
+          { 'class': 'col-md-4' },
+          (0, _hyperapp.h)(
+            'div',
+            { 'class': 'card' },
+            (0, _hyperapp.h)(
+              'div',
+              { 'class': 'side' },
+              (0, _hyperapp.h)('img', { id: 'card5' }),
+              (0, _hyperapp.h)('div', { 'class': 'light-circle' }),
+              (0, _hyperapp.h)(
+                'div',
+                { 'class': 'special-price' },
+                '$92'
+              )
+            ),
+            (0, _hyperapp.h)(
+              'div',
+              { 'class': 'container card-container' },
+              (0, _hyperapp.h)(
+                'p',
+                { 'class': 'special-menu-title' },
+                'Top Sirloin'
+              ),
+              (0, _hyperapp.h)(
+                'p',
+                { 'class': 'special-menu-description' },
+                'A delicious 24oz Top Sirloin, this thing is juicy! Comes as is, no special orders.'
+              )
+            ),
+            (0, _hyperapp.h)(
+              'div',
+              { 'class': 'side back' },
+              (0, _hyperapp.h)(
+                'div',
+                { 'class': 'side' },
+                (0, _hyperapp.h)('img', { id: 'card6' }),
+                (0, _hyperapp.h)('div', { 'class': 'light-circle' }),
+                (0, _hyperapp.h)(
+                  'div',
+                  { 'class': 'special-price' },
+                  '$47'
+                )
+              ),
+              (0, _hyperapp.h)(
+                'div',
+                { 'class': 'container card-container' },
+                (0, _hyperapp.h)(
+                  'p',
+                  { 'class': 'special-menu-title' },
+                  'Filet Mignon'
+                ),
+                (0, _hyperapp.h)(
+                  'p',
+                  { 'class': 'special-menu-description' },
+                  '10oz A well seasoned and month long aged cut that might just bring you back tomorrow'
+                )
+              )
+            )
+          )
+        )
       ),
       (0, _hyperapp.h)(
         'a',

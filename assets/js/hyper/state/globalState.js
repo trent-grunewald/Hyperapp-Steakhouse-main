@@ -25,18 +25,18 @@ const specialMenu = [
     description: 'A delicious 16oz Ribeye, dowsed in seasonsings, you will need water.',
     price: '$72',
   },
-  // {
-  //   image: 'card4',
-  //   title: 'Porterhouse',
-  //   description: 'A juicy 14oz Porterhouse, by far one of our most popular steaks available.',
-  //   price: '$47',
-  // },
-  // {
-  //   image: 'card5',
-  //   title: 'Top Sirloin',
-  //   description: 'A delicious 24oz Top Sirloin, this thing is juicy! Comes as is, no special orders.',
-  //   price: '$92',
-  // }
+  {
+    image: 'card4',
+    title: 'Porterhouse',
+    description: 'A juicy 14oz Porterhouse, by far one of our most popular steaks available.',
+    price: '$47',
+  },
+  {
+    image: 'card5',
+    title: 'Top Sirloin',
+    description: 'A delicious 24oz Top Sirloin, this thing is juicy! Comes as is, no special orders.',
+    price: '$92',
+  }
 ]
 
 const quotes = [

@@ -185,11 +185,14 @@ function ourStory(_ref) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+//Cards flip on click
 var clickFlip = function clickFlip() {
-  var test2 = document.querySelectorAll('.card');
-
-  for (var i = 0; i < test2.length; i++) {
-    test2[i].addEventListener("click", function () {
+  var card = document.querySelectorAll('.card');
+  //For each card
+  for (var i = 0; i < card.length; i++) {
+    //add the click event listener
+    card[i].addEventListener("click", function () {
+      //toggle the class "Flipped" on the selected card
       this.classList.toggle('flipped');
     });
   }

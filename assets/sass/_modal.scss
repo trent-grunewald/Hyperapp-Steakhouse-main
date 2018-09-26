@@ -2,14 +2,14 @@
   display: none;
 }
 
-.modal-overlay{
+.modal-overlay .reservation-overlay{
   background: linear-gradient(135deg, #000000b8, #000000b8 , #000000b8);
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.modal-container{
+.modal-container .reservation-container{
   height: 100%;
 }
 

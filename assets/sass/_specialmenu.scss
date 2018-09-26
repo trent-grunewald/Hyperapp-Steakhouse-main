@@ -195,11 +195,11 @@
   outline: 2px solid black;
   position: absolute;
   transform-style: preserve-3d;
-  transition: all 1s ease-in-out;
+  transition: all 1.25s ease-in-out;
   width: 375px;
   height: 450px;
 }
-.card:hover {
+.flipped {
   transform: rotateY(180deg);
 }
 .card .side {

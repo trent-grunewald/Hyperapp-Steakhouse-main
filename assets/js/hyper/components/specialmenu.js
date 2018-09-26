@@ -2,6 +2,17 @@ import {h, app} from 'hyperapp'
 import { globalState } from '../state/globalState';
 
 export default function SpecialMenu({state, actions}) {
+
+  const clickFlip = function(){
+    const test2 = document.querySelectorAll('.card');
+
+    for (var i = 0; i < test2.length; i++) {
+      test2[i].addEventListener("click", function() {
+        this.classList.toggle('flipped');
+      });
+    }
+  };
+
   return (
     <section class="specialMenu">
     <div class="container">
@@ -12,7 +23,7 @@ export default function SpecialMenu({state, actions}) {
     </div>
     <div class="container card-grid">
   <div class="col-md-4">
-  <div class="card">
+  <div class="card" onclick={clickFlip}>
     <div class="side"><img id='card1'/>
     <div class="light-circle"></div>
     <div class="special-price">$32</div> 
@@ -35,7 +46,7 @@ export default function SpecialMenu({state, actions}) {
 </div>
 
 <div class="col-md-4">
-  <div class="card">
+  <div class="card" onclick={clickFlip}>
     <div class="side"><img id='card3'/>
     <div class="light-circle"></div>
     <div class="special-price">$72</div> 
@@ -58,7 +69,7 @@ export default function SpecialMenu({state, actions}) {
 </div>
 
 <div class="col-md-4">
-  <div class="card">
+  <div class="card" onclick={clickFlip}>
     <div class="side"><img id='card5'/>
     <div class="light-circle"></div>
     <div class="special-price">$92</div> 
@@ -67,6 +78,7 @@ export default function SpecialMenu({state, actions}) {
         <p class="special-menu-title">Top Sirloin</p>
         <p class="special-menu-description">A delicious 24oz Top Sirloin, this thing is juicy! Comes as is, no special orders.</p>
     </div>
+    
     <div class="side back">
     <div class="side"><img id='card6'/>
     <div class="light-circle"></div>

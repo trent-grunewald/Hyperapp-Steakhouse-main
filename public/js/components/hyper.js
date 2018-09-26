@@ -185,6 +185,16 @@ function ourStory(_ref) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var clickFlip = function clickFlip() {
+  var test2 = document.querySelectorAll('.card');
+
+  for (var i = 0; i < test2.length; i++) {
+    test2[i].addEventListener("click", function () {
+      this.classList.toggle('flipped');
+    });
+  }
+};
+
 var nextReview = function nextReview(state, actions) {
   return {
     setReview: {
@@ -945,6 +955,17 @@ function SpecialMenu(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
+
+  var clickFlip = function clickFlip() {
+    var test2 = document.querySelectorAll('.card');
+
+    for (var i = 0; i < test2.length; i++) {
+      test2[i].addEventListener("click", function () {
+        this.classList.toggle('flipped');
+      });
+    }
+  };
+
   return (0, _hyperapp.h)(
     'section',
     { 'class': 'specialMenu' },
@@ -976,7 +997,7 @@ function SpecialMenu(_ref) {
             { 'class': 'col-md-4' },
             (0, _hyperapp.h)(
               'div',
-              { 'class': 'card' },
+              { 'class': 'card', onclick: clickFlip },
               (0, _hyperapp.h)(
                 'div',
                 { 'class': 'side' },
@@ -1038,7 +1059,7 @@ function SpecialMenu(_ref) {
             { 'class': 'col-md-4' },
             (0, _hyperapp.h)(
               'div',
-              { 'class': 'card' },
+              { 'class': 'card', onclick: clickFlip },
               (0, _hyperapp.h)(
                 'div',
                 { 'class': 'side' },
@@ -1100,7 +1121,7 @@ function SpecialMenu(_ref) {
             { 'class': 'col-md-4' },
             (0, _hyperapp.h)(
               'div',
-              { 'class': 'card' },
+              { 'class': 'card', onclick: clickFlip },
               (0, _hyperapp.h)(
                 'div',
                 { 'class': 'side' },

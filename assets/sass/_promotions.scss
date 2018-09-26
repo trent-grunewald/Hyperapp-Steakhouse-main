@@ -1,7 +1,7 @@
 @import 'variables';
 
 .promotions{
-  background: url(https://cdn.inspirationhut.net/wp-content/uploads/2013/05/61.png);
+  background: url(/img/background.png);
 }
 
 .promotion-container{
@@ -28,7 +28,7 @@
 }
 
 #grid-item1{
-  background: url(http://s3.amazonaws.com/medias.photodeck.com/1e3ba609-ffc6-45b4-9806-d4f4024d10bb/Steak-Tritip-Sliced-Pesto-Onions_0081R_original_xlarge.jpg)center center no-repeat;
+  background: url(/img/promotions1.jpg)center center no-repeat;
   height: 400px;
   width: auto;
   background-size: cover;
@@ -57,11 +57,11 @@
 }
 
 #grid-item3{
-  background: url(https://thegoodgrubpeople.co.uk/wp-content/uploads/2017/10/8oz-grass-fed-rump-steak.jpg)center center no-repeat;
+  background: url(/img/promotions3.jpg)center center no-repeat;
   background-size: cover;
 }
 
 #grid-item5{
-  background: url(https://0013a05e776cb3a3cacf-7d16a3f45b9fed243f74feb2d088df02.ssl.cf1.rackcdn.com/Andy-Post-Food-Photography-Grilled-Steak-on-the-Campfire.jpg) center center no-repeat;
+  background: url(/img/promotions5.jpg) center center no-repeat;
   background-size: cover;
 }

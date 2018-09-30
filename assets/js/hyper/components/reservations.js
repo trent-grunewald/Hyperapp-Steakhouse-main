@@ -2,6 +2,8 @@ import {h, app} from 'hyperapp'
 
 export default function Reservation({state, actions}) {
 
+  // Needs to be transparent
+
   return (
     <section id="reservations">
     <div class="reservation-overlay"></div>

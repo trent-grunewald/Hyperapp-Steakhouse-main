@@ -787,6 +787,8 @@ function Reservation(_ref) {
       actions = _ref.actions;
 
 
+  // Needs to be transparent
+
   return (0, _hyperapp.h)(
     "section",
     { id: "reservations" },

@@ -778,20 +778,17 @@ function Quote(_ref) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Reservation;
+exports.default = Reservations;
 
 var _hyperapp = __webpack_require__(0);
 
-function Reservation(_ref) {
+function Reservations(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
-
-  // Needs to be transparent
-
   return (0, _hyperapp.h)(
     "section",
-    { id: "reservations" },
+    { id: "reservation", "class": "hidden" },
     (0, _hyperapp.h)("div", { "class": "reservation-overlay" }),
     (0, _hyperapp.h)(
       "div",
@@ -799,20 +796,20 @@ function Reservation(_ref) {
       (0, _hyperapp.h)(
         "div",
         { "class": "reservation-body" },
-        (0, _hyperapp.h)("div", { "class": "reservation-logo" }),
+        (0, _hyperapp.h)("div", { "class": "reservation-img" }),
         (0, _hyperapp.h)(
           "h1",
           { "class": "reservation-title" },
-          "All booked up"
+          "Receive 25% off!"
         ),
         (0, _hyperapp.h)(
           "h5",
           { "class": "reservation-description" },
-          "Please try again tomorrow."
+          "Receive free coupons for our delicious resturaunt daily, when you surrender your email address below!"
         ),
         (0, _hyperapp.h)(
           "form",
-          { id: "email-form" },
+          { id: "contact-form" },
           (0, _hyperapp.h)("h5", { "class": "email-validation" }),
           (0, _hyperapp.h)("input", { type: "text", "class": "name", placeholder: "Name", disabled: true }),
           (0, _hyperapp.h)("input", { type: "text", "class": "last", placeholder: "Last", disabled: true }),
@@ -822,12 +819,11 @@ function Reservation(_ref) {
             "input",
             { type: "submit", id: "reservation-submit" },
             "Submit"
-          ),
-          (0, _hyperapp.h)("h5", { "class": "email-validation" })
+          )
         ),
         (0, _hyperapp.h)(
           "a",
-          { id: "close-reservation" },
+          { id: "close-modal" },
           (0, _hyperapp.h)("i", { "class": "fas fa-times" })
         )
       )

@@ -23,8 +23,6 @@ export default function Contact({state, actions}) {
           </div>
         </div>
       </div>
-      <div id="mapid" class="mapid" style="width:100%;height:400px;"></div>
-      <div id="map" class="map" style="width:100%;height:400px;"></div>
     </section>
   )
 }

@@ -185,8 +185,6 @@ function ourStory(_ref) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-
 var nextReview = function nextReview(state, actions) {
   return {
     setReview: {
@@ -417,9 +415,7 @@ function Contact(_ref) {
           )
         )
       )
-    ),
-    (0, _hyperapp.h)("div", { id: "mapid", "class": "mapid", style: "width:100%;height:400px;" }),
-    (0, _hyperapp.h)("div", { id: "map", "class": "map", style: "width:100%;height:400px;" })
+    )
   );
 }
 // <Header state={state} actions={actions}/>

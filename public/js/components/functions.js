@@ -1,5 +1,5 @@
 // NAV COLLAPSE
-function navToggle() {
+window.onload =_=>{
   const navs = document.querySelectorAll('.nav-item')
   const collapsed = document.querySelectorAll('.nav-collapse')
   
@@ -7,11 +7,9 @@ function navToggle() {
   navs.forEach(nav => nav.classList.replace('nav-item', 'nav-collapse'));
   //targets the nav-collapse css class and replaces it with nav-item;
   collapsed.forEach(nav => nav.classList.replace('nav-collapse', 'nav-item'));
-}
-
 
 //Windows size / resize function for NAV COLLAPSE
-window.onload =_=>{
+
 const butt = document.querySelector('.logo');
 //checks the window size on load  
 if(window.innerWidth <= 1000) {
@@ -28,40 +26,9 @@ if(window.innerWidth <= 1000) {
     }
    })
   }
+}
 
-  // modal popup
-setTimeout(function modalTest(){
 
-  const popup = document.getElementById('modal')
-  const userInputV = document.getElementById('email') 
-  const emailValidation = document.querySelector('.email-validation')
-  const closeIcon = document.getElementById('close-modal')
-  const modalSubmit = document.getElementById('modal-submit')
-  console.log(modalSubmit)
-
-  //Targets the close icon in the bottom right of the modal.
-  closeIcon.onclick =_=> {
-    //on icon click, closes the modal (Display: none - scss)
-  popup.style.display = 'none'
-   }
-
-  //replaces the modal scss display from none to show
-  popup.classList.replace('hidden', 'show');
-
-  //on modal submit
-  modalSubmit.onclick =_=> {
-    //checks that the user input anything
-    if(userInputV.value === ""){
-      //if not, alerts with red text to enter valid email
-      emailValidation.style.color = 'red';
-      emailValidation.innerHTML = "Please enter a valid email address"
-    } else {
-      //if they input something, removes the modal
-      popup.style.display = 'none'
-    }
-  }
-  //modal load delay
-},1000)
 // var mymap = L.map('map').setView([51.505, -0.09], 13);
 
 // L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g}', {

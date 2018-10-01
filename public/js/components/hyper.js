@@ -10,7 +10,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-
 var companyInfo = {
   title: 'Over-Seasoned Steakhouse',
   phone: '(206)-643-0185',
@@ -185,6 +184,8 @@ function ourStory(_ref) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+
 var nextReview = function nextReview(state, actions) {
   return {
     setReview: {
@@ -201,28 +202,9 @@ var previousReview = function previousReview(state, actions) {
   };
 };
 
-var nextSpecial = function nextSpecial(state, actions) {
-  return {
-    setReview: {
-      currentReview: state.globalState.setSpecial.currentSpecial++
-    }
-  };
-};
-
-var previousSpecial = function previousSpecial(state, actions) {
-  return {
-    setReview: {
-      currentReview: state.globalState.setSpecial.currentSpecial--
-    }
-  };
-};
-
 var actions = exports.actions = {
   nextReview: nextReview,
-  previousReview: previousReview,
-  nextSpecial: nextSpecial,
-  previousSpecial: previousSpecial
-
+  previousReview: previousReview
 };
 
 /***/ }),
@@ -247,11 +229,7 @@ var _header = __webpack_require__(6);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _reservations = __webpack_require__(10);
-
-var _reservations2 = _interopRequireDefault(_reservations);
-
-var _topimg = __webpack_require__(13);
+var _topimg = __webpack_require__(12);
 
 var _topimg2 = _interopRequireDefault(_topimg);
 
@@ -259,7 +237,7 @@ var _ourstory = __webpack_require__(2);
 
 var _ourstory2 = _interopRequireDefault(_ourstory);
 
-var _specialmenu = __webpack_require__(12);
+var _specialmenu = __webpack_require__(11);
 
 var _specialmenu2 = _interopRequireDefault(_specialmenu);
 
@@ -267,7 +245,7 @@ var _quote = __webpack_require__(9);
 
 var _quote2 = _interopRequireDefault(_quote);
 
-var _reviews = __webpack_require__(11);
+var _reviews = __webpack_require__(10);
 
 var _reviews2 = _interopRequireDefault(_reviews);
 
@@ -290,7 +268,6 @@ function App(_ref) {
     { 'class': 'app' },
     (0, _hyperapp.h)(_modal2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_header2.default, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_reservations2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_topimg2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_ourstory2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_specialmenu2.default, { state: state, actions: actions }),
@@ -302,6 +279,8 @@ function App(_ref) {
 }
 // <Header state={state} actions={actions}/>
 // <Button state={state} actions={actions}/>
+
+// import Reservations from './reservations.js'
 
 /***/ }),
 /* 5 */
@@ -323,7 +302,7 @@ function Contact(_ref) {
 
   return (0, _hyperapp.h)(
     "section",
-    { id: "mapid", "class": "contact" },
+    { "class": "contact" },
     (0, _hyperapp.h)(
       "div",
       { "class": "container" },
@@ -342,7 +321,7 @@ function Contact(_ref) {
         { "class": "container contact-box" },
         (0, _hyperapp.h)(
           "div",
-          { "class": "col-md-6 address" },
+          { "class": "col-md-6" },
           (0, _hyperapp.h)(
             "h5",
             { "class": "contact-location" },
@@ -378,7 +357,7 @@ function Contact(_ref) {
         ),
         (0, _hyperapp.h)(
           "div",
-          { "class": "col-md-6 call" },
+          { "class": "col-md-6" },
           (0, _hyperapp.h)(
             "h5",
             { "class": "contact-call" },
@@ -533,42 +512,74 @@ function Modal(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
+  // modal popup
+  setTimeout(function modalTest() {
+
+    var popup = document.getElementById('modal');
+    var userInputV = document.getElementById('email');
+    var emailValidation = document.querySelector('.email-validation');
+    var closeIcon = document.getElementById('close-modal');
+    var modalSubmit = document.getElementById('modal-submit');
+
+    //Targets the close icon in the bottom right of the modal.
+    closeIcon.onclick = function (_) {
+      //on icon click, closes the modal (Display: none - scss)
+      popup.style.display = 'none';
+    };
+
+    //replaces the modal scss display from none to show
+    popup.classList.replace('hidden', 'show');
+
+    //on modal submit
+    modalSubmit.onclick = function (_) {
+      //checks that the user input anything
+      if (userInputV.value === "") {
+        //if not, alerts with red text to enter valid email
+        emailValidation.style.color = 'red';
+        emailValidation.innerHTML = "Please enter a valid email address";
+      } else {
+        //if they input something, removes the modal
+        popup.style.display = 'none';
+      }
+    };
+    //modal load delay
+  }, 3000);
   return (0, _hyperapp.h)(
-    "section",
-    { id: "modal", "class": "hidden" },
-    (0, _hyperapp.h)("div", { "class": "modal-overlay" }),
+    'section',
+    { id: 'modal', 'class': 'hidden' },
+    (0, _hyperapp.h)('div', { 'class': 'modal-overlay' }),
     (0, _hyperapp.h)(
-      "div",
-      { "class": "container modal-container" },
+      'div',
+      { 'class': 'container modal-container' },
       (0, _hyperapp.h)(
-        "div",
-        { "class": "modal-body" },
-        (0, _hyperapp.h)("div", { "class": "modal-img" }),
+        'div',
+        { 'class': 'modal-body' },
+        (0, _hyperapp.h)('div', { 'class': 'modal-img' }),
         (0, _hyperapp.h)(
-          "h1",
-          { "class": "modal-title" },
-          "Receive 25% off!"
+          'h1',
+          { 'class': 'modal-title' },
+          'Receive 25% off!'
         ),
         (0, _hyperapp.h)(
-          "h5",
-          { "class": "modal-description" },
-          "Receive free coupons for our delicious resturaunt daily, when you surrender your email address below!"
+          'h5',
+          { 'class': 'modal-description' },
+          'Receive free coupons for our delicious resturaunt daily, when you surrender your email address below!'
         ),
         (0, _hyperapp.h)(
-          "form",
-          { id: "email-form" },
-          (0, _hyperapp.h)("h5", { "class": "email-validation" }),
-          (0, _hyperapp.h)("input", { type: "text", "class": "address-input", id: "email", action: "mailto:", placeholder: "Email Address" }),
+          'form',
+          { id: 'email-form' },
+          (0, _hyperapp.h)('h5', { 'class': 'email-validation' }),
+          (0, _hyperapp.h)('input', { type: 'text', 'class': 'address-input', id: 'email', action: 'mailto:', placeholder: 'Email Address' }),
           (0, _hyperapp.h)(
-            "input",
-            { type: "submit", id: "modal-submit" },
-            "Submit"
+            'input',
+            { type: 'submit', id: 'modal-submit' },
+            'Submit'
           )
         ),
         (0, _hyperapp.h)(
-          "a",
-          { id: "close-modal" },
-          (0, _hyperapp.h)("i", { "class": "fas fa-times" })
+          'a',
+          null,
+          (0, _hyperapp.h)('i', { id: 'close-modal', 'class': 'fas fa-times' })
         )
       )
     )
@@ -774,71 +785,6 @@ function Quote(_ref) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Reservations;
-
-var _hyperapp = __webpack_require__(0);
-
-function Reservations(_ref) {
-  var state = _ref.state,
-      actions = _ref.actions;
-
-  return (0, _hyperapp.h)(
-    "section",
-    { id: "reservation", "class": "hidden" },
-    (0, _hyperapp.h)("div", { "class": "reservation-overlay" }),
-    (0, _hyperapp.h)(
-      "div",
-      { "class": "container reservation-container" },
-      (0, _hyperapp.h)(
-        "div",
-        { "class": "reservation-body" },
-        (0, _hyperapp.h)("div", { "class": "reservation-img" }),
-        (0, _hyperapp.h)(
-          "h1",
-          { "class": "reservation-title" },
-          "Receive 25% off!"
-        ),
-        (0, _hyperapp.h)(
-          "h5",
-          { "class": "reservation-description" },
-          "Receive free coupons for our delicious resturaunt daily, when you surrender your email address below!"
-        ),
-        (0, _hyperapp.h)(
-          "form",
-          { id: "contact-form" },
-          (0, _hyperapp.h)("h5", { "class": "email-validation" }),
-          (0, _hyperapp.h)("input", { type: "text", "class": "name", placeholder: "Name", disabled: true }),
-          (0, _hyperapp.h)("input", { type: "text", "class": "last", placeholder: "Last", disabled: true }),
-          (0, _hyperapp.h)("input", { type: "number", "class": "telephone", placeholder: "Phone", disabled: true }),
-          (0, _hyperapp.h)("input", { type: "text", "class": "address-input", action: "mailto:", placeholder: "Email Address" }),
-          (0, _hyperapp.h)(
-            "input",
-            { type: "submit", id: "reservation-submit" },
-            "Submit"
-          )
-        ),
-        (0, _hyperapp.h)(
-          "a",
-          { id: "close-modal" },
-          (0, _hyperapp.h)("i", { "class": "fas fa-times" })
-        )
-      )
-    )
-  );
-}
-// <Header state={state} actions={actions}/>
-// <Button state={state} actions={actions}/>
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 exports.default = Reviews;
 
 var _hyperapp = __webpack_require__(0);
@@ -922,7 +868,7 @@ function Reviews(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1178,7 +1124,7 @@ function SpecialMenu(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1259,7 +1205,7 @@ function TopImg(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1298,4 +1244,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 });
 
 /***/ })
-],[14]);
+],[13]);

@@ -29,26 +29,39 @@ if(window.innerWidth <= 1000) {
    })
   }
 
-// modal popup
-  const popup = document.getElementById('modal')
-  const userInput = document.querySelector('#email') 
-  const emailValidation = document.querySelector('.email-validation')
+  // modal popup
+setTimeout(function modalTest(){
 
-  document.getElementById('close-modal').onclick =_=> {
+  const popup = document.getElementById('modal')
+  const userInputV = document.getElementById('email') 
+  const emailValidation = document.querySelector('.email-validation')
+  const closeIcon = document.getElementById('close-modal')
+  const modalSubmit = document.getElementById('modal-submit')
+  console.log(modalSubmit)
+
+  //Targets the close icon in the bottom right of the modal.
+  closeIcon.onclick =_=> {
+    //on icon click, closes the modal (Display: none - scss)
   popup.style.display = 'none'
    }
-   //Sets modal popup delay
-  setTimeout(function modal() {
-    popup.classList.replace('hidden', 'show');
-  }, 1000)
-  document.getElementById('modal-submit').onclick =_=> {
-    if(userInput.value === ""){
+
+  //replaces the modal scss display from none to show
+  popup.classList.replace('hidden', 'show');
+
+  //on modal submit
+  modalSubmit.onclick =_=> {
+    //checks that the user input anything
+    if(userInputV.value === ""){
+      //if not, alerts with red text to enter valid email
       emailValidation.style.color = 'red';
       emailValidation.innerHTML = "Please enter a valid email address"
+    } else {
+      //if they input something, removes the modal
+      popup.style.display = 'none'
     }
   }
-}
-
+  //modal load delay
+},1000)
 // var mymap = L.map('map').setView([51.505, -0.09], 13);
 
 // L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g}', {

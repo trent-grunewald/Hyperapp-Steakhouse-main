@@ -86,9 +86,8 @@ var globalState = exports.globalState = {
   setReview: {
     currentReview: 0
   },
-
-  setSpecial: {
-    currentSpecial: 2
+  setQuote: {
+    currentQuote: 0
   }
 };
 
@@ -147,7 +146,7 @@ function ourStory(_ref) {
             (0, _hyperapp.h)(
               "strong",
               null,
-              "Justin Case"
+              "'Chop-Top' Sawyer"
             ),
             " ",
             (0, _hyperapp.h)(
@@ -267,9 +266,27 @@ var previousReview = function previousReview(state, actions) {
   };
 };
 
+var nextQuote = function nextQuote(state, actions) {
+  return {
+    setQuote: {
+      currentQuote: state.globalState.setQuote.currentQuote++
+    }
+  };
+};
+
+var previousQuote = function previousQuote(state, actions) {
+  return {
+    setQuote: {
+      currentQuote: state.globalState.setQuote.currentQuote--
+    }
+  };
+};
+
 var actions = exports.actions = {
   nextReview: nextReview,
-  previousReview: previousReview
+  previousReview: previousReview,
+  nextQuote: nextQuote,
+  previousQuote: previousQuote
 };
 
 /***/ }),
@@ -839,6 +856,33 @@ function Quote(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
+  var currentQuote = function currentQuote(_) {
+    return (0, _hyperapp.h)(
+      "div",
+      null,
+      (0, _hyperapp.h)(
+        "h1",
+        { "class": "quote" },
+        state.globalState.quotes[state.globalState.setQuote.currentQuote].quote
+      ),
+      (0, _hyperapp.h)(
+        "h5",
+        { "class": "quote-author" },
+        state.globalState.quotes[state.globalState.setQuote.currentQuote].author
+      ),
+      (0, _hyperapp.h)(
+        "h5",
+        { "class": "quote-name" },
+        state.globalState.quotes[state.globalState.setQuote.currentQuote].authorInfo,
+        " ",
+        (0, _hyperapp.h)(
+          "span",
+          { "class": "quote2" },
+          state.globalState.quotes[state.globalState.setQuote.currentQuote].authorInfo2
+        )
+      )
+    );
+  };
   return (0, _hyperapp.h)(
     "section",
     { "class": "quote-body" },
@@ -846,28 +890,7 @@ function Quote(_ref) {
       "div",
       { "class": "container" },
       (0, _hyperapp.h)("q", { lang: "en" }),
-      (0, _hyperapp.h)(
-        "h1",
-        { "class": "quote" },
-        "I Love Cooking A Big Steak,",
-        (0, _hyperapp.h)("br", null),
-        "For Myself and For My Cat."
-      ),
-      (0, _hyperapp.h)(
-        "h5",
-        { "class": "quote-author" },
-        "- Tommy Tammisimo -"
-      ),
-      (0, _hyperapp.h)(
-        "h5",
-        { "class": "quote-name" },
-        "The lonely head chef ",
-        (0, _hyperapp.h)(
-          "span",
-          { "class": "quote2" },
-          "- Over-Seasoned Steakhouse"
-        )
-      )
+      currentQuote()
     )
   );
 }

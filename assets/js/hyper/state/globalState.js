@@ -89,8 +89,7 @@ export let globalState = {
   setReview: {
     currentReview: 0,
   },
-
-  setSpecial: {
-    currentSpecial: 2,
+  setQuote: {
+    currentQuote: 0,
   }
 }

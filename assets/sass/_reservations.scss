@@ -1,12 +1,3 @@
-
-
-// .reservation-overlay{
-//   background: linear-gradient(135deg, #000000b8, #000000b8 , #000000b8);
-//   position: absolute;
-//   width: 100%;
-//   height: 100%;
-// }
-
 .reservation-container{
   height: 100%;
 }
@@ -34,10 +25,9 @@
 }
 
 .reservation-logo{
-  background: url(/img/logodark.png) no-repeat;
-  height: 10em;
+  background: url(/img/logodark.png) no-repeat center center;
+  height: 12vw;
   width: 10;
-  margin-left: 28%;
   background-size: contain;
 }
 
@@ -50,10 +40,10 @@
   margin-top: 3.5em;
   line-height: 2;
   color: #b5b3b4;
-  text-align: center;
 }
 
 .name,.last,.address,.telephone,.email{
+  text-align: center;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -62,6 +52,13 @@
   font-family: $ff-title;
   margin-bottom: 15px;    
   background: #443b3b38;
+}
+
+#close-reservation{
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
 }
 
 #reservation-submit{
@@ -78,11 +75,4 @@
       &:hover{
         box-shadow: 1px 1px 15px 5px black;
       }
-}
-
-#close-reservation{
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
-  cursor: pointer;
 }

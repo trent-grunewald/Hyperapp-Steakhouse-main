@@ -158,7 +158,7 @@ function ourStory(_ref) {
           ),
           (0, _hyperapp.h)(
             "a",
-            { "class": "story-button", href: "#reservations" },
+            { "class": "story-button reservationRequest", href: "#reservations" },
             "Reservation"
           )
         ),
@@ -184,7 +184,72 @@ function ourStory(_ref) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.default = Reservation;
 
+var _hyperapp = __webpack_require__(0);
+
+function Reservation(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
+
+  return (0, _hyperapp.h)(
+    "section",
+    { id: "reservations", "class": "hidden" },
+    (0, _hyperapp.h)("div", { "class": "reservation-overlay" }),
+    (0, _hyperapp.h)(
+      "div",
+      { "class": "container reservation-container" },
+      (0, _hyperapp.h)(
+        "div",
+        { "class": "reservation-body" },
+        (0, _hyperapp.h)("div", { "class": "reservation-logo" }),
+        (0, _hyperapp.h)(
+          "h1",
+          { "class": "reservation-title" },
+          "All booked up"
+        ),
+        (0, _hyperapp.h)(
+          "h5",
+          { "class": "reservation-description" },
+          "Please try again tomorrow."
+        ),
+        (0, _hyperapp.h)(
+          "form",
+          { id: "email-form" },
+          (0, _hyperapp.h)("h5", { "class": "email-validation" }),
+          (0, _hyperapp.h)("input", { type: "text", "class": "name", placeholder: "Name", disabled: true }),
+          (0, _hyperapp.h)("input", { type: "text", "class": "last", placeholder: "Last", disabled: true }),
+          (0, _hyperapp.h)("input", { type: "number", "class": "telephone", placeholder: "Phone", disabled: true }),
+          (0, _hyperapp.h)("input", { type: "text", "class": "address-input", action: "mailto:", placeholder: "Email Address" }),
+          (0, _hyperapp.h)(
+            "input",
+            { type: "submit", id: "reservation-submit" },
+            "Submit"
+          ),
+          (0, _hyperapp.h)("h5", { "class": "email-validation" })
+        ),
+        (0, _hyperapp.h)(
+          "a",
+          { id: "close-reservation" },
+          (0, _hyperapp.h)("i", { "class": "fas fa-times" })
+        )
+      )
+    )
+  );
+}
+// <Header state={state} actions={actions}/>
+// <Button state={state} actions={actions}/>
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var nextReview = function nextReview(state, actions) {
   return {
@@ -208,7 +273,7 @@ var actions = exports.actions = {
 };
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -221,15 +286,19 @@ exports.default = App;
 
 var _hyperapp = __webpack_require__(0);
 
-var _modal = __webpack_require__(7);
+var _modal = __webpack_require__(8);
 
 var _modal2 = _interopRequireDefault(_modal);
 
-var _header = __webpack_require__(6);
+var _reservations = __webpack_require__(3);
+
+var _reservations2 = _interopRequireDefault(_reservations);
+
+var _header = __webpack_require__(7);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _topimg = __webpack_require__(12);
+var _topimg = __webpack_require__(13);
 
 var _topimg2 = _interopRequireDefault(_topimg);
 
@@ -237,23 +306,23 @@ var _ourstory = __webpack_require__(2);
 
 var _ourstory2 = _interopRequireDefault(_ourstory);
 
-var _specialmenu = __webpack_require__(11);
+var _specialmenu = __webpack_require__(12);
 
 var _specialmenu2 = _interopRequireDefault(_specialmenu);
 
-var _quote = __webpack_require__(9);
+var _quote = __webpack_require__(10);
 
 var _quote2 = _interopRequireDefault(_quote);
 
-var _reviews = __webpack_require__(10);
+var _reviews = __webpack_require__(11);
 
 var _reviews2 = _interopRequireDefault(_reviews);
 
-var _promotions = __webpack_require__(8);
+var _promotions = __webpack_require__(9);
 
 var _promotions2 = _interopRequireDefault(_promotions);
 
-var _contact = __webpack_require__(5);
+var _contact = __webpack_require__(6);
 
 var _contact2 = _interopRequireDefault(_contact);
 
@@ -267,6 +336,7 @@ function App(_ref) {
     'div',
     { 'class': 'app' },
     (0, _hyperapp.h)(_modal2.default, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_reservations2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_header2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_topimg2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_ourstory2.default, { state: state, actions: actions }),
@@ -280,10 +350,8 @@ function App(_ref) {
 // <Header state={state} actions={actions}/>
 // <Button state={state} actions={actions}/>
 
-// import Reservations from './reservations.js'
-
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -401,7 +469,7 @@ function Contact(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -414,6 +482,10 @@ exports.default = Header;
 
 var _hyperapp = __webpack_require__(0);
 
+var _reservations = __webpack_require__(3);
+
+var _reservations2 = _interopRequireDefault(_reservations);
+
 var _ourstory = __webpack_require__(2);
 
 var _ourstory2 = _interopRequireDefault(_ourstory);
@@ -424,13 +496,17 @@ function Header(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
+
+  // NAV COLLAPSE
   function navToggle() {
     var navs = document.querySelectorAll('.nav-item');
     var collapsed = document.querySelectorAll('.nav-collapse');
 
+    //Targets the nav-item css class and replaces it with nav-collapse;
     navs.forEach(function (nav) {
       return nav.classList.replace('nav-item', 'nav-collapse');
     });
+    //targets the nav-collapse css class and replaces it with nav-item;
     collapsed.forEach(function (nav) {
       return nav.classList.replace('nav-collapse', 'nav-item');
     });
@@ -438,17 +514,40 @@ function Header(_ref) {
 
   window.onload = function (_) {
     var butt = document.querySelector('.logo');
+    //checks the window size on load  
     if (window.innerWidth <= 1000) {
+      //adds the "Click" event listener to collapse menu if the page is less to or equal to 1000 px wide and initiates the navToggle function.
       butt.addEventListener('click', navToggle);
     }
+    //if the window is not 1000 px wide, it adds an event listener to the window resize.
     window.addEventListener("resize", function () {
       var butt = document.querySelector('.logo');
+      //checks the window width on resize.
       if (window.innerWidth <= 1000) {
+        //adds "click" event listener to collapse menu at 1000px
         butt.addEventListener('click', navToggle);
       } else {
         butt.removeEventListener('click', navToggle);
       }
     });
+
+    //RESERVATION MODAL
+    var requestRes = document.getElementsByClassName('reservationRequest');
+    var reservationBody = document.getElementById('reservations');
+    var closeRes = document.getElementById('close-reservation');
+    //For Loop targeting all Reservation buttons
+    for (var i = 0; i < requestRes.length; i++) {
+      var z = requestRes[i];
+      //Adds Click Listener to each button
+      z.addEventListener('click', function () {
+        //Toggles the display class on click
+        reservationBody.classList.replace('hidden', 'show');
+      });
+    }
+    //Hides the modal when the user clicks the X icon
+    closeRes.onclick = function () {
+      reservationBody.classList.replace('show', 'hidden');
+    };
   };
 
   return (0, _hyperapp.h)(
@@ -483,7 +582,7 @@ function Header(_ref) {
         ),
         (0, _hyperapp.h)(
           'a',
-          { href: '#reservations', 'class': 'nav-item nav-box reservations' },
+          { href: '#reservations', 'class': 'nav-item nav-box reservations reservationRequest' },
           'Reservations ',
           (0, _hyperapp.h)('i', { 'class': 'fa fa-angle-right' })
         )
@@ -495,7 +594,7 @@ function Header(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -513,7 +612,7 @@ function Modal(_ref) {
       actions = _ref.actions;
 
   // modal popup
-  setTimeout(function modalTest() {
+  setTimeout(function modalFunc() {
 
     var popup = document.getElementById('modal');
     var userInputV = document.getElementById('email');
@@ -589,7 +688,7 @@ function Modal(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -723,7 +822,7 @@ function Promotions(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -776,7 +875,7 @@ function Quote(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -868,7 +967,7 @@ function Reviews(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1124,7 +1223,7 @@ function SpecialMenu(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1205,7 +1304,7 @@ function TopImg(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1213,11 +1312,11 @@ function TopImg(_ref) {
 
 var _hyperapp = __webpack_require__(0);
 
-var _actions = __webpack_require__(3);
+var _actions = __webpack_require__(4);
 
 var _globalState = __webpack_require__(1);
 
-var _App = __webpack_require__(4);
+var _App = __webpack_require__(5);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -1244,4 +1343,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 });
 
 /***/ })
-],[13]);
+],[14]);

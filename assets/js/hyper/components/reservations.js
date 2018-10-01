@@ -1,9 +1,8 @@
 import {h, app} from 'hyperapp'
 
 export default function Reservation({state, actions}) {
-
   return (
-    <section id="reservations">
+    <section id="reservations" class="hidden">
     <div class="reservation-overlay"></div>
       <div class="container reservation-container">
         <div class="reservation-body">

@@ -14,7 +14,7 @@ export default function ourStory({state, actions}) {
         <h2 class="storyTitle">Cooking Is The Art Of The Seasoning</h2>
         <p class="story">Each steak is seared to perfection, finished with a perfect amount of butter, freshly chopped parsley, pepper, garlic, garlic salt, garlic butter, onion powder, onion salt, pepper salt, chili powder, and 1/4 cup of our secret seasoning all served sizzling on a 500-degree plate.</p>
         <p class="story-quote"><strong>Justin Case</strong> <span class="quote2">- Master Seasoner at Over-Seasoned</span></p>
-        <a class="story-button" href="#reservations" >Reservation</a>
+        <a class="story-button reservationRequest" href="#reservations" >Reservation</a>
         </div>
         <div class="col-md-6">
         <img src="http://www.justlookaround.nl/wordpress/wp-content/uploads/2016/06/Food-photography-Spareribs-Cookers-Just-Look-Around.jpg" class="story-img"/>

@@ -2,7 +2,7 @@ import {h, app} from 'hyperapp'
 
 export default function Modal({state, actions}) {
       // modal popup
-setTimeout(function modalTest(){
+setTimeout(function modalFunc(){
 
   const popup = document.getElementById('modal')
   const userInputV = document.getElementById('email') 

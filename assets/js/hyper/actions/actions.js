@@ -1,5 +1,4 @@
 
-
 const nextReview = function (state, actions) {
   return (
     {

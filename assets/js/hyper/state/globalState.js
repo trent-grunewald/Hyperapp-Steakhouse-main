@@ -1,5 +1,4 @@
 
-
 const companyInfo = {
   title: 'Over-Seasoned Steakhouse',
   phone: '(206)-643-0185',

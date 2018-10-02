@@ -124,7 +124,7 @@ function ourStory(_ref) {
         { "class": "row" },
         (0, _hyperapp.h)(
           "div",
-          { "class": "col-md-6" },
+          { "class": "col-md-6 story-body" },
           (0, _hyperapp.h)(
             "h5",
             { "class": "story-head" },
@@ -303,7 +303,7 @@ exports.default = App;
 
 var _hyperapp = __webpack_require__(0);
 
-var _modal = __webpack_require__(8);
+var _modal = __webpack_require__(9);
 
 var _modal2 = _interopRequireDefault(_modal);
 
@@ -311,11 +311,11 @@ var _reservations = __webpack_require__(3);
 
 var _reservations2 = _interopRequireDefault(_reservations);
 
-var _header = __webpack_require__(7);
+var _header = __webpack_require__(8);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _topimg = __webpack_require__(13);
+var _topimg = __webpack_require__(14);
 
 var _topimg2 = _interopRequireDefault(_topimg);
 
@@ -323,25 +323,29 @@ var _ourstory = __webpack_require__(2);
 
 var _ourstory2 = _interopRequireDefault(_ourstory);
 
-var _specialmenu = __webpack_require__(12);
+var _specialmenu = __webpack_require__(13);
 
 var _specialmenu2 = _interopRequireDefault(_specialmenu);
 
-var _quote = __webpack_require__(10);
+var _quote = __webpack_require__(11);
 
 var _quote2 = _interopRequireDefault(_quote);
 
-var _reviews = __webpack_require__(11);
+var _reviews = __webpack_require__(12);
 
 var _reviews2 = _interopRequireDefault(_reviews);
 
-var _promotions = __webpack_require__(9);
+var _promotions = __webpack_require__(10);
 
 var _promotions2 = _interopRequireDefault(_promotions);
 
 var _contact = __webpack_require__(6);
 
 var _contact2 = _interopRequireDefault(_contact);
+
+var _footer = __webpack_require__(7);
+
+var _footer2 = _interopRequireDefault(_footer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -361,7 +365,8 @@ function App(_ref) {
     (0, _hyperapp.h)(_quote2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_reviews2.default, { state: state, actions: actions }),
     (0, _hyperapp.h)(_promotions2.default, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_contact2.default, { state: state, actions: actions })
+    (0, _hyperapp.h)(_contact2.default, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_footer2.default, { state: state, actions: actions })
   );
 }
 // <Header state={state} actions={actions}/>
@@ -385,100 +390,121 @@ function Contact(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
+  setTimeout(function () {
+    var mymap = L.map('map').setView([30.6928582, -97.4577975], 20);
+    var marker = L.marker([30.6928582, -97.4577975]).addTo(mymap);
+    marker.bindPopup("<b>Just park out front,</b><br>we will come get you.").openPopup();
+    var circle = L.circle([30.6928582, -97.4577975], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 10
+    }).addTo(mymap);
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+      attribution: 'Test?',
+      maxZoom: 20,
+      id: 'mapbox.streets',
+      mapId: 'map',
+      token: 'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g',
+      accessToken: 'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g'
+    }).addTo(mymap);
+  }, 3000);
   return (0, _hyperapp.h)(
-    "section",
-    { "class": "contact" },
+    'section',
+    { 'class': 'contact' },
     (0, _hyperapp.h)(
-      "div",
-      { "class": "container" },
+      'div',
+      { 'class': 'container' },
       (0, _hyperapp.h)(
-        "h5",
-        { "class": "contact-head" },
-        "CONTACT US"
+        'h5',
+        { 'class': 'contact-head' },
+        'CONTACT US'
       ),
       (0, _hyperapp.h)(
-        "h1",
-        { "class": "contact-title" },
-        "COME ENJOY OUR MEAT!"
+        'h1',
+        { 'class': 'contact-title' },
+        'COME ENJOY OUR MEAT!'
       ),
       (0, _hyperapp.h)(
-        "div",
-        { "class": "container contact-box" },
+        'div',
+        { 'class': 'container contact-box' },
         (0, _hyperapp.h)(
-          "div",
-          { "class": "col-md-6" },
+          'div',
+          { 'class': 'col-md-6' },
           (0, _hyperapp.h)(
-            "h5",
-            { "class": "contact-location" },
-            "Granger, ",
+            'h5',
+            { 'class': 'contact-location' },
+            'Granger, ',
             (0, _hyperapp.h)(
-              "span",
+              'span',
               null,
-              "Texas"
+              'Texas'
             )
           ),
           (0, _hyperapp.h)(
-            "h5",
-            { "class": "contact-address" },
-            "901 Co Rd 336, In the basement,",
-            (0, _hyperapp.h)("br", null),
-            " Granger, TX 76530"
+            'h5',
+            { 'class': 'contact-address' },
+            '901 Co Rd 336, In the basement,',
+            (0, _hyperapp.h)('br', null),
+            ' Granger, TX 76530'
           ),
           (0, _hyperapp.h)(
-            "h5",
-            { "class": "contact-email" },
-            "Email: ",
+            'h5',
+            { 'class': 'contact-email' },
+            'Email: ',
             (0, _hyperapp.h)(
-              "span",
+              'span',
               null,
-              "seasoned@overseasoned.com"
+              'seasoned@overseasoned.com'
             )
           ),
           (0, _hyperapp.h)(
-            "h1",
-            { "class": "contact-underline" },
-            "       "
+            'h1',
+            { 'class': 'contact-underline' },
+            '       '
           )
         ),
         (0, _hyperapp.h)(
-          "div",
-          { "class": "col-md-6" },
+          'div',
+          { 'class': 'col-md-6' },
           (0, _hyperapp.h)(
-            "h5",
-            { "class": "contact-call" },
-            "Call for reservations:"
+            'h5',
+            { 'class': 'contact-call' },
+            'Call for reservations:'
           ),
           (0, _hyperapp.h)(
-            "h1",
-            { "class": "contact-number" },
-            "(206)-643-0185"
+            'h1',
+            { 'class': 'contact-number' },
+            '(206)-643-0185'
           ),
           (0, _hyperapp.h)(
-            "h5",
-            { "class": "contact-hours-title" },
-            "Weekday Hours:"
+            'h5',
+            { 'class': 'contact-hours-title' },
+            'Weekday Hours:'
           ),
           (0, _hyperapp.h)(
-            "h5",
-            { "class": "contact-street" },
-            "from 4pm-9pm",
-            (0, _hyperapp.h)("br", null),
-            "Call for reservations"
+            'h5',
+            { 'class': 'contact-street' },
+            'from 4pm-9pm',
+            (0, _hyperapp.h)('br', null),
+            'Call for reservations'
           ),
           (0, _hyperapp.h)(
-            "h5",
-            { "class": "contact-hours-title" },
-            "Weekend Hours:"
+            'h5',
+            { 'class': 'contact-hours-title' },
+            'Weekend Hours:'
           ),
           (0, _hyperapp.h)(
-            "h5",
-            { "class": "contact-street" },
-            "from 3pm-10pm",
-            (0, _hyperapp.h)("br", null),
-            "Call for reservations"
+            'h5',
+            { 'class': 'contact-street' },
+            'from 3pm-10pm',
+            (0, _hyperapp.h)('br', null),
+            'Call for reservations'
           )
         )
-      )
+      ),
+      (0, _hyperapp.h)('div', { id: 'map' })
     )
   );
 }
@@ -487,6 +513,83 @@ function Contact(_ref) {
 
 /***/ }),
 /* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Footer;
+
+var _hyperapp = __webpack_require__(0);
+
+function Footer(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
+
+  return (0, _hyperapp.h)(
+    "section",
+    { "class": "footer" },
+    (0, _hyperapp.h)(
+      "div",
+      { "class": "container" },
+      (0, _hyperapp.h)("a", { href: "#header", "class": "footer-logo" }),
+      (0, _hyperapp.h)(
+        "a",
+        { href: "#menu", "class": "footer-item" },
+        "Menu"
+      ),
+      (0, _hyperapp.h)(
+        "a",
+        { href: "#contact", "class": "footer-item" },
+        "Locations"
+      ),
+      (0, _hyperapp.h)(
+        "a",
+        { href: "#reservations", "class": "footer-item reservationRequest" },
+        "Reservations ",
+        (0, _hyperapp.h)("i", { "class": "fa fa-angle-right" })
+      ),
+      (0, _hyperapp.h)(
+        "div",
+        { "class": "footer-logo-social" },
+        (0, _hyperapp.h)(
+          "a",
+          { "class": "twitter" },
+          (0, _hyperapp.h)("i", { "class": "fab fa-twitter" })
+        ),
+        (0, _hyperapp.h)(
+          "a",
+          { "class": "facebook" },
+          (0, _hyperapp.h)("i", { "class": "fab fa-facebook-f" })
+        ),
+        (0, _hyperapp.h)(
+          "a",
+          { "class": "google+" },
+          (0, _hyperapp.h)("i", { "class": "fab fa-google-plus-g" })
+        ),
+        (0, _hyperapp.h)(
+          "a",
+          { "class": "instagram" },
+          (0, _hyperapp.h)("i", { "class": "fab fa-instagram" })
+        )
+      ),
+      (0, _hyperapp.h)(
+        "div",
+        { "class": "copyright" },
+        "Trent Grunewald 10/2/2018 ",
+        (0, _hyperapp.h)("i", { "class": "far fa-copyright" })
+      )
+    )
+  );
+}
+// <Header state={state} actions={actions}/>
+// <Button state={state} actions={actions}/>
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -611,7 +714,7 @@ function Header(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -705,7 +808,7 @@ function Modal(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -839,7 +942,7 @@ function Promotions(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -898,7 +1001,7 @@ function Quote(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -918,7 +1021,7 @@ function Reviews(_ref) {
   var currentReview = function currentReview(_) {
     return (0, _hyperapp.h)(
       "div",
-      null,
+      { "class": "review-body" },
       (0, _hyperapp.h)(
         "h5",
         { "class": "review-quote" },
@@ -990,7 +1093,7 @@ function Reviews(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1246,7 +1349,7 @@ function SpecialMenu(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1265,7 +1368,7 @@ function TopImg(_ref) {
 
   return (0, _hyperapp.h)(
     "section",
-    { "class": "topImg" },
+    { "class": "topImg", id: "topImg" },
     (0, _hyperapp.h)("div", { "class": "img-cover" }),
     (0, _hyperapp.h)(
       "div",
@@ -1327,7 +1430,7 @@ function TopImg(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1366,4 +1469,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 });
 
 /***/ })
-],[14]);
+],[15]);

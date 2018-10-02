@@ -1,6 +1,26 @@
 import {h, app} from 'hyperapp'
 
 export default function Contact({state, actions}) {
+  (setTimeout(() => {
+    var mymap = L.map('map').setView([30.6928582,-97.4577975], 20);
+    var marker = L.marker([30.6928582,-97.4577975]).addTo(mymap);
+    marker.bindPopup("<b>Just park out front,</b><br>we will come get you.").openPopup();
+    var circle = L.circle([30.6928582,-97.4577975], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 10
+  }).addTo(mymap);
+    
+  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Test?',
+    maxZoom: 20,
+    id: 'mapbox.streets',
+    mapId: 'map',
+    token:'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g',
+    accessToken: 'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g'
+  }).addTo(mymap);
+  }, 3000))
   return (
     <section class="contact">
       <div class="container">
@@ -20,8 +40,9 @@ export default function Contact({state, actions}) {
             <h5 class="contact-street">from 4pm-9pm<br></br>Call for reservations</h5>
             <h5 class="contact-hours-title">Weekend Hours:</h5>
             <h5 class="contact-street">from 3pm-10pm<br></br>Call for reservations</h5>
-          </div>
+          </div>        
         </div>
+        <div id="map"></div>
       </div>
     </section>
   )

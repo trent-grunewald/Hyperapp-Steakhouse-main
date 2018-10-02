@@ -24,13 +24,16 @@
 .grid-container{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-auto-rows: 400px;
+  margin-bottom: 15em;
+}
+
+#grid-item1, #grid-item3, #grid-item5{
+  height: 400px;
+  width: auto;
 }
 
 #grid-item1{
   background: url(/img/promotions1.jpg)center center no-repeat;
-  height: 400px;
-  width: auto;
   background-size: cover;
 }
 

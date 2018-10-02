@@ -187,6 +187,7 @@
   perspective: 600;
   position: relative;
   width: 150px;
+  height: 450px;
 }
 .card {
   margin-top: 5em;
@@ -221,5 +222,32 @@
 @media only screen and (max-width: 768px) {
   .view-menu {
   margin-bottom: 5em;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .special-title{
+    font-size: 1.75em;
+  }
+
+  .special-menu{
+    padding-bottom: 15em;
+  }
+
+  .col-md-4{
+    height: 500px;
+  }
+
+  .card {
+  width: 320px;
+  }
+
+  .card-grid{
+    padding-bottom: 400px;
+  }
+
+  .view-menu{
+    left: 30%;
+    bottom: 7em; 
   }
 }

@@ -9,6 +9,7 @@ import Quote from './quote.js'
 import Reviews from './reviews.js'
 import Promotions from './promotions.js'
 import Contact from './contact.js'
+import Footer from './footer.js'
 
 
 export default function App({state, actions}) {
@@ -24,6 +25,7 @@ export default function App({state, actions}) {
       <Reviews state={state} actions={actions}/>
       <Promotions state={state} actions={actions}/>
       <Contact state={state} actions={actions}/>
+      <Footer state={state} actions={actions}/>
     </div>
   )
 }

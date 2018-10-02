@@ -2,7 +2,8 @@
 
 .contact{
   background: url(/img/background.png);
-  min-height: 900px;
+  min-height: 1200px;
+  position: relative;
 }
 
 .contact-head{
@@ -23,8 +24,13 @@
   letter-spacing: 1px;
   margin-bottom: 2em;
   background: white;
-  padding: 5em;
-  height: 520px;
+  box-shadow: 5px 5px 25px black;
+  z-index: 5;
+  position: relative;
+  
+  .col-md-6{
+    padding: 5em;
+  }
 }
 
 .contact-location{
@@ -95,21 +101,22 @@ letter-spacing: 1px;
 }
 
 #map{
-  height: 800px;
-    width: 1000px;
+  height: 600px;
+  width: 1350px;
+  position: absolute;
+  top: 45em;
+  left: 20em;
+  z-index: 1;
 }
 
-.map{
-  height: 800px;
-    width: 1000px;
-}
+@media only screen and (max-width: 750px) {
+  .contact-box{
+    .col-md-6{
+      padding: 3em;
+    }
+  }
 
-#mapid{
-  height: 800px;
-    width: 1000px;
-}
-
-.mapid{
-  height: 800px;
-    width: 1000px;
+  .contact-number{
+    font-size: 1.75em;
+  }
 }

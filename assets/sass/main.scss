@@ -13,6 +13,7 @@
 @import "reviews";
 @import "promotions";
 @import "contact";
+@import "footer";
 
 
 .fa,.fas,.far,.fal,.fab {
@@ -21,6 +22,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  min-width: 320px;
+  width: 100%;
   // background: purple;
 }
 

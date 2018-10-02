@@ -1,0 +1,51 @@
+.footer{
+  background: #22222a;
+  padding: 2em;
+  text-align: center;
+
+  &-logo{
+    display: block;
+    height: 200px;
+    width: auto;
+    background: url(/img/logowhite.png) center no-repeat;
+    background-size: contain;
+    margin-bottom: 3em;
+  }
+
+  &-item{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 50px;
+    text-align: center;
+  }
+
+  .footer-logo-social{
+    color: white;
+    font-weight: 600;
+    padding: 30px;
+
+    a{
+      padding: 0 50px;
+    }
+  }
+
+  .copyright{
+    font-weight: 600;
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .footer-item {
+     display: block;
+     padding: 10px;
+   &i{
+    display: none;
+  }
+}
+
+  .footer .footer-logo-social a{
+    padding: 5px;
+  }
+}

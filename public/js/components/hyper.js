@@ -101,287 +101,6 @@ var globalState = exports.globalState = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = ourStory;
-
-var _hyperapp = __webpack_require__(0);
-
-function ourStory(_ref) {
-  var state = _ref.state,
-      actions = _ref.actions;
-
-  // const test = document.querySelector('#reservations').classList.remove('hidden');
-  // const reservation = document.getElementById('reservations')
-  // reservation.style.display = 'unset'
-  //  }
-  return (0, _hyperapp.h)(
-    "section",
-    { "class": "ourStory", id: "ourStory" },
-    (0, _hyperapp.h)(
-      "div",
-      { "class": "container" },
-      (0, _hyperapp.h)(
-        "div",
-        { "class": "row" },
-        (0, _hyperapp.h)(
-          "div",
-          { "class": "col-md-6 story-body" },
-          (0, _hyperapp.h)(
-            "h5",
-            { "class": "story-head" },
-            "OUR STORY"
-          ),
-          (0, _hyperapp.h)(
-            "h2",
-            { "class": "storyTitle" },
-            "Cooking Is The Art Of The Seasoning"
-          ),
-          (0, _hyperapp.h)(
-            "p",
-            { "class": "story" },
-            "Each steak is seared to perfection, finished with a perfect amount of butter, freshly chopped parsley, pepper, garlic, garlic salt, garlic butter, onion powder, onion salt, pepper salt, chili powder, and 1/4 cup of our secret seasoning all served sizzling on a 500-degree plate."
-          ),
-          (0, _hyperapp.h)(
-            "p",
-            { "class": "story-quote" },
-            (0, _hyperapp.h)(
-              "strong",
-              null,
-              "'Chop-Top' Sawyer"
-            ),
-            " ",
-            (0, _hyperapp.h)(
-              "span",
-              { "class": "quote2" },
-              "- Master Seasoner at Over-Seasoned"
-            )
-          ),
-          (0, _hyperapp.h)(
-            "a",
-            { "class": "story-button reservationRequest", href: "#reservations" },
-            "Reservation"
-          )
-        ),
-        (0, _hyperapp.h)(
-          "div",
-          { "class": "col-md-6" },
-          (0, _hyperapp.h)("img", { src: "http://www.justlookaround.nl/wordpress/wp-content/uploads/2016/06/Food-photography-Spareribs-Cookers-Just-Look-Around.jpg", "class": "story-img" })
-        )
-      )
-    )
-  );
-}
-// <Header state={state} actions={actions}/>
-// <Button state={state} actions={actions}/>
-
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = Reservation;
-
-var _hyperapp = __webpack_require__(0);
-
-function Reservation(_ref) {
-  var state = _ref.state,
-      actions = _ref.actions;
-
-  return (0, _hyperapp.h)(
-    "section",
-    { id: "reservations", "class": "hidden" },
-    (0, _hyperapp.h)("div", { "class": "reservation-overlay" }),
-    (0, _hyperapp.h)(
-      "div",
-      { "class": "container reservation-container" },
-      (0, _hyperapp.h)(
-        "div",
-        { "class": "reservation-body" },
-        (0, _hyperapp.h)("div", { "class": "reservation-logo" }),
-        (0, _hyperapp.h)(
-          "h1",
-          { "class": "reservation-title" },
-          "All booked up"
-        ),
-        (0, _hyperapp.h)(
-          "h5",
-          { "class": "reservation-description" },
-          "Please try again tomorrow."
-        ),
-        (0, _hyperapp.h)(
-          "form",
-          { id: "email-form" },
-          (0, _hyperapp.h)("h5", { "class": "email-validation" }),
-          (0, _hyperapp.h)("input", { type: "text", "class": "name", placeholder: "Name", disabled: true }),
-          (0, _hyperapp.h)("input", { type: "text", "class": "last", placeholder: "Last", disabled: true }),
-          (0, _hyperapp.h)("input", { type: "number", "class": "telephone", placeholder: "Phone", disabled: true }),
-          (0, _hyperapp.h)("input", { type: "text", "class": "address-input", action: "mailto:", placeholder: "Email Address" }),
-          (0, _hyperapp.h)(
-            "input",
-            { type: "submit", id: "reservation-submit" },
-            "Submit"
-          ),
-          (0, _hyperapp.h)("h5", { "class": "email-validation" })
-        ),
-        (0, _hyperapp.h)(
-          "a",
-          { id: "close-reservation" },
-          (0, _hyperapp.h)("i", { "class": "fas fa-times" })
-        )
-      )
-    )
-  );
-}
-// <Header state={state} actions={actions}/>
-// <Button state={state} actions={actions}/>
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var nextReview = function nextReview(state, actions) {
-  return {
-    setReview: {
-      currentReview: state.globalState.setReview.currentReview++
-    }
-  };
-};
-
-var previousReview = function previousReview(state, actions) {
-  return {
-    setReview: {
-      currentReview: state.globalState.setReview.currentReview--
-    }
-  };
-};
-
-var nextQuote = function nextQuote(state, actions) {
-  return {
-    setQuote: {
-      currentQuote: state.globalState.setQuote.currentQuote++
-    }
-  };
-};
-
-var previousQuote = function previousQuote(state, actions) {
-  return {
-    setQuote: {
-      currentQuote: state.globalState.setQuote.currentQuote--
-    }
-  };
-};
-
-var actions = exports.actions = {
-  nextReview: nextReview,
-  previousReview: previousReview,
-  nextQuote: nextQuote,
-  previousQuote: previousQuote
-};
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = App;
-
-var _hyperapp = __webpack_require__(0);
-
-var _modal = __webpack_require__(9);
-
-var _modal2 = _interopRequireDefault(_modal);
-
-var _reservations = __webpack_require__(3);
-
-var _reservations2 = _interopRequireDefault(_reservations);
-
-var _header = __webpack_require__(8);
-
-var _header2 = _interopRequireDefault(_header);
-
-var _topimg = __webpack_require__(14);
-
-var _topimg2 = _interopRequireDefault(_topimg);
-
-var _ourstory = __webpack_require__(2);
-
-var _ourstory2 = _interopRequireDefault(_ourstory);
-
-var _specialmenu = __webpack_require__(13);
-
-var _specialmenu2 = _interopRequireDefault(_specialmenu);
-
-var _quote = __webpack_require__(11);
-
-var _quote2 = _interopRequireDefault(_quote);
-
-var _reviews = __webpack_require__(12);
-
-var _reviews2 = _interopRequireDefault(_reviews);
-
-var _promotions = __webpack_require__(10);
-
-var _promotions2 = _interopRequireDefault(_promotions);
-
-var _contact = __webpack_require__(6);
-
-var _contact2 = _interopRequireDefault(_contact);
-
-var _footer = __webpack_require__(7);
-
-var _footer2 = _interopRequireDefault(_footer);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function App(_ref) {
-  var state = _ref.state,
-      actions = _ref.actions;
-
-  return (0, _hyperapp.h)(
-    'div',
-    { 'class': 'app' },
-    (0, _hyperapp.h)(_modal2.default, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_reservations2.default, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_header2.default, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_topimg2.default, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_ourstory2.default, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_specialmenu2.default, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_quote2.default, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_reviews2.default, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_promotions2.default, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_contact2.default, { state: state, actions: actions }),
-    (0, _hyperapp.h)(_footer2.default, { state: state, actions: actions })
-  );
-}
-// <Header state={state} actions={actions}/>
-// <Button state={state} actions={actions}/>
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 exports.default = Contact;
 
 var _hyperapp = __webpack_require__(0);
@@ -391,10 +110,31 @@ function Contact(_ref) {
       actions = _ref.actions;
 
   setTimeout(function () {
-    var mymap = L.map('map').setView([30.6928582, -97.4577975], 20);
+    var mymap = L.map('map').setView([30.6928582, -97.4577975], 10);
     var marker = L.marker([30.6928582, -97.4577975]).addTo(mymap);
+    var marker2 = L.marker([30.6602051, -98.4371652]).addTo(mymap);
+    var marker3 = L.marker([30.4062185, -97.5596615]).addTo(mymap);
+    var marker4 = L.marker([30.8822347, -97.589399]).addTo(mymap);
     marker.bindPopup("<b>Just park out front,</b><br>we will come get you.").openPopup();
     var circle = L.circle([30.6928582, -97.4577975], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 10
+    }).addTo(mymap);
+    var circle2 = L.circle([30.6602051, -98.4371652], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 10
+    }).addTo(mymap);
+    var circle3 = L.circle([30.4062185, -97.5596615], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 10
+    }).addTo(mymap);
+    var circle4 = L.circle([30.8822347, -97.589399], {
       color: 'red',
       fillColor: '#f03',
       fillOpacity: 0.5,
@@ -412,10 +152,10 @@ function Contact(_ref) {
   }, 3000);
   return (0, _hyperapp.h)(
     'section',
-    { 'class': 'contact' },
+    { 'class': 'contact', id: 'contact' },
     (0, _hyperapp.h)(
       'div',
-      { 'class': 'container' },
+      { 'class': 'container contact-container' },
       (0, _hyperapp.h)(
         'h5',
         { 'class': 'contact-head' },
@@ -512,7 +252,7 @@ function Contact(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 7 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -521,284 +261,70 @@ function Contact(_ref) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = Footer;
+exports.default = ourStory;
 
 var _hyperapp = __webpack_require__(0);
 
-function Footer(_ref) {
+function ourStory(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
+  // const test = document.querySelector('#reservations').classList.remove('hidden');
+  // const reservation = document.getElementById('reservations')
+  // reservation.style.display = 'unset'
+  //  }
   return (0, _hyperapp.h)(
     "section",
-    { "class": "footer" },
+    { "class": "ourStory", id: "ourStory" },
     (0, _hyperapp.h)(
       "div",
       { "class": "container" },
-      (0, _hyperapp.h)("a", { href: "#header", "class": "footer-logo" }),
-      (0, _hyperapp.h)(
-        "a",
-        { href: "#menu", "class": "footer-item" },
-        "Menu"
-      ),
-      (0, _hyperapp.h)(
-        "a",
-        { href: "#contact", "class": "footer-item" },
-        "Locations"
-      ),
-      (0, _hyperapp.h)(
-        "a",
-        { href: "#reservations", "class": "footer-item reservationRequest" },
-        "Reservations ",
-        (0, _hyperapp.h)("i", { "class": "fa fa-angle-right" })
-      ),
       (0, _hyperapp.h)(
         "div",
-        { "class": "footer-logo-social" },
+        { "class": "row" },
         (0, _hyperapp.h)(
-          "a",
-          { "class": "twitter" },
-          (0, _hyperapp.h)("i", { "class": "fab fa-twitter" })
-        ),
-        (0, _hyperapp.h)(
-          "a",
-          { "class": "facebook" },
-          (0, _hyperapp.h)("i", { "class": "fab fa-facebook-f" })
-        ),
-        (0, _hyperapp.h)(
-          "a",
-          { "class": "google+" },
-          (0, _hyperapp.h)("i", { "class": "fab fa-google-plus-g" })
-        ),
-        (0, _hyperapp.h)(
-          "a",
-          { "class": "instagram" },
-          (0, _hyperapp.h)("i", { "class": "fab fa-instagram" })
-        )
-      ),
-      (0, _hyperapp.h)(
-        "div",
-        { "class": "copyright" },
-        "Trent Grunewald 10/2/2018 ",
-        (0, _hyperapp.h)("i", { "class": "far fa-copyright" })
-      )
-    )
-  );
-}
-// <Header state={state} actions={actions}/>
-// <Button state={state} actions={actions}/>
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = Header;
-
-var _hyperapp = __webpack_require__(0);
-
-var _reservations = __webpack_require__(3);
-
-var _reservations2 = _interopRequireDefault(_reservations);
-
-var _ourstory = __webpack_require__(2);
-
-var _ourstory2 = _interopRequireDefault(_ourstory);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function Header(_ref) {
-  var state = _ref.state,
-      actions = _ref.actions;
-
-
-  // NAV COLLAPSE
-  function navToggle() {
-    var navs = document.querySelectorAll('.nav-item');
-    var collapsed = document.querySelectorAll('.nav-collapse');
-
-    //Targets the nav-item css class and replaces it with nav-collapse;
-    navs.forEach(function (nav) {
-      return nav.classList.replace('nav-item', 'nav-collapse');
-    });
-    //targets the nav-collapse css class and replaces it with nav-item;
-    collapsed.forEach(function (nav) {
-      return nav.classList.replace('nav-collapse', 'nav-item');
-    });
-  }
-
-  window.onload = function (_) {
-    var butt = document.querySelector('.logo');
-    //checks the window size on load  
-    if (window.innerWidth <= 1000) {
-      //adds the "Click" event listener to collapse menu if the page is less to or equal to 1000 px wide and initiates the navToggle function.
-      butt.addEventListener('click', navToggle);
-    }
-    //if the window is not 1000 px wide, it adds an event listener to the window resize.
-    window.addEventListener("resize", function () {
-      var butt = document.querySelector('.logo');
-      //checks the window width on resize.
-      if (window.innerWidth <= 1000) {
-        //adds "click" event listener to collapse menu at 1000px
-        butt.addEventListener('click', navToggle);
-      } else {
-        butt.removeEventListener('click', navToggle);
-      }
-    });
-
-    //RESERVATION MODAL
-    var requestRes = document.getElementsByClassName('reservationRequest');
-    var reservationBody = document.getElementById('reservations');
-    var closeRes = document.getElementById('close-reservation');
-    //For Loop targeting all Reservation buttons
-    for (var i = 0; i < requestRes.length; i++) {
-      var z = requestRes[i];
-      //Adds Click Listener to each button
-      z.addEventListener('click', function () {
-        //Toggles the display class on click
-        reservationBody.classList.replace('hidden', 'show');
-      });
-    }
-    //Hides the modal when the user clicks the X icon
-    closeRes.onclick = function () {
-      reservationBody.classList.replace('show', 'hidden');
-    };
-  };
-
-  return (0, _hyperapp.h)(
-    'header',
-    null,
-    (0, _hyperapp.h)(
-      'div',
-      { 'class': 'container' },
-      (0, _hyperapp.h)(
-        'nav',
-        { 'class': 'nav' },
-        (0, _hyperapp.h)('div', { 'class': 'logo' }),
-        (0, _hyperapp.h)(
-          'a',
-          { href: '#menu', 'class': 'nav-item nav-box' },
-          'Menu'
-        ),
-        (0, _hyperapp.h)(
-          'a',
-          { href: '#ourStory', 'class': 'nav-item nav-box' },
-          'Our Story'
-        ),
-        (0, _hyperapp.h)(
-          'a',
-          { href: '#', 'class': 'nav-item nav-box' },
-          'Private Events'
-        ),
-        (0, _hyperapp.h)(
-          'a',
-          { href: '#', 'class': 'nav-item nav-box' },
-          'Locations'
-        ),
-        (0, _hyperapp.h)(
-          'a',
-          { href: '#reservations', 'class': 'nav-item nav-box reservations reservationRequest' },
-          'Reservations ',
-          (0, _hyperapp.h)('i', { 'class': 'fa fa-angle-right' })
-        )
-      )
-    )
-  );
-}
-// <Header state={state} actions={actions}/>
-// <Button state={state} actions={actions}/>
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = Modal;
-
-var _hyperapp = __webpack_require__(0);
-
-function Modal(_ref) {
-  var state = _ref.state,
-      actions = _ref.actions;
-
-  // modal popup
-  setTimeout(function modalFunc() {
-
-    var popup = document.getElementById('modal');
-    var userInputV = document.getElementById('email');
-    var emailValidation = document.querySelector('.email-validation');
-    var closeIcon = document.getElementById('close-modal');
-    var modalSubmit = document.getElementById('modal-submit');
-
-    //Targets the close icon in the bottom right of the modal.
-    closeIcon.onclick = function (_) {
-      //on icon click, closes the modal (Display: none - scss)
-      popup.style.display = 'none';
-    };
-
-    //replaces the modal scss display from none to show
-    popup.classList.replace('hidden', 'show');
-
-    //on modal submit
-    modalSubmit.onclick = function (_) {
-      //checks that the user input anything
-      if (userInputV.value === "") {
-        //if not, alerts with red text to enter valid email
-        emailValidation.style.color = 'red';
-        emailValidation.innerHTML = "Please enter a valid email address";
-      } else {
-        //if they input something, removes the modal
-        popup.style.display = 'none';
-      }
-    };
-    //modal load delay
-  }, 3000);
-  return (0, _hyperapp.h)(
-    'section',
-    { id: 'modal', 'class': 'hidden' },
-    (0, _hyperapp.h)('div', { 'class': 'modal-overlay' }),
-    (0, _hyperapp.h)(
-      'div',
-      { 'class': 'container modal-container' },
-      (0, _hyperapp.h)(
-        'div',
-        { 'class': 'modal-body' },
-        (0, _hyperapp.h)('div', { 'class': 'modal-img' }),
-        (0, _hyperapp.h)(
-          'h1',
-          { 'class': 'modal-title' },
-          'Receive 25% off!'
-        ),
-        (0, _hyperapp.h)(
-          'h5',
-          { 'class': 'modal-description' },
-          'Receive free coupons for our delicious resturaunt daily, when you surrender your email address below!'
-        ),
-        (0, _hyperapp.h)(
-          'form',
-          { id: 'email-form' },
-          (0, _hyperapp.h)('h5', { 'class': 'email-validation' }),
-          (0, _hyperapp.h)('input', { type: 'text', 'class': 'address-input', id: 'email', action: 'mailto:', placeholder: 'Email Address' }),
+          "div",
+          { "class": "col-md-6 story-body" },
           (0, _hyperapp.h)(
-            'input',
-            { type: 'submit', id: 'modal-submit' },
-            'Submit'
+            "h5",
+            { "class": "story-head" },
+            "OUR STORY"
+          ),
+          (0, _hyperapp.h)(
+            "h2",
+            { "class": "storyTitle" },
+            "Cooking Is The Art Of The Seasoning"
+          ),
+          (0, _hyperapp.h)(
+            "p",
+            { "class": "story" },
+            "Each steak is seared to perfection, finished with a perfect amount of butter, freshly chopped parsley, pepper, garlic, garlic salt, garlic butter, onion powder, onion salt, pepper salt, chili powder, and 1/4 cup of our secret seasoning all served sizzling on a 500-degree plate."
+          ),
+          (0, _hyperapp.h)(
+            "p",
+            { "class": "story-quote" },
+            (0, _hyperapp.h)(
+              "strong",
+              null,
+              "'Chop-Top' Sawyer"
+            ),
+            " ",
+            (0, _hyperapp.h)(
+              "span",
+              { "class": "quote2" },
+              "- Master Seasoner at Over-Seasoned"
+            )
+          ),
+          (0, _hyperapp.h)(
+            "a",
+            { "class": "story-button reservationRequest", href: "#reservations" },
+            "Reservation"
           )
         ),
         (0, _hyperapp.h)(
-          'a',
-          null,
-          (0, _hyperapp.h)('i', { id: 'close-modal', 'class': 'fas fa-times' })
+          "div",
+          { "class": "col-md-6" },
+          (0, _hyperapp.h)("img", { src: "http://www.justlookaround.nl/wordpress/wp-content/uploads/2016/06/Food-photography-Spareribs-Cookers-Just-Look-Around.jpg", "class": "story-img" })
         )
       )
     )
@@ -808,7 +334,7 @@ function Modal(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 10 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -827,7 +353,7 @@ function Promotions(_ref) {
 
   return (0, _hyperapp.h)(
     "section",
-    { "class": "promotions" },
+    { "class": "promotions", id: "promotions" },
     (0, _hyperapp.h)(
       "div",
       { "class": "container promotion-container" },
@@ -933,6 +459,509 @@ function Promotions(_ref) {
             { "class": "grid-item-desc" },
             "Tuesday, October 31, 1978"
           )
+        )
+      )
+    )
+  );
+}
+// <Header state={state} actions={actions}/>
+// <Button state={state} actions={actions}/>
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Reservation;
+
+var _hyperapp = __webpack_require__(0);
+
+function Reservation(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
+
+  return (0, _hyperapp.h)(
+    "section",
+    { id: "reservations", "class": "hidden" },
+    (0, _hyperapp.h)("div", { "class": "reservation-overlay" }),
+    (0, _hyperapp.h)(
+      "div",
+      { "class": "container reservation-container" },
+      (0, _hyperapp.h)(
+        "div",
+        { "class": "reservation-body" },
+        (0, _hyperapp.h)("div", { "class": "reservation-logo" }),
+        (0, _hyperapp.h)(
+          "h1",
+          { "class": "reservation-title" },
+          "All booked up"
+        ),
+        (0, _hyperapp.h)(
+          "h5",
+          { "class": "reservation-description" },
+          "Please try again tomorrow."
+        ),
+        (0, _hyperapp.h)(
+          "form",
+          { id: "email-form" },
+          (0, _hyperapp.h)("h5", { "class": "email-validation" }),
+          (0, _hyperapp.h)("input", { type: "text", "class": "name", placeholder: "Name", disabled: true }),
+          (0, _hyperapp.h)("input", { type: "text", "class": "last", placeholder: "Last", disabled: true }),
+          (0, _hyperapp.h)("input", { type: "number", "class": "telephone", placeholder: "Phone", disabled: true }),
+          (0, _hyperapp.h)("input", { type: "text", "class": "address-input", action: "mailto:", placeholder: "Email Address" }),
+          (0, _hyperapp.h)(
+            "input",
+            { type: "submit", id: "reservation-submit" },
+            "Submit"
+          ),
+          (0, _hyperapp.h)("h5", { "class": "email-validation" })
+        ),
+        (0, _hyperapp.h)(
+          "a",
+          { id: "close-reservation" },
+          (0, _hyperapp.h)("i", { "class": "fas fa-times" })
+        )
+      )
+    )
+  );
+}
+// <Header state={state} actions={actions}/>
+// <Button state={state} actions={actions}/>
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var nextReview = function nextReview(state, actions) {
+  return {
+    setReview: {
+      currentReview: state.globalState.setReview.currentReview++
+    }
+  };
+};
+
+var previousReview = function previousReview(state, actions) {
+  return {
+    setReview: {
+      currentReview: state.globalState.setReview.currentReview--
+    }
+  };
+};
+
+var nextQuote = function nextQuote(state, actions) {
+  return {
+    setQuote: {
+      currentQuote: state.globalState.setQuote.currentQuote++
+    }
+  };
+};
+
+var previousQuote = function previousQuote(state, actions) {
+  return {
+    setQuote: {
+      currentQuote: state.globalState.setQuote.currentQuote--
+    }
+  };
+};
+
+var actions = exports.actions = {
+  nextReview: nextReview,
+  previousReview: previousReview,
+  nextQuote: nextQuote,
+  previousQuote: previousQuote
+};
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = App;
+
+var _hyperapp = __webpack_require__(0);
+
+var _modal = __webpack_require__(10);
+
+var _modal2 = _interopRequireDefault(_modal);
+
+var _reservations = __webpack_require__(5);
+
+var _reservations2 = _interopRequireDefault(_reservations);
+
+var _header = __webpack_require__(9);
+
+var _header2 = _interopRequireDefault(_header);
+
+var _topimg = __webpack_require__(14);
+
+var _topimg2 = _interopRequireDefault(_topimg);
+
+var _ourstory = __webpack_require__(3);
+
+var _ourstory2 = _interopRequireDefault(_ourstory);
+
+var _specialmenu = __webpack_require__(13);
+
+var _specialmenu2 = _interopRequireDefault(_specialmenu);
+
+var _quote = __webpack_require__(11);
+
+var _quote2 = _interopRequireDefault(_quote);
+
+var _reviews = __webpack_require__(12);
+
+var _reviews2 = _interopRequireDefault(_reviews);
+
+var _promotions = __webpack_require__(4);
+
+var _promotions2 = _interopRequireDefault(_promotions);
+
+var _contact = __webpack_require__(2);
+
+var _contact2 = _interopRequireDefault(_contact);
+
+var _footer = __webpack_require__(8);
+
+var _footer2 = _interopRequireDefault(_footer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function App(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
+
+  return (0, _hyperapp.h)(
+    'div',
+    { 'class': 'app' },
+    (0, _hyperapp.h)(_modal2.default, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_reservations2.default, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_header2.default, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_topimg2.default, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_ourstory2.default, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_specialmenu2.default, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_quote2.default, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_reviews2.default, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_promotions2.default, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_contact2.default, { state: state, actions: actions }),
+    (0, _hyperapp.h)(_footer2.default, { state: state, actions: actions })
+  );
+}
+// <Header state={state} actions={actions}/>
+// <Button state={state} actions={actions}/>
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Footer;
+
+var _hyperapp = __webpack_require__(0);
+
+function Footer(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
+
+  return (0, _hyperapp.h)(
+    "section",
+    { "class": "footer" },
+    (0, _hyperapp.h)(
+      "div",
+      { "class": "container" },
+      (0, _hyperapp.h)("a", { href: "#header", "class": "footer-logo" }),
+      (0, _hyperapp.h)(
+        "a",
+        { href: "#menu", "class": "footer-item" },
+        "Menu"
+      ),
+      (0, _hyperapp.h)(
+        "a",
+        { href: "#contact", "class": "footer-item" },
+        "Locations"
+      ),
+      (0, _hyperapp.h)(
+        "a",
+        { href: "#reservations", "class": "footer-item reservationRequest" },
+        "Reservations ",
+        (0, _hyperapp.h)("i", { "class": "fa fa-angle-right" })
+      ),
+      (0, _hyperapp.h)(
+        "div",
+        { "class": "footer-logo-social" },
+        (0, _hyperapp.h)(
+          "a",
+          { "class": "twitter" },
+          (0, _hyperapp.h)("i", { "class": "fab fa-twitter" })
+        ),
+        (0, _hyperapp.h)(
+          "a",
+          { "class": "facebook" },
+          (0, _hyperapp.h)("i", { "class": "fab fa-facebook-f" })
+        ),
+        (0, _hyperapp.h)(
+          "a",
+          { "class": "google+" },
+          (0, _hyperapp.h)("i", { "class": "fab fa-google-plus-g" })
+        ),
+        (0, _hyperapp.h)(
+          "a",
+          { "class": "instagram" },
+          (0, _hyperapp.h)("i", { "class": "fab fa-instagram" })
+        )
+      ),
+      (0, _hyperapp.h)(
+        "div",
+        { "class": "copyright" },
+        "Trent Grunewald 10/2/2018 ",
+        (0, _hyperapp.h)("i", { "class": "far fa-copyright" })
+      )
+    )
+  );
+}
+// <Header state={state} actions={actions}/>
+// <Button state={state} actions={actions}/>
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Header;
+
+var _hyperapp = __webpack_require__(0);
+
+var _reservations = __webpack_require__(5);
+
+var _reservations2 = _interopRequireDefault(_reservations);
+
+var _ourstory = __webpack_require__(3);
+
+var _ourstory2 = _interopRequireDefault(_ourstory);
+
+var _promotions = __webpack_require__(4);
+
+var _promotions2 = _interopRequireDefault(_promotions);
+
+var _contact = __webpack_require__(2);
+
+var _contact2 = _interopRequireDefault(_contact);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Header(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
+
+
+  // NAV COLLAPSE
+  function navToggle() {
+    var navs = document.querySelectorAll('.nav-item');
+    var collapsed = document.querySelectorAll('.nav-collapse');
+
+    //Targets the nav-item css class and replaces it with nav-collapse;
+    navs.forEach(function (nav) {
+      return nav.classList.replace('nav-item', 'nav-collapse');
+    });
+    //targets the nav-collapse css class and replaces it with nav-item;
+    collapsed.forEach(function (nav) {
+      return nav.classList.replace('nav-collapse', 'nav-item');
+    });
+  }
+
+  window.onload = function (_) {
+    var butt = document.querySelector('.logo');
+    //checks the window size on load  
+    if (window.innerWidth <= 1000) {
+      //adds the "Click" event listener to collapse menu if the page is less to or equal to 1000 px wide and initiates the navToggle function.
+      butt.addEventListener('click', navToggle);
+    }
+    //if the window is not 1000 px wide, it adds an event listener to the window resize.
+    window.addEventListener("resize", function () {
+      var butt = document.querySelector('.logo');
+      //checks the window width on resize.
+      if (window.innerWidth <= 1000) {
+        //adds "click" event listener to collapse menu at 1000px
+        butt.addEventListener('click', navToggle);
+      } else {
+        butt.removeEventListener('click', navToggle);
+      }
+    });
+
+    //RESERVATION MODAL
+    var requestRes = document.getElementsByClassName('reservationRequest');
+    var reservationBody = document.getElementById('reservations');
+    var closeRes = document.getElementById('close-reservation');
+    //For Loop targeting all Reservation buttons
+    for (var i = 0; i < requestRes.length; i++) {
+      var z = requestRes[i];
+      //Adds Click Listener to each button
+      z.addEventListener('click', function () {
+        //Toggles the display class on click
+        reservationBody.classList.replace('hidden', 'show');
+      });
+    }
+    //Hides the modal when the user clicks the X icon
+    closeRes.onclick = function () {
+      reservationBody.classList.replace('show', 'hidden');
+    };
+  };
+
+  return (0, _hyperapp.h)(
+    'header',
+    null,
+    (0, _hyperapp.h)(
+      'div',
+      { 'class': 'container' },
+      (0, _hyperapp.h)(
+        'nav',
+        { 'class': 'nav' },
+        (0, _hyperapp.h)('div', { 'class': 'logo' }),
+        (0, _hyperapp.h)(
+          'a',
+          { href: '#menu', 'class': 'nav-item nav-box' },
+          'Menu'
+        ),
+        (0, _hyperapp.h)(
+          'a',
+          { href: '#ourStory', 'class': 'nav-item nav-box' },
+          'Our Story'
+        ),
+        (0, _hyperapp.h)(
+          'a',
+          { href: '#promotions', 'class': 'nav-item nav-box' },
+          'Private Events'
+        ),
+        (0, _hyperapp.h)(
+          'a',
+          { href: '#contact', 'class': 'nav-item nav-box' },
+          'Locations'
+        ),
+        (0, _hyperapp.h)(
+          'a',
+          { href: '#reservations', 'class': 'nav-item nav-box reservations reservationRequest' },
+          'Reservations ',
+          (0, _hyperapp.h)('i', { 'class': 'fa fa-angle-right' })
+        )
+      )
+    )
+  );
+}
+// <Header state={state} actions={actions}/>
+// <Button state={state} actions={actions}/>
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Modal;
+
+var _hyperapp = __webpack_require__(0);
+
+function Modal(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
+
+  // modal popup
+  setTimeout(function modalFunc() {
+
+    var popup = document.getElementById('modal');
+    var userInputV = document.getElementById('email');
+    var emailValidation = document.querySelector('.email-validation');
+    var closeIcon = document.getElementById('close-modal');
+    var modalSubmit = document.getElementById('modal-submit');
+
+    //Targets the close icon in the bottom right of the modal.
+    closeIcon.onclick = function (_) {
+      //on icon click, closes the modal (Display: none - scss)
+      popup.style.display = 'none';
+    };
+
+    //replaces the modal scss display from none to show
+    popup.classList.replace('hidden', 'show');
+
+    //on modal submit
+    modalSubmit.onclick = function (_) {
+      //checks that the user input anything
+      if (userInputV.value === "") {
+        //if not, alerts with red text to enter valid email
+        emailValidation.style.color = 'red';
+        emailValidation.innerHTML = "Please enter a valid email address";
+      } else {
+        //if they input something, removes the modal
+        popup.style.display = 'none';
+      }
+    };
+    //modal load delay
+  }, 3000);
+  return (0, _hyperapp.h)(
+    'section',
+    { id: 'modal', 'class': 'hidden' },
+    (0, _hyperapp.h)('div', { 'class': 'modal-overlay' }),
+    (0, _hyperapp.h)(
+      'div',
+      { 'class': 'container modal-container' },
+      (0, _hyperapp.h)(
+        'div',
+        { 'class': 'modal-body' },
+        (0, _hyperapp.h)('div', { 'class': 'modal-img' }),
+        (0, _hyperapp.h)(
+          'h1',
+          { 'class': 'modal-title' },
+          'Receive 25% off!'
+        ),
+        (0, _hyperapp.h)(
+          'h5',
+          { 'class': 'modal-description' },
+          'Receive free coupons for our delicious resturaunt daily, when you surrender your email address below!'
+        ),
+        (0, _hyperapp.h)(
+          'form',
+          { id: 'email-form' },
+          (0, _hyperapp.h)('h5', { 'class': 'email-validation' }),
+          (0, _hyperapp.h)('input', { type: 'text', 'class': 'address-input', id: 'email', action: 'mailto:', placeholder: 'Email Address' }),
+          (0, _hyperapp.h)(
+            'input',
+            { type: 'submit', id: 'modal-submit' },
+            'Submit'
+          )
+        ),
+        (0, _hyperapp.h)(
+          'a',
+          null,
+          (0, _hyperapp.h)('i', { id: 'close-modal', 'class': 'fas fa-times' })
         )
       )
     )
@@ -1438,11 +1467,11 @@ function TopImg(_ref) {
 
 var _hyperapp = __webpack_require__(0);
 
-var _actions = __webpack_require__(4);
+var _actions = __webpack_require__(6);
 
 var _globalState = __webpack_require__(1);
 
-var _App = __webpack_require__(5);
+var _App = __webpack_require__(7);
 
 var _App2 = _interopRequireDefault(_App);
 

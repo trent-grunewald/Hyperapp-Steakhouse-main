@@ -2,10 +2,31 @@ import {h, app} from 'hyperapp'
 
 export default function Contact({state, actions}) {
   (setTimeout(() => {
-    var mymap = L.map('map').setView([30.6928582,-97.4577975], 20);
+    var mymap = L.map('map').setView([30.6928582,-97.4577975], 10);
     var marker = L.marker([30.6928582,-97.4577975]).addTo(mymap);
+    var marker2 = L.marker([30.6602051,-98.4371652]).addTo(mymap);
+    var marker3 = L.marker([30.4062185,-97.5596615]).addTo(mymap);
+    var marker4 = L.marker([30.8822347,-97.589399]).addTo(mymap);
     marker.bindPopup("<b>Just park out front,</b><br>we will come get you.").openPopup();
     var circle = L.circle([30.6928582,-97.4577975], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 10
+  }).addTo(mymap);
+    var circle2 = L.circle([30.6602051,-98.4371652], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 10
+  }).addTo(mymap);
+    var circle3 = L.circle([30.4062185,-97.5596615], {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 10
+  }).addTo(mymap);
+    var circle4 = L.circle([30.8822347,-97.589399], {
       color: 'red',
       fillColor: '#f03',
       fillOpacity: 0.5,
@@ -22,8 +43,8 @@ export default function Contact({state, actions}) {
   }).addTo(mymap);
   }, 3000))
   return (
-    <section class="contact">
-      <div class="container">
+    <section class="contact" id="contact">
+      <div class="container contact-container">
        <h5 class="contact-head">CONTACT US</h5>
        <h1 class="contact-title">COME ENJOY OUR MEAT!</h1>
         <div class="container contact-box">

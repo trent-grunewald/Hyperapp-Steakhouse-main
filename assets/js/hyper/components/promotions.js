@@ -2,7 +2,7 @@ import {h, app} from 'hyperapp'
 
 export default function Promotions({state, actions}) {
   return (
-    <section class="promotions">
+    <section class="promotions" id="promotions">
       <div class="container promotion-container">
         <h5 class="promotions-head">JOIN US</h5>
         <h1 class="promotions-title">NEWS & PROMOTIONS</h1>

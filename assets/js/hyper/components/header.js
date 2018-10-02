@@ -1,6 +1,8 @@
 import {h, app} from 'hyperapp';
 import reservations from './reservations';
 import ourStory from './ourstory';
+import promotions from './promotions';
+import contact from './contact';
 
 
 export default function Header({state, actions}) {
@@ -62,8 +64,8 @@ if(window.innerWidth <= 1000) {
             <div class="logo"></div>
             <a href="#menu" class="nav-item nav-box">Menu</a>
             <a href="#ourStory" class="nav-item nav-box">Our Story</a>
-            <a href="#" class="nav-item nav-box">Private Events</a>
-            <a href="#" class="nav-item nav-box">Locations</a>
+            <a href="#promotions" class="nav-item nav-box">Private Events</a>
+            <a href="#contact" class="nav-item nav-box">Locations</a>
             <a href="#reservations" class="nav-item nav-box reservations reservationRequest">Reservations <i class="fa fa-angle-right"></i></a>
         </nav>
       </div>

@@ -221,13 +221,48 @@
   height: 450px;
 }
 
+.menuCard{
+  display: none;
+}
+
 @media only screen and (max-width: 1250px) {
   .card{
-    width: 345px
+    width: 95%;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1171px) {
+  .menuCard{
+    display: unset;
+    padding: 12%;
+    
+    &-text{
+      text-decoration: none;
+      color: black;
+      font-family: "Playfair Display",serif;
+      font-size: 5em;
+      text-transform: capitalize;
+      text-align: center;
+      position: static;
+    }
+
+    &-small{
+      display: none;
+    }
+  }
+  
+  .card-grid{
+    padding-bottom: 200px;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .card{
+    width:90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .view-menu {
   margin-bottom: 5em;
   }
@@ -248,10 +283,6 @@
 
   .card {
   width: 320px;
-  }
-
-  .card-grid{
-    padding-bottom: 400px;
   }
 
   .view-menu{

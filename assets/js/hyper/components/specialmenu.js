@@ -90,10 +90,13 @@ const clickFlip = function(){
     </div>
     </div>
     </div>
+    <div class="card menuCard">
+    <a class="view-menu openMenu menuCard-text" href="#menu">VIEW<br/>OUR<br/>FULL<br/>MENU</a>
+  </div>
   {/* </div> */}
 </div>
       </div>
-      <a class="view-menu openMenu" href="#menu">VIEW FULL MENU</a>
+      <a class="view-menu openMenu menuCard-small" href="#menu">VIEW FULL MENU</a>
       </div>
     </section>
   )

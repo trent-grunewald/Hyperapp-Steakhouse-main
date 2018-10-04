@@ -1795,12 +1795,27 @@ function SpecialMenu(_ref) {
                 )
               )
             )
+          ),
+          (0, _hyperapp.h)(
+            'div',
+            { 'class': 'card menuCard' },
+            (0, _hyperapp.h)(
+              'a',
+              { 'class': 'view-menu openMenu menuCard-text', href: '#menu' },
+              'VIEW',
+              (0, _hyperapp.h)('br', null),
+              'OUR',
+              (0, _hyperapp.h)('br', null),
+              'FULL',
+              (0, _hyperapp.h)('br', null),
+              'MENU'
+            )
           )
         )
       ),
       (0, _hyperapp.h)(
         'a',
-        { 'class': 'view-menu openMenu', href: '#menu' },
+        { 'class': 'view-menu openMenu menuCard-small', href: '#menu' },
         'VIEW FULL MENU'
       )
     )

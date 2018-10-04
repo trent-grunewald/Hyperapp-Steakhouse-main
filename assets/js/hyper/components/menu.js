@@ -2,8 +2,11 @@ import {h, app} from 'hyperapp'
 
 export default function Menu({state, actions}) {
   return (
-    <section id="menu" class="menu">
+    <section id="menu" class="menu hidden">
+     <div class="reservation-overlay"></div>
+     <div class="container menu-body">
       <h1 class="restName">Over-Seasoned</h1>
+      <a><i id="close-menu" class="fas fa-times"></i></a>
       <h2 class="menu_logo"></h2>
       <div class="menu_section menu_section_15386190772">
       <h3>Appetizers</h3>
@@ -74,7 +77,7 @@ export default function Menu({state, actions}) {
 					
 						<div class="menu_item menu_item_15386195279">
 							<h4 class="item--name">Filet Mignon</h4>
-							<span class="price">undefined</span>
+							<span class="price">$47</span>
 							<p class="description">10oz A well seasoned and month long aged cut that might just bring you back tomorrow.</p>
 							<hr/>
 						</div>
@@ -132,7 +135,8 @@ export default function Menu({state, actions}) {
 							<hr/>
 						</div>
 					</div>
-          <footer class="menu_containsRaw">*Consuming raw or undercooked meats, poultry, seafood, shellfish, eggs or unpasteurized milk may increase your risk of foodborne illness.</footer>
+          <footer class="warning">*Consuming raw or undercooked meats, poultry, seafood, shellfish, eggs or unpasteurized milk may increase your risk of foodborne illness.</footer>
+          </div>
     </section>
   )
 

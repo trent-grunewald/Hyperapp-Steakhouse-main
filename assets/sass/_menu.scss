@@ -1,12 +1,7 @@
 @import 'variables';
 
-// #menu{
-//   display: hidden;
-// }
-
 .menu{
   margin-bottom: 15px;
-  max-width: 1200px;
   margin: 0 auto;
 
   &_logo {
@@ -82,4 +77,26 @@ hr {
   border-top: 1px dotted black;
   margin-top: -4px;
   margin-bottom: 20px;
+}
+
+.warning{
+  text-align: center;
+}
+
+.menu-body{
+  background: white;
+  outline: 2px solid black;
+  padding: 20px;
+  position: relative;
+  max-height: 770px;
+  margin-top: 5em;
+  overflow-y: auto;
+}
+
+#close-menu{
+  float: right;
+  position: absolute;
+  right: 50px;
+  top: 40px;
+  font-size: 40px;
 }

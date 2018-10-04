@@ -698,7 +698,7 @@ function Footer(_ref) {
       (0, _hyperapp.h)("a", { href: "#header", "class": "footer-logo" }),
       (0, _hyperapp.h)(
         "a",
-        { href: "#menu", "class": "footer-item" },
+        { href: "#menu", "class": "footer-item openMenu" },
         "Menu"
       ),
       (0, _hyperapp.h)(
@@ -836,6 +836,22 @@ function Header(_ref) {
     closeRes.onclick = function () {
       reservationBody.classList.replace('show', 'hidden');
     };
+
+    //MENU MODAL
+    var openMenu = document.getElementsByClassName('openMenu');
+    var menuBody = document.getElementById('menu');
+    var closeMenu = document.getElementById('close-menu');
+
+    for (var t = 0; t < openMenu.length; t++) {
+      var x = openMenu[t];
+
+      x.addEventListener('click', function () {
+        menuBody.classList.replace('hidden', 'show');
+      });
+    }
+    closeMenu.addEventListener('click', function () {
+      menuBody.classList.replace('show', 'hidden');
+    });
   };
 
   return (0, _hyperapp.h)(
@@ -850,7 +866,7 @@ function Header(_ref) {
         (0, _hyperapp.h)('div', { 'class': 'logo' }),
         (0, _hyperapp.h)(
           'a',
-          { href: '#menu', 'class': 'nav-item nav-box' },
+          { href: '#menu', 'class': 'openMenu nav-item nav-box' },
           'Menu'
         ),
         (0, _hyperapp.h)(
@@ -901,393 +917,403 @@ function Menu(_ref) {
 
 	return (0, _hyperapp.h)(
 		"section",
-		{ id: "menu", "class": "menu" },
-		(0, _hyperapp.h)(
-			"h1",
-			{ "class": "restName" },
-			"Over-Seasoned"
-		),
-		(0, _hyperapp.h)("h2", { "class": "menu_logo" }),
+		{ id: "menu", "class": "menu hidden" },
+		(0, _hyperapp.h)("div", { "class": "reservation-overlay" }),
 		(0, _hyperapp.h)(
 			"div",
-			{ "class": "menu_section menu_section_15386190772" },
+			{ "class": "container menu-body" },
 			(0, _hyperapp.h)(
-				"h3",
+				"h1",
+				{ "class": "restName" },
+				"Over-Seasoned"
+			),
+			(0, _hyperapp.h)(
+				"a",
 				null,
-				"Appetizers"
+				(0, _hyperapp.h)("i", { id: "close-menu", "class": "fas fa-times" })
+			),
+			(0, _hyperapp.h)("h2", { "class": "menu_logo" }),
+			(0, _hyperapp.h)(
+				"div",
+				{ "class": "menu_section menu_section_15386190772" },
+				(0, _hyperapp.h)(
+					"h3",
+					null,
+					"Appetizers"
+				),
+				(0, _hyperapp.h)(
+					"div",
+					{ "class": "menu_item menu_item_15386190982" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"Skins"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$12.99"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"Sun dried, hand cut, skins."
+					),
+					(0, _hyperapp.h)("hr", null)
+				),
+				(0, _hyperapp.h)(
+					"div",
+					{ "class": "menu_item menu_item_15386191426" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"Deep Fried Pee Pods"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$8.99"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"Deep fried in our hand crafted batter, delicious!"
+					),
+					(0, _hyperapp.h)("hr", null)
+				),
+				(0, _hyperapp.h)(
+					"div",
+					{ "class": "menu_item menu_item_15386191997" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"Finger-Eaters"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$16.99"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"These delicious small meat bites are a fan favorite, tastes just like chicken!"
+					),
+					(0, _hyperapp.h)("hr", null)
+				),
+				(0, _hyperapp.h)(
+					"div",
+					{ "class": "menu_item menu_item_15386196829" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"Armadillo"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$22"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"Shredded, smoked armadillo mixed with garlic and Gouda cheese, delicious!"
+					),
+					(0, _hyperapp.h)("hr", null)
+				)
 			),
 			(0, _hyperapp.h)(
 				"div",
-				{ "class": "menu_item menu_item_15386190982" },
+				{ "class": "menu_section menu_section_15386193034" },
 				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"Skins"
+					"h3",
+					null,
+					"Steaks"
 				),
 				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"$12.99"
+					"div",
+					{ "class": "menu_item menu_item_15386193111" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"Grilled NY Strip"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$32"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"A fresh, barely 9oz NY Strip, served with half an asparagus and 1/16 of a potato."
+					),
+					(0, _hyperapp.h)("hr", null)
 				),
 				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"Sun dried, hand cut, skins."
+					"div",
+					{ "class": "menu_item menu_item_15386193127" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"Charbroiled T-Bone"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$52"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"An over-charred T-Bone with dry leaves from a nearby tree sprinkled on top."
+					),
+					(0, _hyperapp.h)("hr", null)
 				),
-				(0, _hyperapp.h)("hr", null)
+				(0, _hyperapp.h)(
+					"div",
+					{ "class": "menu_item menu_item_15386193137" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"Steamed Ribeye"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$72"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"A delicious 16oz Rib eye, dowsed in seasonings, you will need water."
+					),
+					(0, _hyperapp.h)("hr", null)
+				),
+				(0, _hyperapp.h)(
+					"div",
+					{ "class": "menu_item menu_item_15386193146" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"Porterhouse"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$47"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"A juicy 14oz Porterhouse, by far one of our most popular steaks available."
+					),
+					(0, _hyperapp.h)("hr", null)
+				),
+				(0, _hyperapp.h)(
+					"div",
+					{ "class": "menu_item menu_item_15386195256" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"Top Sirloin"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$92"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"A delicious 24oz Top Sirloin, this thing is juicy! Comes as is, no special orders."
+					),
+					(0, _hyperapp.h)("hr", null)
+				),
+				(0, _hyperapp.h)(
+					"div",
+					{ "class": "menu_item menu_item_15386195279" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"Filet Mignon"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$47"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"10oz A well seasoned and month long aged cut that might just bring you back tomorrow."
+					),
+					(0, _hyperapp.h)("hr", null)
+				)
 			),
 			(0, _hyperapp.h)(
 				"div",
-				{ "class": "menu_item menu_item_15386191426" },
+				{ "class": "menu_section menu_section_15386195899" },
 				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"Deep Fried Pee Pods"
+					"h3",
+					null,
+					"Sides"
 				),
 				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"$8.99"
+					"div",
+					{ "class": "menu_item menu_item_15386195966" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"Green Beans"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$7.99"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"Lightly salted, seared to perfection"
+					),
+					(0, _hyperapp.h)("hr", null)
 				),
 				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"Deep fried in our hand crafted batter, delicious!"
+					"div",
+					{ "class": "menu_item menu_item_15386197901" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"Cheese wheel"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$432.99"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"A full size, white cheddar cheese wheel."
+					),
+					(0, _hyperapp.h)("hr", null)
 				),
-				(0, _hyperapp.h)("hr", null)
+				(0, _hyperapp.h)(
+					"div",
+					{ "class": "menu_item menu_item_15386198239" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"Drayton's Chili"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$14.99"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"A two time award-winning chili, watch out for peppercorns!"
+					),
+					(0, _hyperapp.h)("hr", null)
+				)
 			),
 			(0, _hyperapp.h)(
 				"div",
-				{ "class": "menu_item menu_item_15386191997" },
+				{ "class": "menu_section menu_section_15386200957" },
 				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"Finger-Eaters"
+					"h3",
+					null,
+					"Drinks"
 				),
 				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"$16.99"
+					"div",
+					{ "class": "menu_item menu_item_15386201010" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"Red Wine"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$14.99"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"Our own house brand."
+					),
+					(0, _hyperapp.h)("hr", null)
 				),
 				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"These delicious small meat bites are a fan favorite, tastes just like chicken!"
+					"div",
+					{ "class": "menu_item menu_item_15386201238" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"Black Eye Whiskey"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$7.99"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"Distilled in the Black Eyed hills of Louisiana."
+					),
+					(0, _hyperapp.h)("hr", null)
 				),
-				(0, _hyperapp.h)("hr", null)
+				(0, _hyperapp.h)(
+					"div",
+					{ "class": "menu_item menu_item_15386201921" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"The Red Raven"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$12.99"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"Our own mixture containing Gin, Code Red and another secret ingredient."
+					),
+					(0, _hyperapp.h)("hr", null)
+				),
+				(0, _hyperapp.h)(
+					"div",
+					{ "class": "menu_item menu_item_15386202849" },
+					(0, _hyperapp.h)(
+						"h4",
+						{ "class": "item--name" },
+						"Coffee"
+					),
+					(0, _hyperapp.h)(
+						"span",
+						{ "class": "price" },
+						"$2.99"
+					),
+					(0, _hyperapp.h)(
+						"p",
+						{ "class": "description" },
+						"Just brewed a fresh pot!"
+					),
+					(0, _hyperapp.h)("hr", null)
+				)
 			),
 			(0, _hyperapp.h)(
-				"div",
-				{ "class": "menu_item menu_item_15386196829" },
-				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"Armadillo"
-				),
-				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"$22"
-				),
-				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"Shredded, smoked armadillo mixed with garlic and Gouda cheese, delicious!"
-				),
-				(0, _hyperapp.h)("hr", null)
+				"footer",
+				{ "class": "warning" },
+				"*Consuming raw or undercooked meats, poultry, seafood, shellfish, eggs or unpasteurized milk may increase your risk of foodborne illness."
 			)
-		),
-		(0, _hyperapp.h)(
-			"div",
-			{ "class": "menu_section menu_section_15386193034" },
-			(0, _hyperapp.h)(
-				"h3",
-				null,
-				"Steaks"
-			),
-			(0, _hyperapp.h)(
-				"div",
-				{ "class": "menu_item menu_item_15386193111" },
-				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"Grilled NY Strip"
-				),
-				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"$32"
-				),
-				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"A fresh, barely 9oz NY Strip, served with half an asparagus and 1/16 of a potato."
-				),
-				(0, _hyperapp.h)("hr", null)
-			),
-			(0, _hyperapp.h)(
-				"div",
-				{ "class": "menu_item menu_item_15386193127" },
-				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"Charbroiled T-Bone"
-				),
-				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"$52"
-				),
-				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"An over-charred T-Bone with dry leaves from a nearby tree sprinkled on top."
-				),
-				(0, _hyperapp.h)("hr", null)
-			),
-			(0, _hyperapp.h)(
-				"div",
-				{ "class": "menu_item menu_item_15386193137" },
-				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"Steamed Ribeye"
-				),
-				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"$72"
-				),
-				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"A delicious 16oz Rib eye, dowsed in seasonings, you will need water."
-				),
-				(0, _hyperapp.h)("hr", null)
-			),
-			(0, _hyperapp.h)(
-				"div",
-				{ "class": "menu_item menu_item_15386193146" },
-				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"Porterhouse"
-				),
-				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"$47"
-				),
-				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"A juicy 14oz Porterhouse, by far one of our most popular steaks available."
-				),
-				(0, _hyperapp.h)("hr", null)
-			),
-			(0, _hyperapp.h)(
-				"div",
-				{ "class": "menu_item menu_item_15386195256" },
-				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"Top Sirloin"
-				),
-				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"$92"
-				),
-				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"A delicious 24oz Top Sirloin, this thing is juicy! Comes as is, no special orders."
-				),
-				(0, _hyperapp.h)("hr", null)
-			),
-			(0, _hyperapp.h)(
-				"div",
-				{ "class": "menu_item menu_item_15386195279" },
-				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"Filet Mignon"
-				),
-				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"undefined"
-				),
-				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"10oz A well seasoned and month long aged cut that might just bring you back tomorrow."
-				),
-				(0, _hyperapp.h)("hr", null)
-			)
-		),
-		(0, _hyperapp.h)(
-			"div",
-			{ "class": "menu_section menu_section_15386195899" },
-			(0, _hyperapp.h)(
-				"h3",
-				null,
-				"Sides"
-			),
-			(0, _hyperapp.h)(
-				"div",
-				{ "class": "menu_item menu_item_15386195966" },
-				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"Green Beans"
-				),
-				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"$7.99"
-				),
-				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"Lightly salted, seared to perfection"
-				),
-				(0, _hyperapp.h)("hr", null)
-			),
-			(0, _hyperapp.h)(
-				"div",
-				{ "class": "menu_item menu_item_15386197901" },
-				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"Cheese wheel"
-				),
-				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"$432.99"
-				),
-				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"A full size, white cheddar cheese wheel."
-				),
-				(0, _hyperapp.h)("hr", null)
-			),
-			(0, _hyperapp.h)(
-				"div",
-				{ "class": "menu_item menu_item_15386198239" },
-				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"Drayton's Chili"
-				),
-				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"$14.99"
-				),
-				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"A two time award-winning chili, watch out for peppercorns!"
-				),
-				(0, _hyperapp.h)("hr", null)
-			)
-		),
-		(0, _hyperapp.h)(
-			"div",
-			{ "class": "menu_section menu_section_15386200957" },
-			(0, _hyperapp.h)(
-				"h3",
-				null,
-				"Drinks"
-			),
-			(0, _hyperapp.h)(
-				"div",
-				{ "class": "menu_item menu_item_15386201010" },
-				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"Red Wine"
-				),
-				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"$14.99"
-				),
-				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"Our own house brand."
-				),
-				(0, _hyperapp.h)("hr", null)
-			),
-			(0, _hyperapp.h)(
-				"div",
-				{ "class": "menu_item menu_item_15386201238" },
-				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"Black Eye Whiskey"
-				),
-				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"$7.99"
-				),
-				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"Distilled in the Black Eyed hills of Louisiana."
-				),
-				(0, _hyperapp.h)("hr", null)
-			),
-			(0, _hyperapp.h)(
-				"div",
-				{ "class": "menu_item menu_item_15386201921" },
-				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"The Red Raven"
-				),
-				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"$12.99"
-				),
-				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"Our own mixture containing Gin, Code Red and another secret ingredient."
-				),
-				(0, _hyperapp.h)("hr", null)
-			),
-			(0, _hyperapp.h)(
-				"div",
-				{ "class": "menu_item menu_item_15386202849" },
-				(0, _hyperapp.h)(
-					"h4",
-					{ "class": "item--name" },
-					"Coffee"
-				),
-				(0, _hyperapp.h)(
-					"span",
-					{ "class": "price" },
-					"$2.99"
-				),
-				(0, _hyperapp.h)(
-					"p",
-					{ "class": "description" },
-					"Just brewed a fresh pot!"
-				),
-				(0, _hyperapp.h)("hr", null)
-			)
-		),
-		(0, _hyperapp.h)(
-			"footer",
-			{ "class": "menu_containsRaw" },
-			"*Consuming raw or undercooked meats, poultry, seafood, shellfish, eggs or unpasteurized milk may increase your risk of foodborne illness."
 		)
 	);
 }
@@ -1786,7 +1812,7 @@ function SpecialMenu(_ref) {
       ),
       (0, _hyperapp.h)(
         'a',
-        { 'class': 'view-menu', href: '#' },
+        { 'class': 'view-menu openMenu', href: '#menu' },
         'VIEW FULL MENU'
       )
     )

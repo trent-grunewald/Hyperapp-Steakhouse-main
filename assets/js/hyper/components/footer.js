@@ -5,7 +5,7 @@ export default function Footer({state, actions}) {
     <section class="footer">
     <div class="container">
       <a href="#header" class="footer-logo"></a>
-      <a href="#menu" class="footer-item">Menu</a>
+      <a href="#menu" class="footer-item openMenu">Menu</a>
       <a href="#contact" class="footer-item">Locations</a>
       <a href="#reservations" class="footer-item reservationRequest">Reservations <i class="fa fa-angle-right"></i></a>
       <div class="footer-logo-social">

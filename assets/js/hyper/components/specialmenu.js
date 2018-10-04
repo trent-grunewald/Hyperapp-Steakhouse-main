@@ -93,7 +93,7 @@ const clickFlip = function(){
   </div>
 </div>
       </div>
-      <a class="view-menu" href="#">VIEW FULL MENU</a>
+      <a class="view-menu openMenu" href="#menu">VIEW FULL MENU</a>
       </div>
     </section>
   )

@@ -54,6 +54,23 @@ if(window.innerWidth <= 1000) {
   closeRes.onclick = function() {
     reservationBody.classList.replace('show', 'hidden');
   }
+
+
+//MENU MODAL
+const openMenu = document.getElementsByClassName('openMenu');
+const menuBody = document.getElementById('menu');
+const closeMenu = document.getElementById('close-menu');
+
+  for (let t = 0; t < openMenu.length; t++) {
+    const x = openMenu[t];
+
+    x.addEventListener('click', function(){
+      menuBody.classList.replace('hidden', 'show');
+    })
+  }
+closeMenu.addEventListener('click', function(){
+  menuBody.classList.replace('show', 'hidden');
+});
 }
 
   return (
@@ -62,7 +79,7 @@ if(window.innerWidth <= 1000) {
         <div class="container">
           <nav class="nav">
             <div class="logo"></div>
-            <a href="#menu" class="nav-item nav-box">Menu</a>
+            <a href="#menu" class="openMenu nav-item nav-box">Menu</a>
             <a href="#ourStory" class="nav-item nav-box">Our Story</a>
             <a href="#promotions" class="nav-item nav-box">Private Events</a>
             <a href="#contact" class="nav-item nav-box">Locations</a>

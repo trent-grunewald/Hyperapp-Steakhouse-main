@@ -2,31 +2,34 @@ import {h, app} from 'hyperapp'
 
 export default function Contact({state, actions}) {
   (setTimeout(() => {
-    var mymap = L.map('map').setView([30.6928582,-97.4577975], 9);
-    var marker = L.marker([30.6928582,-97.4577975]).addTo(mymap);
-    var marker2 = L.marker([30.6602051,-98.4371652]).addTo(mymap);
-    var marker3 = L.marker([30.4062185,-97.5596615]).addTo(mymap);
-    var marker4 = L.marker([30.8822347,-97.589399]).addTo(mymap);
+    const mymap = L.map('map').setView([30.6928582,-97.4577975], 9);
+    const marker = L.marker([30.6928582,-97.4577975]).addTo(mymap);
+    const marker2 = L.marker([30.6602051,-98.4371652]).addTo(mymap);
+    const marker3 = L.marker([30.4062185,-97.5596615]).addTo(mymap);
+    const marker4 = L.marker([30.8822347,-97.589399]).addTo(mymap);
     marker.bindPopup("<b>Just park out front,</b><br>we will come get you.").openPopup();
-    var circle = L.circle([30.6928582,-97.4577975], {
+    marker2.bindPopup("<b>Come enjoy family dinner,</b><br>with us!").openPopup();
+    marker3.bindPopup("<b>Come on in,</b><br>meet our family.").openPopup();
+    marker4.bindPopup("<b>Try our Award winning,</b><br>chili, family recipe.").openPopup();
+    const circle = L.circle([30.6928582,-97.4577975], {
       color: 'red',
       fillColor: '#f03',
       fillOpacity: 0.5,
       radius: 10
   }).addTo(mymap);
-    var circle2 = L.circle([30.6602051,-98.4371652], {
+  const circle2 = L.circle([30.6602051,-98.4371652], {
       color: 'red',
       fillColor: '#f03',
       fillOpacity: 0.5,
       radius: 10
   }).addTo(mymap);
-    var circle3 = L.circle([30.4062185,-97.5596615], {
+  const circle3 = L.circle([30.4062185,-97.5596615], {
       color: 'red',
       fillColor: '#f03',
       fillOpacity: 0.5,
       radius: 10
   }).addTo(mymap);
-    var circle4 = L.circle([30.8822347,-97.589399], {
+  const circle4 = L.circle([30.8822347,-97.589399], {
       color: 'red',
       fillColor: '#f03',
       fillOpacity: 0.5,

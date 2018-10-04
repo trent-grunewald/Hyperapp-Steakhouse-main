@@ -116,6 +116,9 @@ function Contact(_ref) {
     var marker3 = L.marker([30.4062185, -97.5596615]).addTo(mymap);
     var marker4 = L.marker([30.8822347, -97.589399]).addTo(mymap);
     marker.bindPopup("<b>Just park out front,</b><br>we will come get you.").openPopup();
+    marker2.bindPopup("<b>Come enjoy family dinner,</b><br>with us!").openPopup();
+    marker3.bindPopup("<b>Come on in,</b><br>meet our family.").openPopup();
+    marker4.bindPopup("<b>Try our Award winning,</b><br>chili, family recipe.").openPopup();
     var circle = L.circle([30.6928582, -97.4577975], {
       color: 'red',
       fillColor: '#f03',

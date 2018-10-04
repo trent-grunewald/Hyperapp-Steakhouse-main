@@ -1,0 +1,72 @@
+@import 'variables';
+
+// #menu{
+//   display: hidden;
+// }
+
+.menu{
+  margin-bottom: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &_logo {
+    background: url(img/logodark.png);
+    height: 150px;
+    width: 200px;
+  }
+
+  &_section{
+    margin-bottom: 30px;
+
+    h3{
+      font-style: italic;
+      font-weight: 600;
+      text-decoration: underline 2px solid black;
+      border: 2px solid black;
+      text-align: center;
+      padding: 3px;
+      font-family: $ff-title;
+      margin-bottom: 1em;
+  }
+
+    h4{
+      margin-bottom: 0px;
+    }
+  }
+
+  &_item{
+      margin: 0 15px;
+      position: relative;
+  }
+}
+
+.restName{
+  text-align: center;
+  font-size: 70px;
+  margin-top: 0;
+  font-family: $ff-title;
+}
+
+.price {
+  display: block;
+  float: right;
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  background-color: white;
+  font-weight: bold;
+}
+
+.description {
+  margin-top: 5px;
+  font-style: italic;
+  background-color: white;
+  display: inline-block;
+  max-width: 50%;
+}
+
+hr {
+  border: none;
+  border-top: 1px dotted black;
+  // margin-top: -20px;
+}

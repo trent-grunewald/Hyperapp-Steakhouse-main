@@ -1,6 +1,7 @@
 import {h, app} from 'hyperapp'
 import Modal from './modal.js'
 import Reservations from './reservations.js'
+import Menu from './menu.js'
 import Header from './header.js'
 import TopImg from './topimg.js'
 import OurStory from './ourstory.js'
@@ -17,6 +18,7 @@ export default function App({state, actions}) {
     <div class={'app'}>
       <Modal state={state} actions={actions}/>
       <Reservations state={state} actions={actions}/>
+      <Menu state={state} actions={actions}/>
       <Header state={state} actions={actions}/>
       <TopImg state={state} actions={actions}/>
       <OurStory state={state} actions={actions}/>

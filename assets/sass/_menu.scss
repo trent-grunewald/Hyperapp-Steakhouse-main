@@ -100,3 +100,55 @@ hr {
   top: 40px;
   font-size: 40px;
 }
+
+@media only screen and (max-width: 790px) {
+  .menu-body{
+  background: white;
+  outline: 2px solid black;
+  padding: 20px;
+  position: relative;
+  max-height: 900px;
+  overflow-y: auto;
+  margin-top: 0;
+  }
+
+  #close-menu{
+    top: 30px;
+  }
+
+  .restName{
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .menu-body{
+  background: white;
+  outline: 2px solid black;
+  padding: 20px;
+  position: relative;
+  max-height: 900px;
+  overflow-y: auto;
+  margin-top: 0;
+  }
+
+  #close-menu{
+    font-size: 30px;
+  }
+
+  .restName{
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  #close-menu{
+    left: 48%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .restName{
+    margin-top: 2em;
+  }
+}

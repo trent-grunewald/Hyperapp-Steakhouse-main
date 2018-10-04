@@ -11,6 +11,7 @@
 .special-top{
   text-align: center;
   padding-top: 10em;
+  margin-bottom: 5em;
 }
 
 .special-head{
@@ -184,14 +185,13 @@
 
 .col-md-4 {
   cursor: pointer;
-  height: 150px;
   perspective: 600;
   position: relative;
   width: 150px;
   height: 450px;
 }
 .card {
-  margin-top: 5em;
+  cursor: pointer;
   background: white;
   padding: 20px;
   outline: 2px solid black;
@@ -234,13 +234,13 @@
 @media only screen and (max-width: 1171px) {
   .menuCard{
     display: unset;
-    padding: 12%;
+    padding: 100px;
     
     &-text{
       text-decoration: none;
       color: black;
       font-family: "Playfair Display",serif;
-      font-size: 5em;
+      font-size: 50px;
       text-transform: capitalize;
       text-align: center;
       position: static;
@@ -252,7 +252,7 @@
   }
   
   .card-grid{
-    padding-bottom: 200px;
+    padding-bottom: 50px;
   }
 }
 
@@ -261,10 +261,7 @@
     width:90%;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .view-menu {
-  margin-bottom: 5em;
+    margin-top: 2em;
   }
 }
 
@@ -275,14 +272,6 @@
 
   .special-menu{
     padding-bottom: 15em;
-  }
-
-  .col-md-4{
-    height: 500px;
-  }
-
-  .card {
-  width: 320px;
   }
 
   .view-menu{

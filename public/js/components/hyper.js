@@ -1798,7 +1798,7 @@ function SpecialMenu(_ref) {
           ),
           (0, _hyperapp.h)(
             'div',
-            { 'class': 'card menuCard' },
+            { 'class': 'menuCard' },
             (0, _hyperapp.h)(
               'a',
               { 'class': 'view-menu openMenu menuCard-text', href: '#menu' },
@@ -1808,7 +1808,7 @@ function SpecialMenu(_ref) {
               (0, _hyperapp.h)('br', null),
               'FULL',
               (0, _hyperapp.h)('br', null),
-              'MENU'
+              ' MENU'
             )
           )
         )

@@ -24,12 +24,15 @@
 .grid-container{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  margin-bottom: 15em;
+  margin-bottom: 13em;
+  background: white;
+  border: 2px solid black;
 }
 
 #grid-item1, #grid-item3, #grid-item5{
   height: 400px;
   width: auto;
+  margin: 15px;
 }
 
 #grid-item1{
@@ -40,7 +43,6 @@
 #grid-item2, #grid-item4, #grid-item6{
   padding-top: 25%;
   background: white;
-  border: 2px solid black;
 }
 
 .grid-item-title{

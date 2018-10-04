@@ -10,9 +10,13 @@
   margin: 0 auto;
 
   &_logo {
-    background: url(img/logodark.png);
-    height: 150px;
-    width: 200px;
+    height: 70px;
+    width: 100px;
+    background: url(/img/logodark.png) no-repeat;
+    background-size: contain;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 50px;
   }
 
   &_section{
@@ -25,12 +29,17 @@
       border: 2px solid black;
       text-align: center;
       padding: 3px;
-      font-family: $ff-title;
+      font-family: initial;
       margin-bottom: 1em;
+      font-size: 1.15em;
   }
 
     h4{
       margin-bottom: 0px;
+      font-weight: 700;
+      font-family: initial;
+      margin-bottom: 0px;
+      letter-spacing: 1px;
     }
   }
 
@@ -45,6 +54,7 @@
   font-size: 70px;
   margin-top: 0;
   font-family: $ff-title;
+  padding-bottom: 30px;
 }
 
 .price {
@@ -55,18 +65,21 @@
   right: 0;
   background-color: white;
   font-weight: bold;
+  font-family: initial;
 }
 
 .description {
-  margin-top: 5px;
+  margin-top: 10px;
   font-style: italic;
   background-color: white;
   display: inline-block;
   max-width: 50%;
+  font-family: initial;
 }
 
 hr {
   border: none;
   border-top: 1px dotted black;
-  // margin-top: -20px;
+  margin-top: -4px;
+  margin-bottom: 20px;
 }

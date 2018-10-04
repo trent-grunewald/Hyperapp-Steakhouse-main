@@ -27,6 +27,7 @@
 .card-grid{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 10px;
 }
 
 .top-card{
@@ -197,8 +198,9 @@
   position: absolute;
   transform-style: preserve-3d;
   transition: all 1.25s ease-in-out;
-  width: 375px;
   height: 450px;
+  perspective: 600;
+  position: relative;
 }
 .flipped {
   transform: rotateY(180deg);
@@ -217,6 +219,12 @@
   top: 0;
   right: .5px;
   height: 450px;
+}
+
+@media only screen and (max-width: 1250px) {
+  .card{
+    width: 345px
+  }
 }
 
 @media only screen and (max-width: 768px) {

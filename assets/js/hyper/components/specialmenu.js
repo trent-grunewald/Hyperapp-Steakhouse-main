@@ -22,7 +22,7 @@ const clickFlip = function(){
       <h1 class="special-title">Delicious Flavour Of Spice</h1>
     </div>
     <div class="container card-grid">
-  <div class="col-md-4">
+  {/* <div class="col-md-4"> */}
   <div class="card" onclick={clickFlip}>
     <div class="side"><img id='card1'/>
     <div class="light-circle"></div>
@@ -43,9 +43,9 @@ const clickFlip = function(){
     </div>
     </div>
   </div>
-</div>
+{/* </div> */}
 
-<div class="col-md-4">
+{/* <div class="col-md-4"> */}
   <div class="card" onclick={clickFlip}>
     <div class="side"><img id='card3'/>
     <div class="light-circle"></div>
@@ -66,9 +66,9 @@ const clickFlip = function(){
     </div>
     </div>
   </div>
-</div>
+{/* </div> */}
 
-<div class="col-md-4">
+{/* <div class="col-md-4"> */}
   <div class="card" onclick={clickFlip}>
     <div class="side"><img id='card5'/>
     <div class="light-circle"></div>
@@ -90,7 +90,7 @@ const clickFlip = function(){
     </div>
     </div>
     </div>
-  </div>
+  {/* </div> */}
 </div>
       </div>
       <a class="view-menu openMenu" href="#menu">VIEW FULL MENU</a>

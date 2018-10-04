@@ -110,7 +110,7 @@ function Contact(_ref) {
       actions = _ref.actions;
 
   setTimeout(function () {
-    var mymap = L.map('map').setView([30.6928582, -97.4577975], 10);
+    var mymap = L.map('map').setView([30.6928582, -97.4577975], 9);
     var marker = L.marker([30.6928582, -97.4577975]).addTo(mymap);
     var marker2 = L.marker([30.6602051, -98.4371652]).addTo(mymap);
     var marker3 = L.marker([30.4062185, -97.5596615]).addTo(mymap);
@@ -142,7 +142,7 @@ function Contact(_ref) {
     }).addTo(mymap);
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-      attribution: 'Test?',
+      attribution: 'Our locations',
       maxZoom: 20,
       id: 'mapbox.streets',
       mapId: 'map',
@@ -1268,7 +1268,7 @@ function SpecialMenu(_ref) {
                 (0, _hyperapp.h)(
                   'p',
                   { 'class': 'special-menu-description' },
-                  'A delicious 16oz Ribeye, dowsed in seasonsings, you will need water.'
+                  'A delicious 16oz Rib eye, dowsed in seasonings, you will need water.'
                 )
               ),
               (0, _hyperapp.h)(

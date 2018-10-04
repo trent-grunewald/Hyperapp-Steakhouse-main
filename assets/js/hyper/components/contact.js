@@ -2,7 +2,7 @@ import {h, app} from 'hyperapp'
 
 export default function Contact({state, actions}) {
   (setTimeout(() => {
-    var mymap = L.map('map').setView([30.6928582,-97.4577975], 10);
+    var mymap = L.map('map').setView([30.6928582,-97.4577975], 9);
     var marker = L.marker([30.6928582,-97.4577975]).addTo(mymap);
     var marker2 = L.marker([30.6602051,-98.4371652]).addTo(mymap);
     var marker3 = L.marker([30.4062185,-97.5596615]).addTo(mymap);
@@ -34,7 +34,7 @@ export default function Contact({state, actions}) {
   }).addTo(mymap);
     
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Test?',
+    attribution: 'Our locations',
     maxZoom: 20,
     id: 'mapbox.streets',
     mapId: 'map',

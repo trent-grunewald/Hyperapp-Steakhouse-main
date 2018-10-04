@@ -53,7 +53,7 @@ const clickFlip = function(){
     </div>
        <div class="container card-container">
         <p class="special-menu-title">Steamed Ribeye</p>
-        <p class="special-menu-description">A delicious 16oz Ribeye, dowsed in seasonsings, you will need water.</p>
+        <p class="special-menu-description">A delicious 16oz Rib eye, dowsed in seasonings, you will need water.</p>
     </div>
     <div class="side back">
     <div class="side"><img id='card4'/>

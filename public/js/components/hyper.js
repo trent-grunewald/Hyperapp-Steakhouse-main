@@ -136,7 +136,7 @@ function Contact(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
-  setTimeout(function () {
+  var mapFunc = function mapFunc(_) {
     var mymap = L.map('map').setView([30.6928582, -97.4577975], 9);
     var marker = L.marker([30.6928582, -97.4577975]).addTo(mymap);
     var marker2 = L.marker([30.6602051, -98.4371652]).addTo(mymap);
@@ -179,7 +179,7 @@ function Contact(_ref) {
       token: 'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g',
       accessToken: 'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g'
     }).addTo(mymap);
-  }, 3000);
+  };
   return (0, _hyperapp.h)(
     'section',
     { 'class': 'contact', id: 'contact' },
@@ -1506,7 +1506,7 @@ function Quote(_ref) {
       state.globalState.setQuote.currentQuote !== 0;
       actions.previousQuote();
     }
-  }, 2000);
+  }, 10000);
 
   return (0, _hyperapp.h)(
     "section",

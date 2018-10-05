@@ -11,6 +11,7 @@ export default function Quote({state, actions}) {
           <h5 class="quote-name">{state.globalState.quotes[state.globalState.setQuote.currentQuote].authorInfo} <span class="quote2">{state.globalState.quotes[state.globalState.setQuote.currentQuote].authorInfo2}</span></h5>
       </div>
     )
+    
   }
 
   const leftArrow = setInterval(function() {
@@ -20,7 +21,7 @@ export default function Quote({state, actions}) {
       state.globalState.setQuote.currentQuote !== 0 
         actions.previousQuote()
     }
-  },2000)
+  },10000)
 
   return (
     <section class="quote-body">

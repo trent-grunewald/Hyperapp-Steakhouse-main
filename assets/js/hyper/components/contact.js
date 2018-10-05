@@ -1,7 +1,12 @@
 import {h, app} from 'hyperapp'
 
 export default function Contact({state, actions}) {
-  let mapFunc =_=> {
+
+  (setTimeout(() => {
+    var container = L.DomUtil.get('map');
+    if(container != null){
+    container._leaflet_id = null;
+    }
     const mymap = L.map('map').setView([30.6928582,-97.4577975], 9);
     const marker = L.marker([30.6928582,-97.4577975]).addTo(mymap);
     const marker2 = L.marker([30.6602051,-98.4371652]).addTo(mymap);
@@ -44,7 +49,10 @@ export default function Contact({state, actions}) {
     token:'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g',
     accessToken: 'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g'
   }).addTo(mymap);
-  }
+  }, 3000))
+
+  
+  
   return (
     <section class="contact" id="contact">
       <div class="container contact-container">

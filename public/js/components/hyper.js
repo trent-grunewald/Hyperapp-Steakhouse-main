@@ -114,7 +114,7 @@ var globalState = exports.globalState = {
     currentReview: 0
   },
   setQuote: {
-    currentQuote: Math.floor(Math.random() * 6) + 0
+    currentQuote: 0
   }
 };
 
@@ -136,7 +136,12 @@ function Contact(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
-  var mapFunc = function mapFunc(_) {
+
+  setTimeout(function () {
+    var container = L.DomUtil.get('map');
+    if (container != null) {
+      container._leaflet_id = null;
+    }
     var mymap = L.map('map').setView([30.6928582, -97.4577975], 9);
     var marker = L.marker([30.6928582, -97.4577975]).addTo(mymap);
     var marker2 = L.marker([30.6602051, -98.4371652]).addTo(mymap);
@@ -179,7 +184,8 @@ function Contact(_ref) {
       token: 'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g',
       accessToken: 'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g'
     }).addTo(mymap);
-  };
+  }, 3000);
+
   return (0, _hyperapp.h)(
     'section',
     { 'class': 'contact', id: 'contact' },
@@ -598,17 +604,10 @@ var nextQuote = function nextQuote(state, actions) {
   };
 };
 
-var test = function test(state, actions) {
-  return {
-    setQuote: {
-      currentQuote: 5
-    }
-  };
-};
 var previousQuote = function previousQuote(state, actions) {
   return {
     setQuote: {
-      currentQuote: state.globalState.setQuote.currentQuote--
+      currentQuote: state.globalState.setQuote.currentQuote = 0
     }
   };
 };
@@ -616,7 +615,6 @@ var previousQuote = function previousQuote(state, actions) {
 var actions = exports.actions = {
   nextReview: nextReview,
   previousReview: previousReview,
-  test: test,
   nextQuote: nextQuote,
   previousQuote: previousQuote
 };
@@ -1499,13 +1497,14 @@ function Quote(_ref) {
     );
   };
 
-  var leftArrow = setInterval(function () {
-    if (state.globalState.setQuote.currentQuote === 0) {
-      actions.test();
+  var generateQuote = setInterval(function () {
+    if (state.globalState.setQuote.currentQuote !== 5) {
+      actions.nextQuote();
     } else {
-      state.globalState.setQuote.currentQuote !== 0;
+      state.globalState.setQuote.currentQuote - 5;
       actions.previousQuote();
     }
+    console.log(state.globalState.setQuote.currentQuote);
   }, 10000);
 
   return (0, _hyperapp.h)(
@@ -1516,7 +1515,7 @@ function Quote(_ref) {
       { "class": "container" },
       (0, _hyperapp.h)("q", { lang: "en" }),
       currentQuote(),
-      leftArrow
+      generateQuote
     )
   );
 }

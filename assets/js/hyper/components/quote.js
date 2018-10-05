@@ -14,13 +14,14 @@ export default function Quote({state, actions}) {
     
   }
 
-  const leftArrow = setInterval(function() {
-    if(state.globalState.setQuote.currentQuote === 0) {
-      actions.test()
+  const generateQuote = setInterval(function() {
+    if(state.globalState.setQuote.currentQuote !== 5) {
+      actions.nextQuote()
     } else {
-      state.globalState.setQuote.currentQuote !== 0 
-        actions.previousQuote()
+      state.globalState.setQuote.currentQuote - 5
+      actions.previousQuote()
     }
+    console.log(state.globalState.setQuote.currentQuote)
   },10000)
 
   return (
@@ -28,7 +29,7 @@ export default function Quote({state, actions}) {
       <div class="container">
         <q lang="en"></q>
           {currentQuote()}
-          {leftArrow}
+          {generateQuote}
         {/* <h1 class="quote">I Love Cooking A Big Steak,<br/>For Myself and For My Cat.</h1>
         <h5 class="quote-author">- Tommy Tammisimo -</h5>
         <h5 class="quote-name">The lonely head chef <span class="quote2">- Over-Seasoned Steakhouse</span></h5> */}

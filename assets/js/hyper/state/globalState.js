@@ -120,6 +120,6 @@ export let globalState = {
     currentReview: 0,
   },
   setQuote: {
-    currentQuote: (Math.floor(Math.random() * 6) + 0 ),
+    currentQuote: 0,
   }
 }

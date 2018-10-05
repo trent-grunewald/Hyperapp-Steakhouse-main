@@ -30,20 +30,11 @@ const nextQuote = function (state, actions) {
   )
 }
 
-const test = function (state, actions) {
-  return (
-    {
-      setQuote: {
-      currentQuote: 5, 
-     }
-    }
-  )
-}
 const previousQuote = function (state, actions) {
   return (
     {
       setQuote: {
-      currentQuote: state.globalState.setQuote.currentQuote -- 
+      currentQuote: state.globalState.setQuote.currentQuote = 0,
      }
     }
   )
@@ -52,7 +43,6 @@ const previousQuote = function (state, actions) {
 export const actions = {
   nextReview,
   previousReview,
-  test,
   nextQuote,
   previousQuote,
 }

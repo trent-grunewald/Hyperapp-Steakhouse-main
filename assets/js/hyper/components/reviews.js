@@ -12,11 +12,13 @@ export default function Reviews({state, actions}) {
     )
   }
 
-  const leftArrow = function() {
+  const leftArrow = setInterval(function() {
     if(state.globalState.setReview.currentReview !== 0) {
       actions.previousReview()
+    } else {
+      state.globalState.setReview.currentReview === 5
     }
-  }
+  },2000)
 
   const rightArrow = function(){
     if(state.globalState.setReview.currentReview !== (state.globalState.reviews.length - 1)) {
@@ -33,7 +35,7 @@ export default function Reviews({state, actions}) {
         <h1 class="review-title">What Nobody Say's About Us</h1>
           {currentReview()}
         <div class="arrows">
-          <i onclick={leftArrow} class={`fa fa-arrow-left ${(state.globalState.setReview.currentReview > 0) ? 'ready' : ''}`} aria-hidden="true"></i>
+          <i onLoad={leftArrow} class={`fa fa-arrow-left ${(state.globalState.setReview.currentReview > 0) ? 'ready' : ''}`} aria-hidden="true"></i>
          <i onclick= {rightArrow} class={`fa fa-arrow-right ${(state.globalState.setReview.currentReview === (state.globalState.reviews.length - 1)) ? '' : 'ready'}`}  aria-hidden="true"></i></div>
        </div>
       </div>

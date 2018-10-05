@@ -590,27 +590,35 @@ var previousReview = function previousReview(state, actions) {
   };
 };
 
-// const nextQuote = function (state, actions) {
-//   return (
-//     {
-//       setQuote: {
-//       currentQuote: state.globalState.setQuote.currentQuote ++ 
-//      }
-//     }
-//   )
-// const previousQuote = function (state, actions) {
-//   return (
-//     {
-//       setQuote: {
-//       currentQuote: state.globalState.setQuote.currentQuote -- 
-//      }
-//     }
-//   )
-// }
+var nextQuote = function nextQuote(state, actions) {
+  return {
+    setQuote: {
+      currentQuote: state.globalState.setQuote.currentQuote++
+    }
+  };
+};
+
+var test = function test(state, actions) {
+  return {
+    setQuote: {
+      currentQuote: 5
+    }
+  };
+};
+var previousQuote = function previousQuote(state, actions) {
+  return {
+    setQuote: {
+      currentQuote: state.globalState.setQuote.currentQuote--
+    }
+  };
+};
 
 var actions = exports.actions = {
   nextReview: nextReview,
-  previousReview: previousReview
+  previousReview: previousReview,
+  test: test,
+  nextQuote: nextQuote,
+  previousQuote: previousQuote
 };
 
 /***/ }),
@@ -1491,11 +1499,14 @@ function Quote(_ref) {
     );
   };
 
-  currentQuote();
-
-  // const test = setInterval(function(){
-  //   console.log(state.globalState.setQuote.currentQuote)
-  // },2000)
+  var leftArrow = setInterval(function () {
+    if (state.globalState.setQuote.currentQuote === 0) {
+      actions.test();
+    } else {
+      state.globalState.setQuote.currentQuote !== 0;
+      actions.previousQuote();
+    }
+  }, 2000);
 
   return (0, _hyperapp.h)(
     "section",
@@ -1504,7 +1515,8 @@ function Quote(_ref) {
       "div",
       { "class": "container" },
       (0, _hyperapp.h)("q", { lang: "en" }),
-      currentQuote()
+      currentQuote(),
+      leftArrow
     )
   );
 }
@@ -1557,11 +1569,13 @@ function Reviews(_ref) {
     );
   };
 
-  var leftArrow = function leftArrow() {
+  var leftArrow = setInterval(function () {
     if (state.globalState.setReview.currentReview !== 0) {
       actions.previousReview();
+    } else {
+      state.globalState.setReview.currentReview === 5;
     }
-  };
+  }, 2000);
 
   var rightArrow = function rightArrow() {
     if (state.globalState.setReview.currentReview !== state.globalState.reviews.length - 1) {
@@ -1593,7 +1607,7 @@ function Reviews(_ref) {
         (0, _hyperapp.h)(
           "div",
           { "class": "arrows" },
-          (0, _hyperapp.h)("i", { onclick: leftArrow, "class": "fa fa-arrow-left " + (state.globalState.setReview.currentReview > 0 ? 'ready' : ''), "aria-hidden": "true" }),
+          (0, _hyperapp.h)("i", { onLoad: leftArrow, "class": "fa fa-arrow-left " + (state.globalState.setReview.currentReview > 0 ? 'ready' : ''), "aria-hidden": "true" }),
           (0, _hyperapp.h)("i", { onclick: rightArrow, "class": "fa fa-arrow-right " + (state.globalState.setReview.currentReview === state.globalState.reviews.length - 1 ? '' : 'ready'), "aria-hidden": "true" })
         )
       )

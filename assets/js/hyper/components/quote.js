@@ -13,20 +13,28 @@ export default function Quote({state, actions}) {
     )
   }
 
-  currentQuote();
-
-  // const test = setInterval(function(){
-  //   console.log(state.globalState.setQuote.currentQuote)
-  // },2000)
+  const leftArrow = setInterval(function() {
+    if(state.globalState.setQuote.currentQuote === 0) {
+      actions.test()
+    } else {
+      state.globalState.setQuote.currentQuote !== 0 
+        actions.previousQuote()
+    }
+  },2000)
 
   return (
     <section class="quote-body">
       <div class="container">
         <q lang="en"></q>
           {currentQuote()}
+          {leftArrow}
         {/* <h1 class="quote">I Love Cooking A Big Steak,<br/>For Myself and For My Cat.</h1>
         <h5 class="quote-author">- Tommy Tammisimo -</h5>
         <h5 class="quote-name">The lonely head chef <span class="quote2">- Over-Seasoned Steakhouse</span></h5> */}
+        {/* <div class="arrows">
+          <i onload={leftArrow} class={`fa fa-arrow-left ${(state.globalState.setQuote.currentQuote > 0) ? 'ready' : ''}`} aria-hidden="true"></i>
+         <i onclick= {rightArrow} class={`fa fa-arrow-right ${(state.globalState.setQuote.currentQuote === (state.globalState.quotes.length - 1)) ? '' : 'ready'}`}  aria-hidden="true"></i>
+         </div> */}
       </div>
     </section>
   )

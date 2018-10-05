@@ -20,27 +20,41 @@ const previousReview = function (state, actions) {
 }
 
  
-// const nextQuote = function (state, actions) {
-//   return (
-//     {
-//       setQuote: {
-//       currentQuote: state.globalState.setQuote.currentQuote ++ 
-//      }
-//     }
-//   )
-// const previousQuote = function (state, actions) {
-//   return (
-//     {
-//       setQuote: {
-//       currentQuote: state.globalState.setQuote.currentQuote -- 
-//      }
-//     }
-//   )
-// }
+const nextQuote = function (state, actions) {
+  return (
+    {
+      setQuote: {
+      currentQuote: state.globalState.setQuote.currentQuote ++ 
+     }
+    }
+  )
+}
+
+const test = function (state, actions) {
+  return (
+    {
+      setQuote: {
+      currentQuote: 5, 
+     }
+    }
+  )
+}
+const previousQuote = function (state, actions) {
+  return (
+    {
+      setQuote: {
+      currentQuote: state.globalState.setQuote.currentQuote -- 
+     }
+    }
+  )
+}
 
 export const actions = {
   nextReview,
   previousReview,
+  test,
+  nextQuote,
+  previousQuote,
 }
 
 

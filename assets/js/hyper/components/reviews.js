@@ -12,7 +12,7 @@ export default function Reviews({state, actions}) {
     )
   }
 
-  var leftArrow = function() {
+  const leftArrow = function() {
     if(state.globalState.setReview.currentReview !== 0) {
       actions.previousReview()
     }

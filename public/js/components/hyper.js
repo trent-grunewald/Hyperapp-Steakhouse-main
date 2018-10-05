@@ -58,6 +58,21 @@ var quotes = [{
   author: '- Shilo -',
   authorInfo: 'Vegan ',
   authorInfo2: '- Our Lady Health '
+}, {
+  quote: 'If I have anymore fun today, I don\'t think I\'m gonna be able to take it!',
+  author: '- Franklin -',
+  authorInfo: 'Missing',
+  authorInfo2: '- Last seen in a white van '
+}, {
+  quote: 'Have you ever been in a turkish prison?',
+  author: '- Capt. Oveur-',
+  authorInfo: 'Pilot',
+  authorInfo2: '- Creep '
+}, {
+  quote: 'My family\'s always been in meat.',
+  author: '- Drayton Sawyer-',
+  authorInfo: 'Chili master',
+  authorInfo2: '- Resturaunt Owner'
 }];
 
 var reviews = [{
@@ -77,6 +92,18 @@ var reviews = [{
   author2: 'S-Mart'
 }];
 
+// let mathVar = 0;
+
+// function test(){
+//    mathVar = (Math.floor(Math.random() * 6) + 0 ) 
+//   return mathVar
+
+// };
+
+// let test2 = setInterval(function(){
+//   console.log(test())
+// },1000);
+
 var globalState = exports.globalState = {
   count: 0,
   companyInfo: companyInfo,
@@ -87,7 +114,7 @@ var globalState = exports.globalState = {
     currentReview: 0
   },
   setQuote: {
-    currentQuote: 0
+    currentQuote: Math.floor(Math.random() * 6) + 0
   }
 };
 
@@ -563,27 +590,27 @@ var previousReview = function previousReview(state, actions) {
   };
 };
 
-var nextQuote = function nextQuote(state, actions) {
-  return {
-    setQuote: {
-      currentQuote: state.globalState.setQuote.currentQuote++
-    }
-  };
-};
-
-var previousQuote = function previousQuote(state, actions) {
-  return {
-    setQuote: {
-      currentQuote: state.globalState.setQuote.currentQuote--
-    }
-  };
-};
+// const nextQuote = function (state, actions) {
+//   return (
+//     {
+//       setQuote: {
+//       currentQuote: state.globalState.setQuote.currentQuote ++ 
+//      }
+//     }
+//   )
+// const previousQuote = function (state, actions) {
+//   return (
+//     {
+//       setQuote: {
+//       currentQuote: state.globalState.setQuote.currentQuote -- 
+//      }
+//     }
+//   )
+// }
 
 var actions = exports.actions = {
   nextReview: nextReview,
-  previousReview: previousReview,
-  nextQuote: nextQuote,
-  previousQuote: previousQuote
+  previousReview: previousReview
 };
 
 /***/ }),
@@ -1435,7 +1462,8 @@ function Quote(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
-  var currentQuote = function currentQuote(_) {
+
+  var currentQuote = function currentQuote() {
     return (0, _hyperapp.h)(
       "div",
       null,
@@ -1462,6 +1490,13 @@ function Quote(_ref) {
       )
     );
   };
+
+  currentQuote();
+
+  // const test = setInterval(function(){
+  //   console.log(state.globalState.setQuote.currentQuote)
+  // },2000)
+
   return (0, _hyperapp.h)(
     "section",
     { "class": "quote-body" },

@@ -57,6 +57,24 @@ const quotes = [
     authorInfo: 'Vegan ',
     authorInfo2: '- Our Lady Health '
   },
+  {
+    quote: 'If I have anymore fun today, I don\'t think I\'m gonna be able to take it!',
+    author:'- Franklin -',
+    authorInfo: 'Missing',
+    authorInfo2: '- Last seen in a white van '
+  },
+  {
+    quote: 'Have you ever been in a turkish prison?',
+    author:'- Capt. Oveur-',
+    authorInfo: 'Pilot',
+    authorInfo2: '- Creep '
+  },
+  {
+    quote: 'My family\'s always been in meat.',
+    author:'- Drayton Sawyer-',
+    authorInfo: 'Chili master',
+    authorInfo2: '- Resturaunt Owner'
+  },
 ]
 
 const reviews = [
@@ -80,6 +98,18 @@ const reviews = [
   },
 ]
 
+// let mathVar = 0;
+
+// function test(){
+//    mathVar = (Math.floor(Math.random() * 6) + 0 ) 
+//   return mathVar
+  
+// };
+
+// let test2 = setInterval(function(){
+//   console.log(test())
+// },1000);
+
 export let globalState = {
   count: 0,
   companyInfo,
@@ -90,6 +120,6 @@ export let globalState = {
     currentReview: 0,
   },
   setQuote: {
-    currentQuote: 0,
+    currentQuote: (Math.floor(Math.random() * 6) + 0 ),
   }
 }

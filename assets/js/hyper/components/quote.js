@@ -2,7 +2,8 @@ import {h, app} from 'hyperapp';
 
 
 export default function Quote({state, actions}) {
-  let currentQuote =_=>{
+
+  let currentQuote = function(){
     return (
       <div>
           <h1 class="quote">{state.globalState.quotes[state.globalState.setQuote.currentQuote].quote}</h1>
@@ -11,6 +12,13 @@ export default function Quote({state, actions}) {
       </div>
     )
   }
+
+  currentQuote();
+
+  // const test = setInterval(function(){
+  //   console.log(state.globalState.setQuote.currentQuote)
+  // },2000)
+
   return (
     <section class="quote-body">
       <div class="container">

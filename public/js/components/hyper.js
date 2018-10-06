@@ -75,6 +75,10 @@ var quotes = [{
   authorInfo2: '- Resturaunt Owner'
 }];
 
+function test() {
+  return;
+}
+
 var reviews = [{
   title: '"Way too many spices, I threw up!"',
   review: 'There was so much damn pepper on my steak that it was actually spicy! My fiance and I didn\'t finish our meals and the amount of "side" you get with your meal is laughable... We were still hungry after, so we went to McDonalds. Terrible honeymoon dinner.',
@@ -138,10 +142,13 @@ function Contact(_ref) {
 
 
   setTimeout(function () {
+    // DO NOT REMOVE, Prevents leaflet initialization bug
     var container = L.DomUtil.get('map');
     if (container != null) {
       container._leaflet_id = null;
     }
+
+    // LEAFLET MAP
     var mymap = L.map('map').setView([30.6928582, -97.4577975], 9);
     var marker = L.marker([30.6928582, -97.4577975]).addTo(mymap);
     var marker2 = L.marker([30.6602051, -98.4371652]).addTo(mymap);
@@ -1496,12 +1503,10 @@ function Quote(_ref) {
       )
     );
   };
-
-  var generateQuote = setInterval(function () {
+  var generateQuote = setTimeout(function () {
     if (state.globalState.setQuote.currentQuote !== 5) {
       actions.nextQuote();
     } else {
-      state.globalState.setQuote.currentQuote - 5;
       actions.previousQuote();
     }
     console.log(state.globalState.setQuote.currentQuote);
@@ -1514,8 +1519,7 @@ function Quote(_ref) {
       "div",
       { "class": "container" },
       (0, _hyperapp.h)("q", { lang: "en" }),
-      currentQuote(),
-      generateQuote
+      currentQuote()
     )
   );
 }
@@ -1568,13 +1572,15 @@ function Reviews(_ref) {
     );
   };
 
-  var leftArrow = setInterval(function () {
+  var leftArrow = function leftArrow() {
     if (state.globalState.setReview.currentReview !== 0) {
       actions.previousReview();
     } else {
       state.globalState.setReview.currentReview === 5;
     }
-  }, 2000);
+  };
+
+  setInterval(leftArrow, 2000);
 
   var rightArrow = function rightArrow() {
     if (state.globalState.setReview.currentReview !== state.globalState.reviews.length - 1) {

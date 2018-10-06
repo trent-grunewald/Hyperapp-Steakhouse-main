@@ -24,7 +24,7 @@ const nextQuote = function (state, actions) {
   return (
     {
       setQuote: {
-      currentQuote: state.globalState.setQuote.currentQuote ++ 
+      currentQuote:state.globalState.setQuote.currentQuote ++, 
      }
     }
   )

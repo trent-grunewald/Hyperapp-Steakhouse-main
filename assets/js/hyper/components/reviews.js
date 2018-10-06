@@ -12,13 +12,15 @@ export default function Reviews({state, actions}) {
     )
   }
 
-  const leftArrow = setInterval(function() {
+  const leftArrow = function() {
     if(state.globalState.setReview.currentReview !== 0) {
       actions.previousReview()
     } else {
       state.globalState.setReview.currentReview === 5
     }
-  },2000)
+  }
+  
+  setInterval(leftArrow,2000);
 
   const rightArrow = function(){
     if(state.globalState.setReview.currentReview !== (state.globalState.reviews.length - 1)) {

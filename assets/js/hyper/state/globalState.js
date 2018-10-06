@@ -77,6 +77,10 @@ const quotes = [
   },
 ]
 
+function test() {
+  return ;
+}
+
 const reviews = [
   {
     title: '"Way too many spices, I threw up!"',

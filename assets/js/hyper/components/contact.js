@@ -3,10 +3,13 @@ import {h, app} from 'hyperapp'
 export default function Contact({state, actions}) {
 
   (setTimeout(() => {
+    // DO NOT REMOVE, Prevents leaflet initialization bug
     var container = L.DomUtil.get('map');
     if(container != null){
     container._leaflet_id = null;
     }
+
+    // LEAFLET MAP
     const mymap = L.map('map').setView([30.6928582,-97.4577975], 9);
     const marker = L.marker([30.6928582,-97.4577975]).addTo(mymap);
     const marker2 = L.marker([30.6602051,-98.4371652]).addTo(mymap);

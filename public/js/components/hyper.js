@@ -1479,7 +1479,7 @@ function Quote(_ref) {
   var currentQuote = function currentQuote() {
     return (0, _hyperapp.h)(
       "div",
-      null,
+      { "class": "quoteHidden quoteBody" },
       (0, _hyperapp.h)(
         "h1",
         { "class": "quote" },
@@ -1503,13 +1503,32 @@ function Quote(_ref) {
       )
     );
   };
+
+  function test() {
+    var quote = document.querySelector('.quoteBody');
+
+    if (quote.classList.contains("quoteHidden")) {
+      quote.classList.toggle("quoteTransition");
+    } else {
+      quote.classList.toggle("quoteHidden");
+    };
+  }
+  // function test2(){
+  //   const quote = document.querySelector('.quoteBody')
+
+  //   if(quote.classList.contains("quoteTransition")) {
+  //   quote.classList.replace("quoteHidden", "quoteTransition")
+  //   const quoteReveal = document.querySelector('.quoteTransition')
+  //   };
+
   var generateQuote = setTimeout(function () {
     if (state.globalState.setQuote.currentQuote !== 5) {
       actions.nextQuote();
+      test();
     } else {
       actions.previousQuote();
+      test();
     }
-    console.log(state.globalState.setQuote.currentQuote);
   }, 10000);
 
   return (0, _hyperapp.h)(

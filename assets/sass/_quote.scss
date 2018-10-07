@@ -30,6 +30,15 @@ q:lang(en) {
   quotes: '\201C' '\201D' '\2018' '\2019';
 }
 
+.quoteHidden{
+  opacity: 0;
+}
+
+.quoteTransition{
+  opacity: 1;
+  transition: opacity 2s;
+}
+
 .quote{
   font-family: $ff-title;
   margin-bottom: 3em;
@@ -53,6 +62,24 @@ q:lang(en) {
   .quote2{
     color: #b5b3b4;
     font-style: italic;
+  }
+}
+
+@keyframes quoteFade {
+  0% {
+    position: absolute;
+    top: -3rem;
+    opacity: 0;
+  }
+
+  75% {
+    position: absolute;
+    top: 25%;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 

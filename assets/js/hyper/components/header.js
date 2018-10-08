@@ -74,7 +74,7 @@ closeMenu.addEventListener('click', function(){
 }
 
   return (
-    <header>
+    <header id="header">
       {
         <div class="container">
           <nav class="nav">

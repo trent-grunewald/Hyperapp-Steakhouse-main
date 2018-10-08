@@ -2,7 +2,11 @@
 const companyInfo = {
   title: 'Over-Seasoned Steakhouse',
   phone: '(206)-643-0185',
-  location: 'Granger, Texas'
+  location: 'Granger, ', 
+  state: 'Texas',
+  directions: '901 Co Rd 336, In the basement, ',
+  zip: 'TX 76530',
+  email: 'seasoned@overseasoned.com',
 }
 
 const specialMenu = [
@@ -58,16 +62,16 @@ const quotes = [
     authorInfo2: '- Our Lady Health '
   },
   {
-    quote: 'If I have anymore fun today, I don\'t think I\'m gonna be able to take it!',
-    author:'- Franklin -',
-    authorInfo: 'Missing',
-    authorInfo2: '- Last seen in a white van '
+    quote: 'Being vegetarian is a big missed steak',
+    author:'- Random meat fan -',
+    authorInfo: 'Dude, Bro',
+    authorInfo2: '- Best if you don\'t talk to him '
   },
   {
-    quote: 'Have you ever been in a turkish prison?',
-    author:'- Capt. Oveur-',
-    authorInfo: 'Pilot',
-    authorInfo2: '- Creep '
+    quote: 'If you\'re not supposed to eat cows, why are they made of food?',
+    author:'- Homer Simpson -',
+    authorInfo: 'Dad',
+    authorInfo2: '- Springfield '
   },
   {
     quote: 'My family\'s always been in meat.',
@@ -77,9 +81,6 @@ const quotes = [
   },
 ]
 
-function test() {
-  return ;
-}
 
 const reviews = [
   {
@@ -124,6 +125,6 @@ export let globalState = {
     currentReview: 0,
   },
   setQuote: {
-    currentQuote: 0,
+    currentQuote: (Math.floor(Math.random() * 6)),
   }
 }

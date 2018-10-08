@@ -171,16 +171,12 @@
 .view-menu{
   font-family: "Playfair Display",serif;
   color: black;
-  display: block;
-  text-align: center;
   letter-spacing: 2px;
   text-shadow: 0px 0px;
   text-decoration: underline #b5b3b4;
   position: absolute;
-    bottom: 0;
-    text-align: center;
-    left: 46%;
-    bottom: 11em;
+  left: 46%;
+  bottom: 11em;
 }
 
 .col-md-4 {
@@ -231,7 +227,7 @@
   }
 }
 
-@media only screen and (max-width: 1171px) {
+@media only screen and (max-width: 1188px) {
   .menuCard{
     display: unset;
     padding: 100px;

@@ -19,32 +19,9 @@ const previousReview = function (state, actions) {
   )
 }
 
- 
-const nextQuote = function (state, actions) {
-  return (
-    {
-      setQuote: {
-      currentQuote:state.globalState.setQuote.currentQuote ++, 
-     }
-    }
-  )
-}
-
-const previousQuote = function (state, actions) {
-  return (
-    {
-      setQuote: {
-      currentQuote: state.globalState.setQuote.currentQuote = 0,
-     }
-    }
-  )
-}
-
 export const actions = {
   nextReview,
   previousReview,
-  nextQuote,
-  previousQuote,
 }
 
 

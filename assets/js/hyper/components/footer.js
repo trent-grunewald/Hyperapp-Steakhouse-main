@@ -14,7 +14,8 @@ export default function Footer({state, actions}) {
         <a class="google+"><i class="fab fa-google-plus-g"></i></a>
         <a class="instagram"><i class="fab fa-instagram"></i></a>
       </div>
-      <div class="copyright">Trent Grunewald 10/2/2018 <i class="far fa-copyright"></i></div>
+      <div class="copyright">Trent Grunewald 10/8/2018 <i class="far fa-copyright"></i></div>
+      <span class="not">Not actually copyrighted</span>
     </div>
     </section>
   )

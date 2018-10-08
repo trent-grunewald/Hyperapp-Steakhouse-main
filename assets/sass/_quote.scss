@@ -30,18 +30,6 @@ q:lang(en) {
   quotes: '\201C' '\201D' '\2018' '\2019';
 }
 
-.quoteHidden{
-  opacity: 0;
-  transition: 2s ease-in-out;
-  transition: opacity 2s;
-}
-
-.quoteTransition{
-  opacity: 1;
-  transition: 2s ease-in-out;
-  transition: opacity 2s;
-}
-
 .quote{
   font-family: $ff-title;
   margin-bottom: 3em;

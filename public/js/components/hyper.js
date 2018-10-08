@@ -1479,7 +1479,7 @@ function Quote(_ref) {
   var currentQuote = function currentQuote() {
     return (0, _hyperapp.h)(
       "div",
-      { "class": "quoteHidden quoteBody" },
+      { "class": "quoteHidden" },
       (0, _hyperapp.h)(
         "h1",
         { "class": "quote" },
@@ -1504,32 +1504,30 @@ function Quote(_ref) {
     );
   };
 
-  function test() {
-    var quote = document.querySelector('.quoteBody');
-
-    if (quote.classList.contains("quoteHidden")) {
-      quote.classList.toggle("quoteTransition");
-    } else {
-      quote.classList.toggle("quoteHidden");
-    };
-  }
-  // function test2(){
-  //   const quote = document.querySelector('.quoteBody')
-
   //   if(quote.classList.contains("quoteTransition")) {
   //   quote.classList.replace("quoteHidden", "quoteTransition")
   //   const quoteReveal = document.querySelector('.quoteTransition')
   //   };
+  var showQuote = setTimeout(function () {
+    var quoteHide = document.querySelector('.quoteHidden');
+    quoteHide.classList.replace("quoteHidden", "quoteTransition");
+  }, 100);
 
   var generateQuote = setTimeout(function () {
     if (state.globalState.setQuote.currentQuote !== 5) {
       actions.nextQuote();
-      test();
     } else {
       actions.previousQuote();
-      test();
     }
   }, 10000);
+  var hideQuote = setTimeout(function () {
+    var quoteShow = document.querySelector('.quoteTransition');
+    quoteShow.classList.replace("quoteTransition", "quoteHidden");
+  }, 7000);
+  //  const timeout2 = setTimeout(function () {
+  //    const hidden = document.queryCommandEnabled("quoteTransition")
+  //   hidden.removeClass('quoteTransition');
+  // }, 500)
 
   return (0, _hyperapp.h)(
     "section",

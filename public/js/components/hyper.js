@@ -13,7 +13,11 @@ Object.defineProperty(exports, "__esModule", {
 var companyInfo = {
   title: 'Over-Seasoned Steakhouse',
   phone: '(206)-643-0185',
-  location: 'Granger, Texas'
+  location: 'Granger, ',
+  state: 'Texas',
+  directions: '901 Co Rd 336, In the basement, ',
+  zip: 'TX 76530',
+  email: 'seasoned@overseasoned.com'
 };
 
 var specialMenu = [{
@@ -59,25 +63,21 @@ var quotes = [{
   authorInfo: 'Vegan ',
   authorInfo2: '- Our Lady Health '
 }, {
-  quote: 'If I have anymore fun today, I don\'t think I\'m gonna be able to take it!',
-  author: '- Franklin -',
-  authorInfo: 'Missing',
-  authorInfo2: '- Last seen in a white van '
+  quote: 'Being vegetarian is a big missed steak',
+  author: '- Random meat fan -',
+  authorInfo: 'Dude, Bro',
+  authorInfo2: '- Best if you don\'t talk to him '
 }, {
-  quote: 'Have you ever been in a turkish prison?',
-  author: '- Capt. Oveur-',
-  authorInfo: 'Pilot',
-  authorInfo2: '- Creep '
+  quote: 'If you\'re not supposed to eat cows, why are they made of food?',
+  author: '- Homer Simpson -',
+  authorInfo: 'Dad',
+  authorInfo2: '- Springfield '
 }, {
   quote: 'My family\'s always been in meat.',
   author: '- Drayton Sawyer-',
   authorInfo: 'Chili master',
   authorInfo2: '- Resturaunt Owner'
 }];
-
-function test() {
-  return;
-}
 
 var reviews = [{
   title: '"Way too many spices, I threw up!"',
@@ -118,7 +118,7 @@ var globalState = exports.globalState = {
     currentReview: 0
   },
   setQuote: {
-    currentQuote: 0
+    currentQuote: Math.floor(Math.random() * 6)
   }
 };
 
@@ -140,14 +140,12 @@ function Contact(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
-
-  setTimeout(function () {
-    // DO NOT REMOVE, Prevents leaflet initialization bug
+  // DO NOT REMOVE, Prevents leaflet initialization bug
+  setTimeout(function loadMap() {
     var container = L.DomUtil.get('map');
     if (container != null) {
       container._leaflet_id = null;
     }
-
     // LEAFLET MAP
     var mymap = L.map('map').setView([30.6928582, -97.4577975], 9);
     var marker = L.marker([30.6928582, -97.4577975]).addTo(mymap);
@@ -191,7 +189,7 @@ function Contact(_ref) {
       token: 'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g',
       accessToken: 'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g'
     }).addTo(mymap);
-  }, 3000);
+  }, 5);
 
   return (0, _hyperapp.h)(
     'section',
@@ -218,19 +216,23 @@ function Contact(_ref) {
           (0, _hyperapp.h)(
             'h5',
             { 'class': 'contact-location' },
-            'Granger, ',
+            state.globalState.companyInfo.location,
+            ' ',
             (0, _hyperapp.h)(
               'span',
               null,
-              'Texas'
+              state.globalState.companyInfo.state
             )
           ),
           (0, _hyperapp.h)(
             'h5',
             { 'class': 'contact-address' },
-            '901 Co Rd 336, In the basement,',
+            state.globalState.companyInfo.directions,
             (0, _hyperapp.h)('br', null),
-            ' Granger, TX 76530'
+            ' ',
+            state.globalState.companyInfo.location,
+            ' ',
+            state.globalState.companyInfo.zip
           ),
           (0, _hyperapp.h)(
             'h5',
@@ -239,7 +241,7 @@ function Contact(_ref) {
             (0, _hyperapp.h)(
               'span',
               null,
-              'seasoned@overseasoned.com'
+              state.globalState.companyInfo.email
             )
           ),
           (0, _hyperapp.h)(
@@ -259,7 +261,7 @@ function Contact(_ref) {
           (0, _hyperapp.h)(
             'h1',
             { 'class': 'contact-number' },
-            '(206)-643-0185'
+            state.globalState.companyInfo.phone
           ),
           (0, _hyperapp.h)(
             'h5',
@@ -528,50 +530,86 @@ function Reservation(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
+
+  setTimeout(function reserve() {
+
+    var reserveEmail = document.querySelector('.address-input');
+    var reservationSubmit = document.getElementById('reservation-submit');
+    var emailWarning = document.getElementById('reserve-warning');
+
+    //on modal submit
+    reservationSubmit.onclick = function (_) {
+      //checks that the user input anything
+      if (reserveEmail.value === "") {
+        //
+        emailWarning.style.color = 'red';
+        //if not, alerts with red text to enter valid email
+        emailWarning.innerHTML = "Please enter a valid email address";
+      } else {
+        //if they input something, removes the modal
+        popup.style.display = 'none';
+      }
+    };
+    //modal load delay
+  }, 3000);
+
   return (0, _hyperapp.h)(
-    "section",
-    { id: "reservations", "class": "hidden" },
-    (0, _hyperapp.h)("div", { "class": "reservation-overlay" }),
+    'section',
+    { id: 'reservations', 'class': 'hidden' },
+    (0, _hyperapp.h)('div', { 'class': 'reservation-overlay' }),
     (0, _hyperapp.h)(
-      "div",
-      { "class": "container reservation-container" },
+      'div',
+      { 'class': 'container reservation-container' },
       (0, _hyperapp.h)(
-        "div",
-        { "class": "reservation-body" },
-        (0, _hyperapp.h)("div", { "class": "reservation-logo" }),
+        'div',
+        { 'class': 'reservation-body' },
+        (0, _hyperapp.h)('div', { 'class': 'reservation-logo' }),
         (0, _hyperapp.h)(
-          "h1",
-          { "class": "reservation-title" },
-          "All booked up"
+          'h1',
+          { 'class': 'reservation-title' },
+          'All booked up'
         ),
         (0, _hyperapp.h)(
-          "h5",
-          { "class": "reservation-description" },
-          "Please try again tomorrow."
+          'h5',
+          { 'class': 'reservation-description' },
+          'Please try again tomorrow.'
         ),
         (0, _hyperapp.h)(
-          "form",
-          { id: "email-form" },
-          (0, _hyperapp.h)("h5", { "class": "email-validation" }),
-          (0, _hyperapp.h)("input", { type: "text", "class": "name", placeholder: "Name", disabled: true }),
-          (0, _hyperapp.h)("input", { type: "text", "class": "last", placeholder: "Last", disabled: true }),
-          (0, _hyperapp.h)("input", { type: "number", "class": "telephone", placeholder: "Phone", disabled: true }),
-          (0, _hyperapp.h)("input", { type: "text", "class": "address-input", action: "mailto:", placeholder: "Email Address" }),
+          'form',
+          { id: 'email-form' },
+          (0, _hyperapp.h)('h5', { 'class': 'email-validation' }),
+          (0, _hyperapp.h)('input', { type: 'text', 'class': 'name', placeholder: 'Name', disabled: true }),
+          (0, _hyperapp.h)('input', { type: 'text', 'class': 'last', placeholder: 'Last', disabled: true }),
+          (0, _hyperapp.h)('input', { type: 'number', 'class': 'telephone', placeholder: 'Phone', disabled: true }),
+          (0, _hyperapp.h)('input', { type: 'text', 'class': 'address-input', action: 'mailto:', placeholder: 'Email Address' }),
           (0, _hyperapp.h)(
-            "input",
-            { type: "submit", id: "reservation-submit" },
-            "Submit"
+            'input',
+            { type: 'submit', id: 'reservation-submit' },
+            'Submit'
           ),
-          (0, _hyperapp.h)("h5", { "class": "email-validation" })
+          (0, _hyperapp.h)('h5', { id: 'reserve-warning' })
         ),
         (0, _hyperapp.h)(
-          "a",
-          { id: "close-reservation" },
-          (0, _hyperapp.h)("i", { "class": "fas fa-times" })
+          'a',
+          { id: 'close-reservation' },
+          (0, _hyperapp.h)('i', { 'class': 'fas fa-times' })
         )
       )
     )
   );
+
+  var userInput = document.querySelector('.address-input');
+  var emailValidation = document.querySelector('.email-validation');
+
+  //checks that the user input anything
+  // if(userInput.value === ""){
+  //   //if not, alerts with red text to enter valid email
+  //   emailValidation.style.color = 'red';
+  //   emailValidation.innerHTML = "Please enter a valid email"
+  // } else {
+  //   //if they input something, removes the modal
+  //   popup.style.display = 'none'
+  // }
 }
 // <Header state={state} actions={actions}/>
 // <Button state={state} actions={actions}/>
@@ -603,27 +641,9 @@ var previousReview = function previousReview(state, actions) {
   };
 };
 
-var nextQuote = function nextQuote(state, actions) {
-  return {
-    setQuote: {
-      currentQuote: state.globalState.setQuote.currentQuote++
-    }
-  };
-};
-
-var previousQuote = function previousQuote(state, actions) {
-  return {
-    setQuote: {
-      currentQuote: state.globalState.setQuote.currentQuote = 0
-    }
-  };
-};
-
 var actions = exports.actions = {
   nextReview: nextReview,
-  previousReview: previousReview,
-  nextQuote: nextQuote,
-  previousQuote: previousQuote
+  previousReview: previousReview
 };
 
 /***/ }),
@@ -782,8 +802,13 @@ function Footer(_ref) {
       (0, _hyperapp.h)(
         "div",
         { "class": "copyright" },
-        "Trent Grunewald 10/2/2018 ",
+        "Trent Grunewald 10/8/2018 ",
         (0, _hyperapp.h)("i", { "class": "far fa-copyright" })
+      ),
+      (0, _hyperapp.h)(
+        "span",
+        { "class": "not" },
+        "Not actually copyrighted"
       )
     )
   );
@@ -899,7 +924,7 @@ function Header(_ref) {
 
   return (0, _hyperapp.h)(
     'header',
-    null,
+    { id: 'header' },
     (0, _hyperapp.h)(
       'div',
       { 'class': 'container' },
@@ -1479,7 +1504,7 @@ function Quote(_ref) {
   var currentQuote = function currentQuote() {
     return (0, _hyperapp.h)(
       "div",
-      { "class": "quoteHidden" },
+      null,
       (0, _hyperapp.h)(
         "h1",
         { "class": "quote" },
@@ -1503,31 +1528,6 @@ function Quote(_ref) {
       )
     );
   };
-
-  //   if(quote.classList.contains("quoteTransition")) {
-  //   quote.classList.replace("quoteHidden", "quoteTransition")
-  //   const quoteReveal = document.querySelector('.quoteTransition')
-  //   };
-  var showQuote = setTimeout(function () {
-    var quoteHide = document.querySelector('.quoteHidden');
-    quoteHide.classList.replace("quoteHidden", "quoteTransition");
-  }, 100);
-
-  var generateQuote = setTimeout(function () {
-    if (state.globalState.setQuote.currentQuote !== 5) {
-      actions.nextQuote();
-    } else {
-      actions.previousQuote();
-    }
-  }, 10000);
-  var hideQuote = setTimeout(function () {
-    var quoteShow = document.querySelector('.quoteTransition');
-    quoteShow.classList.replace("quoteTransition", "quoteHidden");
-  }, 7000);
-  //  const timeout2 = setTimeout(function () {
-  //    const hidden = document.queryCommandEnabled("quoteTransition")
-  //   hidden.removeClass('quoteTransition');
-  // }, 500)
 
   return (0, _hyperapp.h)(
     "section",
@@ -1592,16 +1592,18 @@ function Reviews(_ref) {
   var leftArrow = function leftArrow() {
     if (state.globalState.setReview.currentReview !== 0) {
       actions.previousReview();
-    } else {
-      state.globalState.setReview.currentReview === 5;
+      clearTimeout(generateQuote());
+      clearTimeout(generateQuote);
     }
   };
 
-  setInterval(leftArrow, 2000);
+  // setInterval(leftArrow,2000);
 
   var rightArrow = function rightArrow() {
     if (state.globalState.setReview.currentReview !== state.globalState.reviews.length - 1) {
       actions.nextReview();
+      clearTimeout(generateQuote());
+      clearTimeout(generateQuote);
     }
   };
 
@@ -1629,7 +1631,7 @@ function Reviews(_ref) {
         (0, _hyperapp.h)(
           "div",
           { "class": "arrows" },
-          (0, _hyperapp.h)("i", { onLoad: leftArrow, "class": "fa fa-arrow-left " + (state.globalState.setReview.currentReview > 0 ? 'ready' : ''), "aria-hidden": "true" }),
+          (0, _hyperapp.h)("i", { onclick: leftArrow, "class": "fa fa-arrow-left " + (state.globalState.setReview.currentReview > 0 ? 'ready' : ''), "aria-hidden": "true" }),
           (0, _hyperapp.h)("i", { onclick: rightArrow, "class": "fa fa-arrow-right " + (state.globalState.setReview.currentReview === state.globalState.reviews.length - 1 ? '' : 'ready'), "aria-hidden": "true" })
         )
       )

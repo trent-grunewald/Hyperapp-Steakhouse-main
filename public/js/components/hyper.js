@@ -141,7 +141,7 @@ function Contact(_ref) {
       actions = _ref.actions;
 
 
-  setTimeout(function () {
+  function mapBox() {
     // DO NOT REMOVE, Prevents leaflet initialization bug
     var container = L.DomUtil.get('map');
     if (container != null) {
@@ -191,7 +191,14 @@ function Contact(_ref) {
       token: 'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g',
       accessToken: 'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g'
     }).addTo(mymap);
-  }, 3000);
+    map.on('click', function (e) {
+      //don't forget to pass this 'e' event parameter
+      e.preventDefault();
+      scope.deselectAllMarkers();
+      e.stopPropagation();
+      return false;
+    });
+  }
 
   return (0, _hyperapp.h)(
     'section',
@@ -287,7 +294,11 @@ function Contact(_ref) {
           )
         )
       ),
-      (0, _hyperapp.h)('div', { id: 'map' })
+      (0, _hyperapp.h)(
+        'div',
+        { id: 'map' },
+        setTimeout(mapBox, 10)
+      )
     )
   );
 }
@@ -524,6 +535,8 @@ exports.default = Reservation;
 
 var _hyperapp = __webpack_require__(0);
 
+var _timers = __webpack_require__(22);
+
 function Reservation(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
@@ -531,12 +544,14 @@ function Reservation(_ref) {
 
   setTimeout(function reserve() {
 
-    var reserveEmail = document.querySelector('.address-input');
+    var reserveEmail = document.getElementById('reserve-email');
     var reservationSubmit = document.getElementById('reservation-submit');
     var emailWarning = document.getElementById('reserve-warning');
+    var reservationModal = document.getElementById('reservations');
 
     //on modal submit
     reservationSubmit.onclick = function (_) {
+
       //checks that the user input anything
       if (reserveEmail.value === "") {
         //
@@ -545,7 +560,8 @@ function Reservation(_ref) {
         emailWarning.innerHTML = "Please enter a valid email address";
       } else {
         //if they input something, removes the modal
-        popup.style.display = 'none';
+        reservationModal.classList.replace('show', 'hidden');
+        emailWarning.innerHTML = "";
       }
     };
     //modal load delay
@@ -579,7 +595,7 @@ function Reservation(_ref) {
           (0, _hyperapp.h)('input', { type: 'text', 'class': 'name', placeholder: 'Name', disabled: true }),
           (0, _hyperapp.h)('input', { type: 'text', 'class': 'last', placeholder: 'Last', disabled: true }),
           (0, _hyperapp.h)('input', { type: 'number', 'class': 'telephone', placeholder: 'Phone', disabled: true }),
-          (0, _hyperapp.h)('input', { type: 'text', 'class': 'address-input', action: 'mailto:', placeholder: 'Email Address' }),
+          (0, _hyperapp.h)('input', { type: 'text', id: 'reserve-email', action: 'mailto:', placeholder: 'Email Address' }),
           (0, _hyperapp.h)(
             'input',
             { type: 'submit', id: 'reservation-submit' },
@@ -600,7 +616,8 @@ function Reservation(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 6 */
+/* 6 */,
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -632,7 +649,7 @@ var actions = exports.actions = {
 };
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -645,7 +662,7 @@ exports.default = App;
 
 var _hyperapp = __webpack_require__(0);
 
-var _modal = __webpack_require__(11);
+var _modal = __webpack_require__(12);
 
 var _modal2 = _interopRequireDefault(_modal);
 
@@ -653,15 +670,15 @@ var _reservations = __webpack_require__(5);
 
 var _reservations2 = _interopRequireDefault(_reservations);
 
-var _menu = __webpack_require__(10);
+var _menu = __webpack_require__(11);
 
 var _menu2 = _interopRequireDefault(_menu);
 
-var _header = __webpack_require__(9);
+var _header = __webpack_require__(10);
 
 var _header2 = _interopRequireDefault(_header);
 
-var _topimg = __webpack_require__(15);
+var _topimg = __webpack_require__(16);
 
 var _topimg2 = _interopRequireDefault(_topimg);
 
@@ -669,15 +686,15 @@ var _ourstory = __webpack_require__(3);
 
 var _ourstory2 = _interopRequireDefault(_ourstory);
 
-var _specialmenu = __webpack_require__(14);
+var _specialmenu = __webpack_require__(15);
 
 var _specialmenu2 = _interopRequireDefault(_specialmenu);
 
-var _quote = __webpack_require__(12);
+var _quote = __webpack_require__(13);
 
 var _quote2 = _interopRequireDefault(_quote);
 
-var _reviews = __webpack_require__(13);
+var _reviews = __webpack_require__(14);
 
 var _reviews2 = _interopRequireDefault(_reviews);
 
@@ -689,7 +706,7 @@ var _contact = __webpack_require__(2);
 
 var _contact2 = _interopRequireDefault(_contact);
 
-var _footer = __webpack_require__(8);
+var _footer = __webpack_require__(9);
 
 var _footer2 = _interopRequireDefault(_footer);
 
@@ -720,7 +737,7 @@ function App(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -781,7 +798,7 @@ function Footer(_ref) {
         (0, _hyperapp.h)(
           "a",
           { "class": "instagram" },
-          (0, _hyperapp.h)("i", { "class": "fab fa-instagram" })
+          (0, _hyperapp.h)("i", { "class": "fab fa-instagram mx-2" })
         )
       ),
       (0, _hyperapp.h)(
@@ -802,7 +819,7 @@ function Footer(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -951,7 +968,7 @@ function Header(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1374,7 +1391,7 @@ function Menu(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1469,7 +1486,7 @@ function Modal(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1529,7 +1546,7 @@ function Quote(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1623,7 +1640,7 @@ function Reviews(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1882,7 +1899,7 @@ function SpecialMenu(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1963,7 +1980,7 @@ function TopImg(_ref) {
 // <Button state={state} actions={actions}/>
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1971,11 +1988,11 @@ function TopImg(_ref) {
 
 var _hyperapp = __webpack_require__(0);
 
-var _actions = __webpack_require__(6);
+var _actions = __webpack_require__(7);
 
 var _globalState = __webpack_require__(1);
 
-var _App = __webpack_require__(7);
+var _App = __webpack_require__(8);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -2002,4 +2019,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 });
 
 /***/ })
-],[16]);
+],[17]);

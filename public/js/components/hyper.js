@@ -1490,7 +1490,7 @@ function Quote(_ref) {
   var currentQuote = function currentQuote() {
     return (0, _hyperapp.h)(
       "div",
-      { "class": "quoteHidden" },
+      null,
       (0, _hyperapp.h)(
         "h1",
         { "class": "quote" },
@@ -1514,6 +1514,16 @@ function Quote(_ref) {
       )
     );
   };
+  return (0, _hyperapp.h)(
+    "section",
+    { "class": "quote-body" },
+    (0, _hyperapp.h)(
+      "div",
+      { "class": "container" },
+      (0, _hyperapp.h)("q", { lang: "en" }),
+      currentQuote()
+    )
+  );
 }
 // <Header state={state} actions={actions}/>
 // <Button state={state} actions={actions}/>

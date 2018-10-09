@@ -23,6 +23,16 @@
   transform: translate(-50%, -50%);
 }
 
+#reserve-email{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  border: 2px solid #b5b3b4;
+  font-family: $ff-title;
+  text-align: center;
+}
+
 .reservation-logo{
   background: url(/img/logodark.png) no-repeat center center;
   height: 12vw;

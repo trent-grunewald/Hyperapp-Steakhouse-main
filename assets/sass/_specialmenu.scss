@@ -231,6 +231,7 @@
   .menuCard{
     display: unset;
     padding: 100px;
+    text-align: center;
     
     &-text{
       text-decoration: none;
@@ -238,7 +239,6 @@
       font-family: "Playfair Display",serif;
       font-size: 50px;
       text-transform: capitalize;
-      text-align: center;
       position: static;
     }
 

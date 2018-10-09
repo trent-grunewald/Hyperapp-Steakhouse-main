@@ -12,7 +12,7 @@ export default function Footer({state, actions}) {
         <a class="twitter"><i class="fab fa-twitter"></i></a>
         <a class="facebook"><i class="fab fa-facebook-f"></i></a>
         <a class="google+"><i class="fab fa-google-plus-g"></i></a>
-        <a class="instagram"><i class="fab fa-instagram"></i></a>
+        <a class="instagram"><i class="fab fa-instagram mx-2"></i></a>
       </div>
       <div class="copyright">Trent Grunewald 10/8/2018 <i class="far fa-copyright"></i></div>
       <span class="not">Not actually copyrighted</span>

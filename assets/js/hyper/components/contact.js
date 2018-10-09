@@ -2,7 +2,7 @@ import {h, app} from 'hyperapp'
 
 export default function Contact({state, actions}) {
 
-  (setTimeout(() => {
+  function mapBox(){
     // DO NOT REMOVE, Prevents leaflet initialization bug
     var container = L.DomUtil.get('map');
     if(container != null){
@@ -52,10 +52,16 @@ export default function Contact({state, actions}) {
     token:'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g',
     accessToken: 'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g'
   }).addTo(mymap);
-  }, 3000))
-
+  map.on('click', function(e) {  //don't forget to pass this 'e' event parameter
+    e.preventDefault();
+    scope.deselectAllMarkers();        
+    e.stopPropagation();
+    return false;     
+});
+  }
   
   
+ 
   return (
     <section class="contact" id="contact">
       <div class="container contact-container">
@@ -77,7 +83,7 @@ export default function Contact({state, actions}) {
             <h5 class="contact-street">from 3pm-10pm<br></br>Call for reservations</h5>
           </div>        
         </div>
-        <div id="map"></div>
+        <div id="map">{setTimeout(mapBox,10)}</div>
       </div>
     </section>
   )

@@ -1,15 +1,18 @@
 import {h, app} from 'hyperapp'
+import { setInterval } from 'timers';
 
 export default function Reservation({state, actions}) {
   
   setTimeout(function reserve(){
 
-    const reserveEmail = document.querySelector('.address-input')
+    const reserveEmail = document.getElementById('reserve-email')
     const reservationSubmit = document.getElementById('reservation-submit')
     const emailWarning = document.getElementById('reserve-warning')
+    const reservationModal = document.getElementById('reservations')
   
     //on modal submit
     reservationSubmit.onclick =_=> {
+
       //checks that the user input anything
       if(reserveEmail.value === ""){
         //
@@ -18,7 +21,8 @@ export default function Reservation({state, actions}) {
         emailWarning.innerHTML = "Please enter a valid email address"
       } else {
         //if they input something, removes the modal
-        popup.style.display = 'none'
+        reservationModal.classList.replace('show','hidden')
+        emailWarning.innerHTML = ""
       }
     }
     //modal load delay
@@ -37,7 +41,7 @@ export default function Reservation({state, actions}) {
           <input type="text" class="name" placeholder="Name" disabled/>
           <input type="text" class="last" placeholder="Last" disabled/>
           <input type="number" class="telephone" placeholder="Phone" disabled/>
-          <input type="text" class="address-input" action="mailto:" placeholder="Email Address"></input>
+          <input type="text" id="reserve-email" action="mailto:" placeholder="Email Address"></input>
           <input type="submit" id="reservation-submit">Submit</input>
           <h5 id="reserve-warning"></h5>
           </form>

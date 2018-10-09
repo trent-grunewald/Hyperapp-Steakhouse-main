@@ -46,19 +46,6 @@ export default function Reservation({state, actions}) {
       </div>
     </section>
   )
- 
-  const userInput = document.querySelector('.address-input');
-  const emailValidation = document.querySelector('.email-validation');
-
-  //checks that the user input anything
-  // if(userInput.value === ""){
-  //   //if not, alerts with red text to enter valid email
-  //   emailValidation.style.color = 'red';
-  //   emailValidation.innerHTML = "Please enter a valid email"
-  // } else {
-  //   //if they input something, removes the modal
-  //   popup.style.display = 'none'
-  // }
 }
 // <Header state={state} actions={actions}/>
 // <Button state={state} actions={actions}/>

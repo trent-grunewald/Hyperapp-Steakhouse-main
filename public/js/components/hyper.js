@@ -140,12 +140,14 @@ function Contact(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
-  // DO NOT REMOVE, Prevents leaflet initialization bug
-  setTimeout(function loadMap() {
+
+  setTimeout(function () {
+    // DO NOT REMOVE, Prevents leaflet initialization bug
     var container = L.DomUtil.get('map');
     if (container != null) {
       container._leaflet_id = null;
     }
+
     // LEAFLET MAP
     var mymap = L.map('map').setView([30.6928582, -97.4577975], 9);
     var marker = L.marker([30.6928582, -97.4577975]).addTo(mymap);
@@ -189,7 +191,7 @@ function Contact(_ref) {
       token: 'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g',
       accessToken: 'pk.eyJ1IjoidHJlbnRnIiwiYSI6ImNqbWZlZ291OTA4MWgzdXFwMWZhcjRxcjYifQ.JX8sZBfAm_hx2lkliZ1F5g'
     }).addTo(mymap);
-  }, 5);
+  }, 3000);
 
   return (0, _hyperapp.h)(
     'section',
@@ -216,23 +218,19 @@ function Contact(_ref) {
           (0, _hyperapp.h)(
             'h5',
             { 'class': 'contact-location' },
-            state.globalState.companyInfo.location,
-            ' ',
+            'Granger, ',
             (0, _hyperapp.h)(
               'span',
               null,
-              state.globalState.companyInfo.state
+              'Texas'
             )
           ),
           (0, _hyperapp.h)(
             'h5',
             { 'class': 'contact-address' },
-            state.globalState.companyInfo.directions,
+            '901 Co Rd 336, In the basement,',
             (0, _hyperapp.h)('br', null),
-            ' ',
-            state.globalState.companyInfo.location,
-            ' ',
-            state.globalState.companyInfo.zip
+            ' Granger, TX 76530'
           ),
           (0, _hyperapp.h)(
             'h5',
@@ -241,7 +239,7 @@ function Contact(_ref) {
             (0, _hyperapp.h)(
               'span',
               null,
-              state.globalState.companyInfo.email
+              'seasoned@overseasoned.com'
             )
           ),
           (0, _hyperapp.h)(
@@ -261,7 +259,7 @@ function Contact(_ref) {
           (0, _hyperapp.h)(
             'h1',
             { 'class': 'contact-number' },
-            state.globalState.companyInfo.phone
+            '(206)-643-0185'
           ),
           (0, _hyperapp.h)(
             'h5',
@@ -597,19 +595,6 @@ function Reservation(_ref) {
       )
     )
   );
-
-  var userInput = document.querySelector('.address-input');
-  var emailValidation = document.querySelector('.email-validation');
-
-  //checks that the user input anything
-  // if(userInput.value === ""){
-  //   //if not, alerts with red text to enter valid email
-  //   emailValidation.style.color = 'red';
-  //   emailValidation.innerHTML = "Please enter a valid email"
-  // } else {
-  //   //if they input something, removes the modal
-  //   popup.style.display = 'none'
-  // }
 }
 // <Header state={state} actions={actions}/>
 // <Button state={state} actions={actions}/>
@@ -1438,6 +1423,7 @@ function Modal(_ref) {
     };
     //modal load delay
   }, 3000);
+
   return (0, _hyperapp.h)(
     'section',
     { id: 'modal', 'class': 'hidden' },
@@ -1504,7 +1490,7 @@ function Quote(_ref) {
   var currentQuote = function currentQuote() {
     return (0, _hyperapp.h)(
       "div",
-      null,
+      { "class": "quoteHidden" },
       (0, _hyperapp.h)(
         "h1",
         { "class": "quote" },
@@ -1528,17 +1514,6 @@ function Quote(_ref) {
       )
     );
   };
-
-  return (0, _hyperapp.h)(
-    "section",
-    { "class": "quote-body" },
-    (0, _hyperapp.h)(
-      "div",
-      { "class": "container" },
-      (0, _hyperapp.h)("q", { lang: "en" }),
-      currentQuote()
-    )
-  );
 }
 // <Header state={state} actions={actions}/>
 // <Button state={state} actions={actions}/>
@@ -1592,8 +1567,6 @@ function Reviews(_ref) {
   var leftArrow = function leftArrow() {
     if (state.globalState.setReview.currentReview !== 0) {
       actions.previousReview();
-      clearTimeout(generateQuote());
-      clearTimeout(generateQuote);
     }
   };
 
@@ -1602,8 +1575,6 @@ function Reviews(_ref) {
   var rightArrow = function rightArrow() {
     if (state.globalState.setReview.currentReview !== state.globalState.reviews.length - 1) {
       actions.nextReview();
-      clearTimeout(generateQuote());
-      clearTimeout(generateQuote);
     }
   };
 

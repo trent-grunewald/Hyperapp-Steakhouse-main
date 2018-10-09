@@ -16,8 +16,6 @@ export default function Reviews({state, actions}) {
   const leftArrow = function() {
     if(state.globalState.setReview.currentReview !== 0) {
       actions.previousReview()
-      clearTimeout(generateQuote())
-      clearTimeout(generateQuote)
     }
   }
 
@@ -26,8 +24,6 @@ export default function Reviews({state, actions}) {
   const rightArrow = function(){
     if(state.globalState.setReview.currentReview !== (state.globalState.reviews.length - 1)) {
       actions.nextReview()
-      clearTimeout(generateQuote())
-      clearTimeout(generateQuote)
     }
   }
 

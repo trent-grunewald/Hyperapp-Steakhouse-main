@@ -33,6 +33,7 @@ setTimeout(function modalFunc(){
   }
   //modal load delay
 },3000)
+
   return (
     <section id="modal" class="hidden">
     <div class="modal-overlay"></div>

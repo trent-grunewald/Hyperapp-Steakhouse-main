@@ -378,7 +378,7 @@ function ourStory(_ref) {
         (0, _hyperapp.h)(
           "div",
           { "class": "col-md-6" },
-          (0, _hyperapp.h)("img", { src: "http://www.justlookaround.nl/wordpress/wp-content/uploads/2016/06/Food-photography-Spareribs-Cookers-Just-Look-Around.jpg", "class": "story-img" })
+          (0, _hyperapp.h)("img", { src: "url(/img/ribs.jpg" })
         )
       )
     )
